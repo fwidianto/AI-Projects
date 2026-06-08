@@ -655,6 +655,30 @@
         </div>
         
         <div class="sidebar-section">
+            <div class="sidebar-section-title">Analytics Dashboard</div>
+            <a href="{{ url_for('dashboard.executive') }}" class="sidebar-link {% if 'dashboard' in request.endpoint %}active{% endif %}">
+                <span class="sidebar-link-icon">📊</span>
+                Executive View
+            </a>
+            <a href="{{ url_for('dashboard.sales') }}" class="sidebar-link">
+                <span class="sidebar-link-icon">💰</span>
+                Sales Analytics
+            </a>
+            <a href="{{ url_for('dashboard.purchasing') }}" class="sidebar-link">
+                <span class="sidebar-link-icon">🛒</span>
+                Purchasing
+            </a>
+            <a href="{{ url_for('dashboard.inventory') }}" class="sidebar-link">
+                <span class="sidebar-link-icon">📦</span>
+                Inventory
+            </a>
+            <a href="{{ url_for('dashboard.aging') }}" class="sidebar-link">
+                <span class="sidebar-link-icon">📋</span>
+                AR/AP Aging
+            </a>
+        </div>
+        
+        <div class="sidebar-section">
             <div class="sidebar-section-title">Quick Lookup</div>
             <a href="{{ url_for('customer_list') }}" class="sidebar-link {% if request.endpoint == 'customer_list' %}active{% endif %}">
                 <span class="sidebar-link-icon">👥</span>

@@ -1,0 +1,178 @@
+{% extends "dashboard/base.html" %}
+
+{% block title %}Purchasing Analytics - ERP Dashboard{% endblock %}
+
+{% block content %}
+<div class="page-header">
+    <h1 class="page-title">🛒 Purchasing Analytics</h1>
+    <p class="page-subtitle">Supplier performance, spend analysis, and procurement metrics</p>
+</div>
+
+<!-- KPI Cards -->
+<div class="kpi-grid">
+    <div class="kpi-card">
+        <div class="kpi-header">
+            <span class="kpi-label">Total Spend (12M)</span>
+            <div class="kpi-icon blue">💰</div>
+        </div>
+        <div class="kpi-value format-number">
+            ${{ "{:,.0f}".format(monthly_spend|sum(attribute='spend') if monthly_spend else 0) }}
+        </div>
+        <div class="kpi-change">All suppliers</div>
+    </div>
+    
+    <div class="kpi-card">
+        <div class="kpi-header">
+            <span class="kpi-label">Active Suppliers</span>
+            <div class="kpi-icon green">🏭</div>
+        </div>
+        <div class="kpi-value format-number">{{ top_suppliers|length }}</div>
+        <div class="kpi-change">Top performers</div>
+    </div>
+    
+    <div class="kpi-card">
+        <div class="kpi-header">
+            <span class="kpi-label">Avg Lead Time</span>
+            <div class="kpi-icon purple">⏱️</div>
+        </div>
+        <div class="kpi-value format-number">
+            {{ "%.0f".format(delivery_stats.avg_lead_time|default(0)) }} days
+        </div>
+        <div class="kpi-change">From order to receipt</div>
+    </div>
+    
+    <div class="kpi-card">
+        <div class="kpi-header">
+            <span class="kpi-label">On-Time Rate</span>
+            <div class="kpi-icon teal">✅</div>
+        </div>
+        <div class="kpi-value format-number">
+            {{ "%.0f".format((delivery_stats.on_time_count|default(0) / delivery_stats.total_count * 100) if delivery_stats.total_count > 0 else 0) }}%
+        </div>
+        <div class="kpi-change">{{ delivery_stats.on_time_count|default(0) }} deliveries</div>
+    </div>
+</div>
+
+<!-- Charts -->
+<div class="chart-grid">
+    <div class="chart-card">
+        <div class="chart-header">
+            <h3 class="chart-title">📈 Monthly Purchase Spend</h3>
+        </div>
+        <div class="chart-container">
+            <canvas id="spendChart"></canvas>
+        </div>
+    </div>
+    
+    <div class="chart-card">
+        <div class="chart-header">
+            <h3 class="chart-title">📊 Spend by Category</h3>
+        </div>
+        <div class="chart-container">
+            <canvas id="categorySpendChart"></canvas>
+        </div>
+    </div>
+</div>
+
+<!-- Supplier Performance Table -->
+<div class="chart-card" style="margin-bottom: 24px;">
+    <div class="chart-header">
+        <h3 class="chart-title">🏭 Top Suppliers by Spend</h3>
+    </div>
+    <table class="data-table">
+        <thead>
+            <tr>
+                <th>Supplier</th>
+                <th>Country</th>
+                <th>Total Spend</th>
+                <th>On-Time Rate</th>
+                <th>Orders</th>
+                <th>Performance</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for s in supplier_performance %}
+            <tr>
+                <td><strong>{{ s.supplier_name }}</strong></td>
+                <td>{{ s.country }}</td>
+                <td class="number">${{ "{:,.0f}".format(s.spend) }}</td>
+                <td class="number">{{ "%.0f".format(s.on_time|default(0)) }}%</td>
+                <td class="number">{{ s.orders }}</td>
+                <td>
+                    {% if s.on_time|default(0) >= 90 %}
+                    <span class="badge badge-success">Excellent</span>
+                    {% elif s.on_time|default(0) >= 75 %}
+                    <span class="badge badge-warning">Good</span>
+                    {% else %}
+                    <span class="badge badge-danger">Needs Improvement</span>
+                    {% endif %}
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Spend Chart
+    const spendData = {{ monthly_spend|tojson }};
+    const labels = spendData.slice().reverse().map(d => {
+        const monthNames = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+        return monthNames[d.month - 1] + ' ' + d.year;
+    });
+    
+    new Chart(document.getElementById('spendChart').getContext('2d'), {
+        type: 'line',
+        data: {
+            labels: labels,
+            datasets: [{
+                label: 'Spend',
+                data: spendData.slice().reverse().map(d => d.spend),
+                borderColor: '#2563eb',
+                backgroundColor: 'rgba(37, 99, 235, 0.1)',
+                fill: true,
+                tension: 0.3
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: { legend: { display: false } },
+            scales: {
+                y: { ticks: { callback: v => '$' + v.toLocaleString() } }
+            }
+        }
+    });
+    
+    // Category Spend Chart
+    const catData = {{ spend_by_category|tojson }};
+    new Chart(document.getElementById('categorySpendChart').getContext('2d'), {
+        type: 'pie',
+        data: {
+            labels: catData.map(d => d.category),
+            datasets: [{
+                data: catData.map(d => d.spend),
+                backgroundColor: ['#2563eb', '#059669', '#d97706', '#7c3aed', '#dc2626', '#0891b2']
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                legend: { position: 'right' },
+                tooltip: {
+                    callbacks: {
+                        label: function(ctx) {
+                            return ctx.label + ': $' + ctx.raw.toLocaleString();
+                        }
+                    }
+                }
+            }
+        }
+    });
+});
+</script>
+{% endblock %}

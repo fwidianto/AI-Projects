@@ -24,6 +24,15 @@ def min_func(*args):
     return min(*args)
 app.jinja_env.globals.update(max=max_func, min=min_func)
 
+# Import and register Dashboard Blueprint
+from dashboard_app import dashboard_bp
+app.register_blueprint(dashboard_bp)
+
+# Add now variable to all templates
+@app.context_processor
+def inject_now():
+    return {'now': datetime.now()}
+
 # ========================================
 # DATABASE CONNECTION
 # ========================================

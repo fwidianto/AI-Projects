@@ -1,0 +1,262 @@
+{% extends "dashboard/base.html" %}
+
+{% block title %}Executive Dashboard - ERP Analytics{% endblock %}
+
+{% block extra_head %}
+<style>
+    .summary-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 24px;
+        margin-top: 24px;
+    }
+    
+    @media (max-width: 1024px) {
+        .summary-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+    
+    .summary-card {
+        background: white;
+        border-radius: 12px;
+        padding: 24px;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    }
+    
+    .summary-title {
+        font-size: 1rem;
+        font-weight: 600;
+        color: var(--gray-800);
+        margin-bottom: 16px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="page-header">
+    <h1 class="page-title">📊 Executive Dashboard</h1>
+    <p class="page-subtitle">Key performance indicators and business summary</p>
+</div>
+
+<!-- KPI Cards -->
+<div class="kpi-grid">
+    <div class="kpi-card">
+        <div class="kpi-header">
+            <span class="kpi-label">Total Revenue (12M)</span>
+            <div class="kpi-icon blue">💰</div>
+        </div>
+        <div class="kpi-value format-number">${{ "{:,.0f}".format(revenue) }}</div>
+        <div class="kpi-change up">📈 vs prior period</div>
+    </div>
+    
+    <div class="kpi-card">
+        <div class="kpi-header">
+            <span class="kpi-label">Gross Profit</span>
+            <div class="kpi-icon green">📈</div>
+        </div>
+        <div class="kpi-value format-number">${{ "{:,.0f}".format(gross_profit) }}</div>
+        <div class="kpi-change up">📈 vs prior period</div>
+    </div>
+    
+    <div class="kpi-card">
+        <div class="kpi-header">
+            <span class="kpi-label">Gross Margin</span>
+            <div class="kpi-icon purple">%</div>
+        </div>
+        <div class="kpi-value format-number">{{ "%.1f"|format(margin_pct) }}%</div>
+        <div class="kpi-change">Industry avg: 35%</div>
+    </div>
+    
+    <div class="kpi-card">
+        <div class="kpi-header">
+            <span class="kpi-label">Inventory Value</span>
+            <div class="kpi-icon teal">📦</div>
+        </div>
+        <div class="kpi-value format-number">${{ "{:,.0f}".format(inventory_value) }}</div>
+        <div class="kpi-change">{{ inv_turnover|round(1) }}x turnover</div>
+    </div>
+    
+    <div class="kpi-card">
+        <div class="kpi-header">
+            <span class="kpi-label">Outstanding AR</span>
+            <div class="kpi-icon orange">📋</div>
+        </div>
+        <div class="kpi-value format-number">${{ "{:,.0f}".format(outstanding_ar) }}</div>
+        <div class="kpi-change">Invoices pending</div>
+    </div>
+    
+    <div class="kpi-card">
+        <div class="kpi-header">
+            <span class="kpi-label">Outstanding AP</span>
+            <div class="kpi-icon red">💳</div>
+        </div>
+        <div class="kpi-value format-number">${{ "{:,.0f}".format(outstanding_ap) }}</div>
+        <div class="kpi-change">Payments due</div>
+    </div>
+    
+    <div class="kpi-card">
+        <div class="kpi-header">
+            <span class="kpi-label">Inventory Turnover</span>
+            <div class="kpi-icon green">🔄</div>
+        </div>
+        <div class="kpi-value format-number">{{ "%.1f"|format(inv_turnover) }}x</div>
+        <div class="kpi-change">Per year</div>
+    </div>
+</div>
+
+<!-- Charts Row -->
+<div class="chart-grid">
+    <div class="chart-card">
+        <div class="chart-header">
+            <h3 class="chart-title">📈 Revenue Trend (12 Months)</h3>
+        </div>
+        <div class="chart-container">
+            <canvas id="revenueChart"></canvas>
+        </div>
+    </div>
+    
+    <div class="chart-card">
+        <div class="chart-header">
+            <h3 class="chart-title">🔄 Sales Funnel</h3>
+        </div>
+        <div class="funnel" style="margin-top: 20px;">
+            <div class="funnel-stage">
+                <div class="funnel-value">{{ "{:,}".format(leads) }}</div>
+                <div class="funnel-label">Leads</div>
+            </div>
+            <div class="funnel-stage">
+                <div class="funnel-value">{{ "{:,}".format(quotations) }}</div>
+                <div class="funnel-label">Quotations</div>
+                <span class="funnel-rate">{{ "%.0f"|format((quotations/leads*100) if leads > 0 else 0) }}%</span>
+            </div>
+            <div class="funnel-stage">
+                <div class="funnel-value">{{ "{:,}".format(sales_orders) }}</div>
+                <div class="funnel-label">Sales Orders</div>
+                <span class="funnel-rate">{{ "%.0f"|format((sales_orders/quotations*100) if quotations > 0 else 0) }}%</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Summary Tables -->
+<div class="summary-grid">
+    <div class="summary-card">
+        <h3 class="summary-title">🏆 Top Products by Revenue</h3>
+        <table class="data-table">
+            <thead>
+                <tr>
+                    <th>Product</th>
+                    <th>Revenue</th>
+                    <th>Profit</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for p in top_products %}
+                <tr>
+                    <td>{{ p.product_name }}</td>
+                    <td class="number">${{ "{:,.0f}".format(p.revenue) }}</td>
+                    <td class="number positive">${{ "{:,.0f}".format(p.profit) }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    
+    <div class="summary-card">
+        <h3 class="summary-title">👥 Top Customers by Revenue</h3>
+        <table class="data-table">
+            <thead>
+                <tr>
+                    <th>Customer</th>
+                    <th>Revenue</th>
+                    <th>Profit</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for c in top_customers %}
+                <tr>
+                    <td>{{ c.customer_name }}</td>
+                    <td class="number">${{ "{:,.0f}".format(c.revenue) }}</td>
+                    <td class="number positive">${{ "{:,.0f}".format(c.profit) }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Revenue Trend Chart
+    const monthlyData = {{ monthly_trend|tojson }};
+    const labels = monthlyData.map(d => {
+        const monthNames = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+        return monthNames[d.month - 1] + ' ' + d.year;
+    });
+    const revenues = monthlyData.map(d => d.revenue);
+    const profits = monthlyData.map(d => d.profit);
+    
+    const ctx = document.getElementById('revenueChart').getContext('2d');
+    new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: labels,
+            datasets: [
+                {
+                    label: 'Revenue',
+                    data: revenues,
+                    borderColor: '#2563eb',
+                    backgroundColor: 'rgba(37, 99, 235, 0.1)',
+                    fill: true,
+                    tension: 0.3,
+                    yAxisID: 'y'
+                },
+                {
+                    label: 'Profit',
+                    data: profits,
+                    borderColor: '#059669',
+                    backgroundColor: 'rgba(5, 150, 105, 0.1)',
+                    fill: true,
+                    tension: 0.3,
+                    yAxisID: 'y'
+                }
+            ]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                legend: {
+                    position: 'top',
+                },
+                tooltip: {
+                    callbacks: {
+                        label: function(context) {
+                            return context.dataset.label + ': $' + context.raw.toLocaleString();
+                        }
+                    }
+                }
+            },
+            scales: {
+                y: {
+                    type: 'linear',
+                    display: true,
+                    position: 'left',
+                    ticks: {
+                        callback: function(value) {
+                            return '$' + value.toLocaleString();
+                        }
+                    }
+                }
+            }
+        }
+    });
+});
+</script>
+{% endblock %}

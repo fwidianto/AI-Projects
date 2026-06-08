@@ -1,0 +1,276 @@
+{% extends "dashboard/base.html" %}
+
+{% block title %}AR/AP Aging - ERP Dashboard{% endblock %}
+
+{% block content %}
+<div class="page-header">
+    <h1 class="page-title">📋 AR/AP Aging</h1>
+    <p class="page-subtitle">Accounts receivable analysis, overdue invoices, and payment status</p>
+</div>
+
+<!-- KPI Cards -->
+<div class="kpi-grid">
+    <div class="kpi-card">
+        <div class="kpi-header">
+            <span class="kpi-label">Total Outstanding AR</span>
+            <div class="kpi-icon blue">💵</div>
+        </div>
+        <div class="kpi-value format-number">${{ "{:,.0f}".format(ar_aging.total|default(0)) }}</div>
+        <div class="kpi-change">Receivables outstanding</div>
+    </div>
+    
+    <div class="kpi-card">
+        <div class="kpi-header">
+            <span class="kpi-label">Current (Not Due)</span>
+            <div class="kpi-icon green">✅</div>
+        </div>
+        <div class="kpi-value format-number">${{ "{:,.0f}".format(ar_aging.current|default(0)) }}</div>
+        <div class="kpi-change">{{ "%.1f"|format((ar_aging.current|default(0) / ar_aging.total * 100) if ar_aging.total > 0 else 0) }}% of total</div>
+    </div>
+    
+    <div class="kpi-card">
+        <div class="kpi-header">
+            <span class="kpi-label">Overdue (31-60 Days)</span>
+            <div class="kpi-icon orange">⚠️</div>
+        </div>
+        <div class="kpi-value format-number">${{ "{:,.0f}".format(ar_aging['31-60']|default(0)) }}</div>
+        <div class="kpi-change">Needs attention</div>
+    </div>
+    
+    <div class="kpi-card">
+        <div class="kpi-header">
+            <span class="kpi-label">Critical (90+ Days)</span>
+            <div class="kpi-icon red">🚨</div>
+        </div>
+        <div class="kpi-value format-number">${{ "{:,.0f}".format(ar_aging['90+']|default(0)) }}</div>
+        <div class="kpi-change">High risk</div>
+    </div>
+</div>
+
+<!-- AR Aging Chart -->
+<div class="chart-card" style="margin-bottom: 24px;">
+    <div class="chart-header">
+        <h3 class="chart-title">📊 AR Aging Breakdown</h3>
+    </div>
+    
+    {% set total_ar = ar_aging.total|default(0) %}
+    {% set current_pct = ((ar_aging.current|default(0) / total_ar * 100) if total_ar > 0 else 0)|round %}
+    {% set d1_30_pct = ((ar_aging['1-30']|default(0) / total_ar * 100) if total_ar > 0 else 0)|round %}
+    {% set d31_60_pct = ((ar_aging['31-60']|default(0) / total_ar * 100) if total_ar > 0 else 0)|round %}
+    {% set d61_90_pct = ((ar_aging['61-90']|default(0) / total_ar * 100) if total_ar > 0 else 0)|round %}
+    {% set d90_pct = ((ar_aging['90+']|default(0) / total_ar * 100) if total_ar > 0 else 0)|round %}
+    
+    <div class="aging-bar">
+        <div class="aging-segment" style="width: {{ current_pct }}%; background: #059669;" title="Current: ${{ "{:,.0f}".format(ar_aging.current|default(0)) }}">
+            {% if current_pct > 10 %}{{ current_pct }}%{% endif %}
+        </div>
+        <div class="aging-segment" style="width: {{ d1_30_pct }}%; background: #d97706;" title="1-30 Days: ${{ "{:,.0f}".format(ar_aging['1-30']|default(0)) }}">
+            {% if d1_30_pct > 10 %}{{ d1_30_pct }}%{% endif %}
+        </div>
+        <div class="aging-segment" style="width: {{ d31_60_pct }}%; background: #ea580c;" title="31-60 Days: ${{ "{:,.0f}".format(ar_aging['31-60']|default(0)) }}">
+            {% if d31_60_pct > 10 %}{{ d31_60_pct }}%{% endif %}
+        </div>
+        <div class="aging-segment" style="width: {{ d61_90_pct }}%; background: #dc2626;" title="61-90 Days: ${{ "{:,.0f}".format(ar_aging['61-90']|default(0)) }}">
+            {% if d61_90_pct > 10 %}{{ d61_90_pct }}%{% endif %}
+        </div>
+        <div class="aging-segment" style="width: {{ d90_pct }}%; background: #991b1b;" title="90+ Days: ${{ "{:,.0f}".format(ar_aging['90+']|default(0)) }}">
+            {% if d90_pct > 10 %}{{ d90_pct }}%{% endif %}
+        </div>
+    </div>
+    
+    <div class="aging-legend">
+        <div class="aging-legend-item">
+            <div class="aging-legend-color" style="background: #059669;"></div>
+            <span>Current: ${{ "{:,.0f}".format(ar_aging.current|default(0)) }}</span>
+        </div>
+        <div class="aging-legend-item">
+            <div class="aging-legend-color" style="background: #d97706;"></div>
+            <span>1-30 Days: ${{ "{:,.0f}".format(ar_aging['1-30']|default(0)) }}</span>
+        </div>
+        <div class="aging-legend-item">
+            <div class="aging-legend-color" style="background: #ea580c;"></div>
+            <span>31-60 Days: ${{ "{:,.0f}".format(ar_aging['31-60']|default(0)) }}</span>
+        </div>
+        <div class="aging-legend-item">
+            <div class="aging-legend-color" style="background: #dc2626;"></div>
+            <span>61-90 Days: ${{ "{:,.0f}".format(ar_aging['61-90']|default(0)) }}</span>
+        </div>
+        <div class="aging-legend-item">
+            <div class="aging-legend-color" style="background: #991b1b;"></div>
+            <span>90+ Days: ${{ "{:,.0f}".format(ar_aging['90+']|default(0)) }}</span>
+        </div>
+    </div>
+</div>
+
+<!-- Charts Row -->
+<div class="chart-grid">
+    <div class="chart-card">
+        <div class="chart-header">
+            <h3 class="chart-title">📈 Aging Trend</h3>
+        </div>
+        <div class="chart-container">
+            <canvas id="agingTrendChart"></canvas>
+        </div>
+    </div>
+    
+    <div class="chart-card">
+        <div class="chart-header">
+            <h3 class="chart-title">📊 Invoice Status</h3>
+        </div>
+        <div class="chart-container">
+            <canvas id="statusChart"></canvas>
+        </div>
+    </div>
+</div>
+
+<!-- Overdue Invoices -->
+<div class="chart-card" style="margin-bottom: 24px;">
+    <div class="chart-header">
+        <h3 class="chart-title">🚨 Top Overdue Invoices</h3>
+    </div>
+    <table class="data-table">
+        <thead>
+            <tr>
+                <th>Invoice</th>
+                <th>Customer</th>
+                <th>Total</th>
+                <th>Paid</th>
+                <th>Due Date</th>
+                <th>Days Overdue</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for inv in overdue_invoices[:15] %}
+            <tr>
+                <td><strong>{{ inv.invoice_number }}</strong></td>
+                <td>{{ inv.customer_name }}</td>
+                <td class="number">${{ "{:,.0f}".format(inv.total_amount) }}</td>
+                <td class="number">${{ "{:,.0f}".format(inv.amount_paid) }}</td>
+                <td>{{ inv.due_date }}</td>
+                <td>
+                    <span class="badge badge-{{ 'danger' if inv.days_overdue > 60 else 'warning' }}">
+                        {{ inv.days_overdue }} days
+                    </span>
+                </td>
+            </tr>
+            {% else %}
+            <tr>
+                <td colspan="6" style="text-align: center; color: var(--gray-400);">No overdue invoices</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+<!-- Top Overdue Customers -->
+<div class="chart-card">
+    <div class="chart-header">
+        <h3 class="chart-title">👥 Top Overdue Customers</h3>
+    </div>
+    <table class="data-table">
+        <thead>
+            <tr>
+                <th>Customer</th>
+                <th>Overdue Amount</th>
+                <th>Invoice Count</th>
+                <th>Risk Level</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for c in top_overdue_customers %}
+            <tr>
+                <td><strong>{{ c.customer_name }}</strong></td>
+                <td class="number negative">${{ "{:,.0f}".format(c.overdue_amount) }}</td>
+                <td class="number">{{ c.overdue_count }}</td>
+                <td>
+                    {% if c.overdue_amount > 10000 %}
+                    <span class="badge badge-danger">High</span>
+                    {% elif c.overdue_amount > 5000 %}
+                    <span class="badge badge-warning">Medium</span>
+                    {% else %}
+                    <span class="badge badge-info">Low</span>
+                    {% endif %}
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Aging Trend Chart
+    const trendData = {{ aging_trend|tojson }};
+    if (trendData.length > 0) {
+        new Chart(document.getElementById('agingTrendChart').getContext('2d'), {
+            type: 'line',
+            data: {
+                labels: trendData.slice().reverse().map(d => d.month),
+                datasets: [
+                    {
+                        label: 'Current',
+                        data: trendData.slice().reverse().map(d => d.current),
+                        borderColor: '#059669',
+                        backgroundColor: 'rgba(5, 150, 105, 0.1)',
+                        fill: true,
+                        tension: 0.3
+                    },
+                    {
+                        label: '31-60 Days',
+                        data: trendData.slice().reverse().map(d => d['31-60']),
+                        borderColor: '#ea580c',
+                        backgroundColor: 'transparent',
+                        tension: 0.3
+                    },
+                    {
+                        label: '90+ Days',
+                        data: trendData.slice().reverse().map(d => d['90+']),
+                        borderColor: '#991b1b',
+                        backgroundColor: 'transparent',
+                        tension: 0.3
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    y: { ticks: { callback: v => '$' + v.toLocaleString() } }
+                }
+            }
+        });
+    }
+    
+    // Status Chart
+    const statusData = {{ invoice_status|tojson }};
+    if (statusData.length > 0) {
+        new Chart(document.getElementById('statusChart').getContext('2d'), {
+            type: 'doughnut',
+            data: {
+                labels: statusData.map(d => d.status),
+                datasets: [{
+                    data: statusData.map(d => d.amount),
+                    backgroundColor: ['#059669', '#d97706', '#dc2626', '#6b7280']
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { position: 'right' },
+                    tooltip: {
+                        callbacks: {
+                            label: function(ctx) {
+                                return ctx.label + ': $' + ctx.raw.toLocaleString();
+                            }
+                        }
+                    }
+                }
+            }
+        });
+    }
+});
+</script>
+{% endblock %}
