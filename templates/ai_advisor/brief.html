@@ -1,6 +1,16 @@
-/* ==========================================================
-   DAILY EXECUTIVE BRIEF - DARK THEME
-   ========================================================== */
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Executive Brief - AI Advisor</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+    /* ==========================================================
+       DAILY EXECUTIVE BRIEF - DARK THEME
+       ========================================================== */
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
 body {
@@ -141,10 +151,10 @@ nav {
     font-size: 12px;
     font-weight: 600;
 }
-.risk-badge.Critical { background: rgba(239, 68, 68, 0.15); color: #ef4444; }
-.risk-badge.High { background: rgba(245, 158, 11, 0.15); color: #f59e0b; }
-.risk-badge.Medium { background: rgba(59, 130, 246, 0.15); color: #60a5fa; }
-.risk-badge.Low { background: rgba(34, 197, 94, 0.15); color: #22c55e; }
+.risk-badge.risk-critical { background: rgba(239, 68, 68, 0.15); color: #ef4444; }
+.risk-badge.risk-high { background: rgba(245, 158, 11, 0.15); color: #f59e0b; }
+.risk-badge.risk-medium { background: rgba(59, 130, 246, 0.15); color: #60a5fa; }
+.risk-badge.risk-low { background: rgba(34, 197, 94, 0.15); color: #22c55e; }
 
 /* At a Glance Grid */
 .at-a-glance {
@@ -191,7 +201,7 @@ nav {
 </head>
 <body>
     <!-- Navigation -->
-    <nav>
+    <nav aria-label="Main navigation">
         <div class="nav-container">
             <a href="/ai-advisor" class="logo">🤖 AI Executive Advisor</a>
             <div class="nav-links">
@@ -201,6 +211,8 @@ nav {
             </div>
         </div>
     </nav>
+    
+    <main>
     
     <div class="brief-container">
         <div class="brief-header">
@@ -255,7 +267,7 @@ nav {
                 <div class="brief-card {% if brief.risk_count > 2 %}danger{% elif brief.risk_count > 0 %}warning{% else %}success{% endif %}">
                     <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;">
                         <span>{{ brief.top_risk }}</span>
-                        <span class="risk-badge {{ brief.ar_risk }}">{{ brief.ar_risk }} AR Risk</span>
+                        <span class="risk-badge risk-{{ brief.ar_risk|lower }}">{{ brief.ar_risk }} AR Risk</span>
                     </div>
                 </div>
             </div>
@@ -305,5 +317,6 @@ nav {
             </div>
         </div>
     </div>
+    </main><!-- end main -->
 </body>
 </html>
