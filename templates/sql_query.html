@@ -69,20 +69,33 @@
 </div>
 
 <script>
-document.getEventListener('DOMContentLoaded', function() {
-    document.getElementById('sqlForm').addEventListener('submit', function(e) {
-        e.preventDefault();
-        executeQuery();
-    });
+document.addEventListener('DOMContentLoaded', function() {
+    const form = document.getElementById('sqlForm');
+    if (form) {
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            executeQuery();
+        });
+    } else {
+        console.error('SQL form not found');
+    }
 });
 
 function executeQuery() {
-    const sql = document.getElementById('sqlQuery').value.trim();
+    const sqlInput = document.getElementById('sqlQuery');
+    if (!sqlInput) {
+        alert('SQL input not found');
+        return;
+    }
+    
+    const sql = sqlInput.value.trim();
     
     if (!sql) {
         showError('Please enter a SQL query.');
         return;
     }
+    
+    console.log('Executing SQL:', sql);
     
     const formData = new FormData();
     formData.append('sql', sql);
@@ -91,15 +104,20 @@ function executeQuery() {
         method: 'POST',
         body: formData
     })
-    .then(response => response.json())
-    .then(data => {
+    .then(function(response) {
+        console.log('Response status:', response.status);
+        return response.json();
+    })
+    .then(function(data) {
+        console.log('Data received:', data);
         if (data.error) {
             showError(data.error);
         } else {
             showResults(data);
         }
     })
-    .catch(err => {
+    .catch(function(err) {
+        console.error('Fetch error:', err);
         showError('An error occurred: ' + err.message);
     });
 }
