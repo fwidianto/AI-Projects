@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block title %}Error - ERP Data Explorer{% endblock %}
+
+{% block page_title %}Error{% endblock %}
+
+{% block content %}
+<div class="card">
+    <div class="empty-state">
+        <div class="empty-state-icon">⚠️</div>
+        <h2 style="color: var(--gray-700); margin-bottom: 15px;">Something went wrong</h2>
+        <p style="color: var(--gray-500); margin-bottom: 25px;">{{ message }}</p>
+        <div style="display: flex; gap: 15px; justify-content: center;">
+            <a href="{{ url_for('index') }}" class="btn btn-primary">🏠 Go to Dashboard</a>
+            <a href="{{ url_for('tables') }}" class="btn btn-secondary">📋 Browse Tables</a>
+        </div>
+    </div>
+</div>
+{% endblock %}

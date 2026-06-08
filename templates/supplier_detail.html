@@ -1,0 +1,173 @@
+{% extends "base.html" %}
+
+{% block title %}{{ supplier.supplier_name }} - ERP Data Explorer{% endblock %}
+
+{% block page_title %}Supplier Detail{% endblock %}
+
+{% block topbar_actions %}
+<a href="{{ url_for('tables') }}" class="btn btn-secondary">← Back to Tables</a>
+{% endblock %}
+
+{% block content %}
+<!-- Supplier Header -->
+<div class="detail-header">
+    <div class="detail-title">🏭 {{ supplier.supplier_name }}</div>
+    <div class="detail-meta">
+        <span>📋 {{ supplier.supplier_id }}</span>
+        <span>🌍 {{ supplier.country }}</span>
+        <span>🏷️ {{ supplier.supplier_type }}</span>
+    </div>
+    <div class="detail-grid">
+        <div class="detail-item">
+            <div class="detail-item-label">Supplier ID</div>
+            <div class="detail-item-value">{{ supplier.supplier_id }}</div>
+        </div>
+        <div class="detail-item">
+            <div class="detail-item-label">Country</div>
+            <div class="detail-item-value">{{ supplier.country }}</div>
+        </div>
+        <div class="detail-item">
+            <div class="detail-item-label">Type</div>
+            <div class="detail-item-value">{{ supplier.supplier_type }}</div>
+        </div>
+        <div class="detail-item">
+            <div class="detail-item-label">Contact</div>
+            <div class="detail-item-value">{{ supplier.contact_name or 'N/A' }}</div>
+        </div>
+        <div class="detail-item">
+            <div class="detail-item-label">Email</div>
+            <div class="detail-item-value">{{ supplier.email or 'N/A' }}</div>
+        </div>
+        <div class="detail-item">
+            <div class="detail-item-label">Phone</div>
+            <div class="detail-item-value">{{ supplier.phone or 'N/A' }}</div>
+        </div>
+    </div>
+</div>
+
+<!-- Spend Analysis -->
+{% if spend_summary and spend_summary.orders > 0 %}
+<div class="card" style="margin-bottom: 25px;">
+    <div class="card-header">
+        <h3 class="card-title">💰 Spend Analysis</h3>
+    </div>
+    <div class="card-body">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 20px;">
+            <div class="detail-item" style="text-align: center;">
+                <div class="detail-item-label">Total Orders</div>
+                <div class="detail-item-value" style="font-size: 1.5rem;">{{ spend_summary.orders }}</div>
+            </div>
+            <div class="detail-item" style="text-align: center;">
+                <div class="detail-item-label">Total Spend</div>
+                <div class="detail-item-value" style="font-size: 1.5rem; color: var(--primary);">
+                    ${{ "%.2f"|format(spend_summary.total_spend|default(0)) }}
+                </div>
+            </div>
+            <div class="detail-item" style="text-align: center;">
+                <div class="detail-item-label">Avg Cost</div>
+                <div class="detail-item-value" style="font-size: 1.5rem;">
+                    ${{ "%.2f"|format(spend_summary.avg_cost|default(0)) }}
+                </div>
+            </div>
+            <div class="detail-item" style="text-align: center;">
+                <div class="detail-item-label">Completed Orders</div>
+                <div class="detail-item-value" style="font-size: 1.5rem; color: var(--success);">
+                    {{ spend_summary.completed|default(0) }}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endif %}
+
+<!-- Purchase Orders -->
+<div class="card" style="margin-bottom: 25px;">
+    <div class="card-header">
+        <h3 class="card-title">📋 Purchase Orders ({{ purchase_orders|length }})</h3>
+    </div>
+    <div class="table-container">
+        {% if purchase_orders %}
+        <table>
+            <thead>
+                <tr>
+                    <th>PO Number</th>
+                    <th>Product</th>
+                    <th>Qty</th>
+                    <th>Unit Cost</th>
+                    <th>Total</th>
+                    <th>Order Date</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for po in purchase_orders[:20] %}
+                <tr>
+                    <td><strong>{{ po.po_number }}</strong></td>
+                    <td>{{ po.product_name or 'N/A' }}</td>
+                    <td>{{ po.quantity }}</td>
+                    <td>${{ "%.2f"|format(po.unit_cost) }}</td>
+                    <td>${{ "%.2f"|format(po.total_cost) }}</td>
+                    <td>{{ po.order_date }}</td>
+                    <td>
+                        <span class="badge badge-{{ 'success' if po.status == 'COMPLETED' else 'warning' }}">
+                            {{ po.status }}
+                        </span>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        {% if purchase_orders|length > 20 %}
+        <div style="padding: 15px; text-align: center; color: var(--gray-500);">
+            Showing 20 of {{ purchase_orders|length }} orders
+        </div>
+        {% endif %}
+        {% else %}
+        <div class="empty-state">No purchase orders found</div>
+        {% endif %}
+    </div>
+</div>
+
+<!-- Goods Receipts -->
+<div class="card">
+    <div class="card-header">
+        <h3 class="card-title">📥 Goods Receipts ({{ goods_receipts|length }})</h3>
+    </div>
+    <div class="table-container">
+        {% if goods_receipts %}
+        <table>
+            <thead>
+                <tr>
+                    <th>Receipt Number</th>
+                    <th>Product</th>
+                    <th>Qty Received</th>
+                    <th>Unit Cost</th>
+                    <th>Warehouse</th>
+                    <th>Receipt Date</th>
+                    <th>Quality</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for receipt in goods_receipts[:20] %}
+                <tr>
+                    <td><strong>{{ receipt.receipt_number }}</strong></td>
+                    <td>{{ receipt.product_id }}</td>
+                    <td>{{ receipt.quantity_received }}</td>
+                    <td>${{ "%.2f"|format(receipt.unit_cost|default(0)) }}</td>
+                    <td>{{ receipt.warehouse_name or receipt.warehouse_id }}</td>
+                    <td>{{ receipt.receipt_date }}</td>
+                    <td>
+                        <span class="badge badge-{{ 'success' if receipt.quality_check_passed else 'danger' }}">
+                            {{ 'Passed' if receipt.quality_check_passed else 'Failed' }}
+                        </span>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        {% else %}
+        <div class="empty-state">No goods receipts found</div>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}

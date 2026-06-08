@@ -1,0 +1,93 @@
+{% extends "base.html" %}
+
+{% block title %}Table Explorer - ERP Data Explorer{% endblock %}
+
+{% block page_title %}Table Explorer{% endblock %}
+
+{% block content %}
+<div class="card">
+    <div class="card-header">
+        <h3 class="card-title">📋 Browse Database Tables</h3>
+        <p style="color: var(--gray-500); font-size: 0.9rem; margin-top: 5px;">
+            Select a table to explore its data with search, sort, and filter capabilities.
+        </p>
+    </div>
+</div>
+
+<!-- Master Data -->
+<div style="margin-top: 30px;">
+    <h3 style="color: var(--gray-700); margin-bottom: 15px; display: flex; align-items: center; gap: 10px;">
+        📦 Master Data
+    </h3>
+    <div class="tables-grid">
+        {% for table in tables['Master Data'] %}
+        <a href="{{ url_for('table_view', table_name=table.name) }}" class="table-card">
+            <div class="table-card-header">
+                <span class="table-card-icon">{{ table.icon }}</span>
+                <div>
+                    <div class="table-card-title">{{ table.display }}</div>
+                    <div class="table-card-count" id="count-{{ table.name }}">Loading...</div>
+                </div>
+            </div>
+        </a>
+        {% endfor %}
+    </div>
+</div>
+
+<!-- Transactions -->
+<div style="margin-top: 30px;">
+    <h3 style="color: var(--gray-700); margin-bottom: 15px; display: flex; align-items: center; gap: 10px;">
+        📝 Transactions
+    </h3>
+    <div class="tables-grid">
+        {% for table in tables['Transactions'] %}
+        <a href="{{ url_for('table_view', table_name=table.name) }}" class="table-card">
+            <div class="table-card-header">
+                <span class="table-card-icon">{{ table.icon }}</span>
+                <div>
+                    <div class="table-card-title">{{ table.display }}</div>
+                    <div class="table-card-count" id="count-{{ table.name }}">Loading...</div>
+                </div>
+            </div>
+        </a>
+        {% endfor %}
+    </div>
+</div>
+
+<!-- Analytics -->
+<div style="margin-top: 30px;">
+    <h3 style="color: var(--gray-700); margin-bottom: 15px; display: flex; align-items: center; gap: 10px;">
+        📊 Analytics
+    </h3>
+    <div class="tables-grid">
+        {% for table in tables['Analytics'] %}
+        <a href="{{ url_for('table_view', table_name=table.name) }}" class="table-card">
+            <div class="table-card-header">
+                <span class="table-card-icon">{{ table.icon }}</span>
+                <div>
+                    <div class="table-card-title">{{ table.display }}</div>
+                    <div class="table-card-count" id="count-{{ table.name }}">Loading...</div>
+                </div>
+            </div>
+        </a>
+        {% endfor %}
+    </div>
+</div>
+
+<script>
+// Fetch table counts via API
+document.addEventListener('DOMContentLoaded', function() {
+    fetch('/api/tables')
+        .then(response => response.json())
+        .then(data => {
+            data.forEach(table => {
+                const el = document.getElementById('count-' + table.name);
+                if (el) {
+                    el.textContent = table.count.toLocaleString() + ' records';
+                }
+            });
+        })
+        .catch(err => console.log('Error loading table counts:', err));
+});
+</script>
+{% endblock %}

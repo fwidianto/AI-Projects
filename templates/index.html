@@ -1,0 +1,174 @@
+{% extends "base.html" %}
+
+{% block title %}Dashboard - ERP Data Explorer{% endblock %}
+
+{% block page_title %}Dashboard{% endblock %}
+
+{% block content %}
+<!-- KPI Cards -->
+<div class="kpi-grid">
+    {% for kpi in kpis %}
+    <div class="kpi-card">
+        <div class="kpi-icon {{ kpi.color }}">{{ kpi.icon }}</div>
+        <div class="kpi-content">
+            <div class="kpi-title">{{ kpi.title }}</div>
+            <div class="kpi-value">{{ kpi.value }}</div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+<!-- Recent Sales & Monthly Trends -->
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 25px; margin-bottom: 30px;">
+    <!-- Recent Sales -->
+    <div class="card">
+        <div class="card-header">
+            <h3 class="card-title">📋 Recent Sales Orders</h3>
+            <a href="{{ url_for('table_view', table_name='fact_sales_orders') }}" class="btn btn-secondary">View All</a>
+        </div>
+        <div class="table-container">
+            {% if recent_sales %}
+            <table>
+                <thead>
+                    <tr>
+                        <th>SO Number</th>
+                        <th>Customer</th>
+                        <th>Amount</th>
+                        <th>Date</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for sale in recent_sales %}
+                    <tr>
+                        <td><strong>{{ sale.so_number }}</strong></td>
+                        <td>{{ sale.customer_name or 'N/A' }}</td>
+                        <td>${{ "%.2f"|format(sale.total_amount) }}</td>
+                        <td>{{ sale.order_date }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            {% else %}
+            <div class="empty-state">No recent sales orders found</div>
+            {% endif %}
+        </div>
+    </div>
+    
+    <!-- Monthly Revenue Trend -->
+    <div class="card">
+        <div class="card-header">
+            <h3 class="card-title">📈 Monthly Revenue</h3>
+            <a href="{{ url_for('table_view', table_name='analytics_monthly_trends') }}" class="btn btn-secondary">View All</a>
+        </div>
+        <div class="table-container">
+            {% if monthly_revenue %}
+            <table>
+                <thead>
+                    <tr>
+                        <th>Month</th>
+                        <th>Revenue</th>
+                        <th>Profit</th>
+                        <th>Margin</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for month in monthly_revenue %}
+                    <tr>
+                        <td><strong>{{ month.month }}</strong></td>
+                        <td>${{ "%.2f"|format(month.total_revenue) }}</td>
+                        <td>${{ "%.2f"|format(month.total_profit) }}</td>
+                        <td>
+                            {% if month.total_revenue > 0 %}
+                            <span class="badge badge-success">{{ "%.1f"|format((month.total_profit / month.total_revenue) * 100) }}%</span>
+                            {% else %}
+                            -
+                            {% endif %}
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            {% else %}
+            <div class="empty-state">No monthly data available</div>
+            {% endif %}
+        </div>
+    </div>
+</div>
+
+<!-- Quick Links -->
+<div class="card">
+    <div class="card-header">
+        <h3 class="card-title">🚀 Quick Actions</h3>
+    </div>
+    <div class="card-body">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px;">
+            <a href="{{ url_for('tables') }}" class="btn btn-primary" style="justify-content: center;">
+                📋 Browse All Tables
+            </a>
+            <a href="{{ url_for('data_quality') }}" class="btn btn-secondary" style="justify-content: center;">
+                ✅ Data Quality Check
+            </a>
+            <a href="{{ url_for('sql_query') }}" class="btn btn-secondary" style="justify-content: center;">
+                💾 Run SQL Query
+            </a>
+            <a href="{{ url_for('table_view', table_name='analytics_customer_performance') }}" class="btn btn-secondary" style="justify-content: center;">
+                ⭐ Top Customers
+            </a>
+        </div>
+    </div>
+</div>
+
+<!-- Table Overview -->
+<div class="card" style="margin-top: 25px;">
+    <div class="card-header">
+        <h3 class="card-title">📊 Database Overview</h3>
+    </div>
+    <div class="table-container">
+        <table>
+            <thead>
+                <tr>
+                    <th>Category</th>
+                    <th>Table</th>
+                    <th>Records</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for group_name, tables_list in tables.items() %}
+                    {% for table in tables_list %}
+                    <tr>
+                        {% if loop.first %}
+                        <td rowspan="{{ tables_list|length }}"><strong>{{ group_name }}</strong></td>
+                        {% endif %}
+                        <td>{{ table.icon }} {{ table.display }}</td>
+                        <td><span id="count-{{ table.name }}">-</span></td>
+                        <td>
+                            <a href="{{ url_for('table_view', table_name=table.name) }}" class="btn btn-secondary" style="padding: 5px 12px; font-size: 0.8rem;">
+                                Explore
+                            </a>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<script>
+// Fetch table counts via API
+document.addEventListener('DOMContentLoaded', function() {
+    fetch('/api/tables')
+        .then(response => response.json())
+        .then(data => {
+            data.forEach(table => {
+                const el = document.getElementById('count-' + table.name);
+                if (el) {
+                    el.textContent = table.count.toLocaleString();
+                }
+            });
+        })
+        .catch(err => console.log('Error loading table counts:', err));
+});
+</script>
+{% endblock %}

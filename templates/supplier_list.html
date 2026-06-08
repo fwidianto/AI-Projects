@@ -1,0 +1,94 @@
+{% extends "base.html" %}
+
+{% block title %}Suppliers - ERP Data Explorer{% endblock %}
+
+{% block page_title %}Find Supplier{% endblock %}
+
+{% block content %}
+<div class="card">
+    <div class="card-header">
+        <h3 class="card-title">🏭 Supplier Directory</h3>
+    </div>
+    <form method="get">
+        <div class="search-box">
+            <input type="text" name="search" class="search-input" placeholder="Search by name or ID..." value="{{ search }}">
+            <button type="submit" class="btn btn-primary">🔍 Search</button>
+            {% if search %}
+            <a href="{{ url_for('supplier_list') }}" class="btn btn-secondary">Clear</a>
+            {% endif %}
+        </div>
+    </form>
+    
+    <div class="table-container">
+        {% if suppliers %}
+        <table>
+            <thead>
+                <tr>
+                    <th>Supplier ID</th>
+                    <th>Name</th>
+                    <th>Country</th>
+                    <th>Type</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for supplier in suppliers %}
+                <tr>
+                    <td><strong>{{ supplier.supplier_id }}</strong></td>
+                    <td>{{ supplier.supplier_name }}</td>
+                    <td>{{ supplier.country }}</td>
+                    <td>{{ supplier.supplier_type }}</td>
+                    <td>
+                        <a href="{{ url_for('supplier_detail', supplier_id=supplier.supplier_id) }}" class="btn btn-secondary" style="padding: 5px 12px; font-size: 0.8rem;">
+                            View Details
+                        </a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        {% else %}
+        <div class="empty-state">
+            <div class="empty-state-icon">🏭</div>
+            <p>No suppliers found{% if search %} for "{{ search }}"{% endif %}</p>
+        </div>
+        {% endif %}
+    </div>
+    
+    {% if total_pages > 1 %}
+    <div class="pagination">
+        <div class="pagination-info">
+            Showing {{ suppliers|length }} of {{ total }} suppliers
+        </div>
+        <div class="pagination-controls">
+            {% if page > 1 %}
+            <a href="{{ url_for('supplier_list', search=search, page=1) }}" class="pagination-btn">«</a>
+            <a href="{{ url_for('supplier_list', search=search, page=page-1) }}" class="pagination-btn">‹</a>
+            {% else %}
+            <span class="pagination-btn disabled">«</span>
+            <span class="pagination-btn disabled">‹</span>
+            {% endif %}
+            
+            {% set start = max(1, page - 2) %}
+            {% set end = min(total_pages, page + 2) %}
+            
+            {% for p in range(start, end + 1) %}
+                {% if p == page %}
+                <span class="pagination-btn active">{{ p }}</span>
+                {% else %}
+                <a href="{{ url_for('supplier_list', search=search, page=p) }}" class="pagination-btn">{{ p }}</a>
+                {% endif %}
+            {% endfor %}
+            
+            {% if page < total_pages %}
+            <a href="{{ url_for('supplier_list', search=search, page=page+1) }}" class="pagination-btn">›</a>
+            <a href="{{ url_for('supplier_list', search=search, page=total_pages) }}" class="pagination-btn">»</a>
+            {% else %}
+            <span class="pagination-btn disabled">›</span>
+            <span class="pagination-btn disabled">»</span>
+            {% endif %}
+        </div>
+    </div>
+    {% endif %}
+</div>
+{% endblock %}

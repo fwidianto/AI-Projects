@@ -1,0 +1,157 @@
+{% extends "base.html" %}
+
+{% block title %}SQL Query - ERP Data Explorer{% endblock %}
+
+{% block page_title %}SQL Query{% endblock %}
+
+{% block content %}
+<!-- Instructions -->
+<div class="card" style="margin-bottom: 25px;">
+    <div class="card-header">
+        <h3 class="card-title">💾 Read-Only SQL Query Interface</h3>
+    </div>
+    <div class="card-body">
+        <p style="color: var(--gray-600); margin-bottom: 15px;">
+            <strong>⚠️ Security Notice:</strong> Only SELECT queries are allowed. INSERT, UPDATE, DELETE, DROP, and ALTER operations are blocked.
+        </p>
+        <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+            <button class="btn btn-secondary" onclick="insertExample('SELECT * FROM dim_product LIMIT 10;')">Select Products</button>
+            <button class="btn btn-secondary" onclick="insertExample('SELECT customer_name, SUM(total_revenue) as revenue FROM analytics_customer_performance GROUP BY customer_name ORDER BY revenue DESC LIMIT 10;')">Top Customers</button>
+            <button class="btn btn-secondary" onclick="insertExample('SELECT * FROM fact_customer_invoices WHERE status = \\'OVERDUE\\';')">Overdue Invoices</button>
+            <button class="btn btn-secondary" onclick="insertExample('SELECT * FROM analytics_monthly_trends ORDER BY year DESC, month DESC;')">Monthly Trends</button>
+        </div>
+    </div>
+</div>
+
+<!-- Query Editor -->
+<div class="card" style="margin-bottom: 25px;">
+    <div class="card-header">
+        <h3 class="card-title">📝 Query Editor</h3>
+    </div>
+    <div class="card-body">
+        <form id="sqlForm">
+            <textarea id="sqlQuery" name="sql" class="sql-editor" placeholder="Enter your SELECT query here...&#10;&#10;Example:&#10;SELECT * FROM dim_product WHERE category = 'Electronics' LIMIT 20;"></textarea>
+            <div style="margin-top: 15px; display: flex; gap: 10px;">
+                <button type="submit" class="btn btn-primary">▶️ Execute Query</button>
+                <button type="button" class="btn btn-secondary" onclick="clearQuery()">🗑️ Clear</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<!-- Results -->
+<div id="resultsSection" class="card" style="display: none;">
+    <div class="card-header">
+        <h3 class="card-title">📊 Results</h3>
+        <span id="rowCount" class="badge badge-info"></span>
+    </div>
+    <div id="errorMessage" class="sql-error" style="display: none;"></div>
+    <div id="successMessage" class="sql-success" style="display: none;"></div>
+    <div class="table-container">
+        <div id="resultsTable"></div>
+    </div>
+</div>
+
+<!-- Available Tables -->
+<div class="card">
+    <div class="card-header">
+        <h3 class="card-title">📋 Available Tables</h3>
+    </div>
+    <div class="card-body">
+        <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 15px;">
+            {% for table in table_list %}
+            <div style="padding: 12px; background: var(--gray-50); border-radius: 8px; cursor: pointer;" onclick="insertExample('SELECT * FROM {{ table }} LIMIT 20;')">
+                <strong style="color: var(--gray-700);">{{ table }}</strong>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+<script>
+document.getEventListener('DOMContentLoaded', function() {
+    document.getElementById('sqlForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        executeQuery();
+    });
+});
+
+function executeQuery() {
+    const sql = document.getElementById('sqlQuery').value.trim();
+    
+    if (!sql) {
+        showError('Please enter a SQL query.');
+        return;
+    }
+    
+    const formData = new FormData();
+    formData.append('sql', sql);
+    
+    fetch('/execute-sql', {
+        method: 'POST',
+        body: formData
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.error) {
+            showError(data.error);
+        } else {
+            showResults(data);
+        }
+    })
+    .catch(err => {
+        showError('An error occurred: ' + err.message);
+    });
+}
+
+function showError(message) {
+    document.getElementById('resultsSection').style.display = 'block';
+    document.getElementById('errorMessage').style.display = 'block';
+    document.getElementById('errorMessage').textContent = 'Error: ' + message;
+    document.getElementById('successMessage').style.display = 'none';
+    document.getElementById('resultsTable').innerHTML = '';
+    document.getElementById('rowCount').textContent = '';
+}
+
+function showResults(data) {
+    document.getElementById('resultsSection').style.display = 'block';
+    document.getElementById('errorMessage').style.display = 'none';
+    document.getElementById('successMessage').style.display = 'block';
+    document.getElementById('successMessage').textContent = `Query executed successfully. ${data.row_count} row(s) returned.`;
+    document.getElementById('rowCount').textContent = data.row_count + ' rows';
+    
+    if (data.rows.length === 0) {
+        document.getElementById('resultsTable').innerHTML = '<div class="empty-state"><p>No results found</p></div>';
+        return;
+    }
+    
+    let tableHtml = '<table><thead><tr>';
+    data.columns.forEach(col => {
+        tableHtml += `<th>${col}</th>`;
+    });
+    tableHtml += '</tr></thead><tbody>';
+    
+    data.rows.forEach(row => {
+        tableHtml += '<tr>';
+        row.forEach(cell => {
+            const value = cell === null ? '<span style="color: var(--gray-400);">NULL</span>' : cell;
+            tableHtml += `<td>${value}</td>`;
+        });
+        tableHtml += '</tr>';
+    });
+    tableHtml += '</tbody></table>';
+    
+    document.getElementById('resultsTable').innerHTML = tableHtml;
+}
+
+function insertExample(sql) {
+    document.getElementById('sqlQuery').value = sql;
+    document.getElementById('sqlQuery').focus();
+}
+
+function clearQuery() {
+    document.getElementById('sqlQuery').value = '';
+    document.getElementById('resultsSection').style.display = 'none';
+}
+</script>
+{% endblock %}

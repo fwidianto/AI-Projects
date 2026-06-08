@@ -1,0 +1,96 @@
+{% extends "base.html" %}
+
+{% block title %}Products - ERP Data Explorer{% endblock %}
+
+{% block page_title %}Find Product{% endblock %}
+
+{% block content %}
+<div class="card">
+    <div class="card-header">
+        <h3 class="card-title">📦 Product Catalog</h3>
+    </div>
+    <form method="get">
+        <div class="search-box">
+            <input type="text" name="search" class="search-input" placeholder="Search by name, SKU, or ID..." value="{{ search }}">
+            <button type="submit" class="btn btn-primary">🔍 Search</button>
+            {% if search %}
+            <a href="{{ url_for('product_list') }}" class="btn btn-secondary">Clear</a>
+            {% endif %}
+        </div>
+    </form>
+    
+    <div class="table-container">
+        {% if products %}
+        <table>
+            <thead>
+                <tr>
+                    <th>Product ID</th>
+                    <th>Name</th>
+                    <th>SKU</th>
+                    <th>Category</th>
+                    <th>Price</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for product in products %}
+                <tr>
+                    <td><strong>{{ product.product_id }}</strong></td>
+                    <td>{{ product.product_name }}</td>
+                    <td>{{ product.sku }}</td>
+                    <td>{{ product.category }}</td>
+                    <td>${{ "%.2f"|format(product.default_selling_price) }}</td>
+                    <td>
+                        <a href="{{ url_for('product_detail', product_id=product.product_id) }}" class="btn btn-secondary" style="padding: 5px 12px; font-size: 0.8rem;">
+                            View Details
+                        </a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        {% else %}
+        <div class="empty-state">
+            <div class="empty-state-icon">📦</div>
+            <p>No products found{% if search %} for "{{ search }}"{% endif %}</p>
+        </div>
+        {% endif %}
+    </div>
+    
+    {% if total_pages > 1 %}
+    <div class="pagination">
+        <div class="pagination-info">
+            Showing {{ products|length }} of {{ total }} products
+        </div>
+        <div class="pagination-controls">
+            {% if page > 1 %}
+            <a href="{{ url_for('product_list', search=search, page=1) }}" class="pagination-btn">«</a>
+            <a href="{{ url_for('product_list', search=search, page=page-1) }}" class="pagination-btn">‹</a>
+            {% else %}
+            <span class="pagination-btn disabled">«</span>
+            <span class="pagination-btn disabled">‹</span>
+            {% endif %}
+            
+            {% set start = max(1, page - 2) %}
+            {% set end = min(total_pages, page + 2) %}
+            
+            {% for p in range(start, end + 1) %}
+                {% if p == page %}
+                <span class="pagination-btn active">{{ p }}</span>
+                {% else %}
+                <a href="{{ url_for('product_list', search=search, page=p) }}" class="pagination-btn">{{ p }}</a>
+                {% endif %}
+            {% endfor %}
+            
+            {% if page < total_pages %}
+            <a href="{{ url_for('product_list', search=search, page=page+1) }}" class="pagination-btn">›</a>
+            <a href="{{ url_for('product_list', search=search, page=total_pages) }}" class="pagination-btn">»</a>
+            {% else %}
+            <span class="pagination-btn disabled">›</span>
+            <span class="pagination-btn disabled">»</span>
+            {% endif %}
+        </div>
+    </div>
+    {% endif %}
+</div>
+{% endblock %}

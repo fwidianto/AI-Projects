@@ -1,0 +1,234 @@
+{% extends "base.html" %}
+
+{% block title %}{{ product.product_name }} - ERP Data Explorer{% endblock %}
+
+{% block page_title %}Product Detail{% endblock %}
+
+{% block topbar_actions %}
+<a href="{{ url_for('tables') }}" class="btn btn-secondary">← Back to Tables</a>
+{% endblock %}
+
+{% block content %}
+<!-- Product Header -->
+<div class="detail-header">
+    <div class="detail-title">📦 {{ product.product_name }}</div>
+    <div class="detail-meta">
+        <span>📋 {{ product.product_id }}</span>
+        <span>🏷️ {{ product.category }}</span>
+        <span>📝 SKU: {{ product.sku }}</span>
+    </div>
+    <div class="detail-grid">
+        <div class="detail-item">
+            <div class="detail-item-label">Product ID</div>
+            <div class="detail-item-value">{{ product.product_id }}</div>
+        </div>
+        <div class="detail-item">
+            <div class="detail-item-label">SKU</div>
+            <div class="detail-item-value">{{ product.sku }}</div>
+        </div>
+        <div class="detail-item">
+            <div class="detail-item-label">Category</div>
+            <div class="detail-item-value">{{ product.category }}</div>
+        </div>
+        <div class="detail-item">
+            <div class="detail-item-label">Default Price</div>
+            <div class="detail-item-value">${{ "%.2f"|format(product.default_selling_price) }}</div>
+        </div>
+    </div>
+</div>
+
+<!-- Margin Analysis -->
+{% if margin_summary and margin_summary.transactions > 0 %}
+<div class="card" style="margin-bottom: 25px;">
+    <div class="card-header">
+        <h3 class="card-title">💰 Margin Analysis</h3>
+    </div>
+    <div class="card-body">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 20px;">
+            <div class="detail-item" style="text-align: center;">
+                <div class="detail-item-label">Transactions</div>
+                <div class="detail-item-value" style="font-size: 1.5rem;">{{ margin_summary.transactions }}</div>
+            </div>
+            <div class="detail-item" style="text-align: center;">
+                <div class="detail-item-label">Units Sold</div>
+                <div class="detail-item-value" style="font-size: 1.5rem;">{{ margin_summary.units_sold|default(0)|int }}</div>
+            </div>
+            <div class="detail-item" style="text-align: center;">
+                <div class="detail-item-label">Total Revenue</div>
+                <div class="detail-item-value" style="font-size: 1.5rem; color: var(--primary);">
+                    ${{ "%.2f"|format(margin_summary.total_revenue|default(0)) }}
+                </div>
+            </div>
+            <div class="detail-item" style="text-align: center;">
+                <div class="detail-item-label">Total Profit</div>
+                <div class="detail-item-value" style="font-size: 1.5rem; color: var(--success);">
+                    ${{ "%.2f"|format(margin_summary.total_profit|default(0)) }}
+                </div>
+            </div>
+            <div class="detail-item" style="text-align: center;">
+                <div class="detail-item-label">Avg Margin</div>
+                <div class="detail-item-value" style="font-size: 1.5rem;">
+                    {{ "%.1f"|format(margin_summary.avg_margin|default(0)) }}%
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endif %}
+
+<!-- Current Inventory -->
+{% if current_inventory %}
+<div class="card" style="margin-bottom: 25px;">
+    <div class="card-header">
+        <h3 class="card-title">🏢 Current Inventory ({{ current_inventory|length }} warehouses)</h3>
+    </div>
+    <div class="table-container">
+        <table>
+            <thead>
+                <tr>
+                    <th>Warehouse</th>
+                    <th>Quantity On Hand</th>
+                    <th>Average Cost</th>
+                    <th>Total Value</th>
+                    <th>Last Updated</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for inv in current_inventory %}
+                <tr>
+                    <td><strong>{{ inv.warehouse_name or inv.warehouse_id }}</strong></td>
+                    <td>{{ inv.quantity_on_hand|int }}</td>
+                    <td>${{ "%.2f"|format(inv.average_cost|default(0)) }}</td>
+                    <td>${{ "%.2f"|format((inv.quantity_on_hand|default(0)) * (inv.average_cost|default(0))) }}</td>
+                    <td>{{ inv.last_updated }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endif %}
+
+<!-- Purchase History -->
+<div class="card" style="margin-bottom: 25px;">
+    <div class="card-header">
+        <h3 class="card-title">🏭 Purchase History ({{ purchase_history|length }})</h3>
+    </div>
+    <div class="table-container">
+        {% if purchase_history %}
+        <table>
+            <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Supplier</th>
+                    <th>Qty</th>
+                    <th>Unit Cost</th>
+                    <th>Total Cost</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for ph in purchase_history[:20] %}
+                <tr>
+                    <td>{{ ph.order_date }}</td>
+                    <td>{{ ph.supplier_name or 'N/A' }}</td>
+                    <td>{{ ph.quantity }}</td>
+                    <td>${{ "%.2f"|format(ph.unit_cost) }}</td>
+                    <td>${{ "%.2f"|format(ph.total_cost) }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        {% if purchase_history|length > 20 %}
+        <div style="padding: 15px; text-align: center; color: var(--gray-500);">
+            Showing 20 of {{ purchase_history|length }} records
+        </div>
+        {% endif %}
+        {% else %}
+        <div class="empty-state">No purchase history found</div>
+        {% endif %}
+    </div>
+</div>
+
+<!-- Sales History -->
+<div class="card" style="margin-bottom: 25px;">
+    <div class="card-header">
+        <h3 class="card-title">🛒 Sales History ({{ sales_history|length }})</h3>
+    </div>
+    <div class="table-container">
+        {% if sales_history %}
+        <table>
+            <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Customer</th>
+                    <th>Qty</th>
+                    <th>Unit Price</th>
+                    <th>Total</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for sh in sales_history[:20] %}
+                <tr>
+                    <td>{{ sh.order_date }}</td>
+                    <td>{{ sh.customer_name or 'N/A' }}</td>
+                    <td>{{ sh.quantity }}</td>
+                    <td>${{ "%.2f"|format(sh.unit_price) }}</td>
+                    <td>${{ "%.2f"|format(sh.total_amount) }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        {% if sales_history|length > 20 %}
+        <div style="padding: 15px; text-align: center; color: var(--gray-500);">
+            Showing 20 of {{ sales_history|length }} records
+        </div>
+        {% endif %}
+        {% else %}
+        <div class="empty-state">No sales history found</div>
+        {% endif %}
+    </div>
+</div>
+
+<!-- Inventory Movements -->
+<div class="card">
+    <div class="card-header">
+        <h3 class="card-title">📊 Inventory Movements ({{ inventory_movements|length }})</h3>
+    </div>
+    <div class="table-container">
+        {% if inventory_movements %}
+        <table>
+            <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Type</th>
+                    <th>Qty In</th>
+                    <th>Qty Out</th>
+                    <th>Balance</th>
+                    <th>Unit Cost</th>
+                    <th>Warehouse</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for mov in inventory_movements[:30] %}
+                <tr>
+                    <td>{{ mov.movement_date }}</td>
+                    <td>
+                        <span class="badge badge-{{ 'success' if mov.movement_type == 'GOODS_RECEIPT' else 'info' }}">
+                            {{ mov.movement_type }}
+                        </span>
+                    </td>
+                    <td>{{ mov.quantity_in|default(0) }}</td>
+                    <td>{{ mov.quantity_out|default(0) }}</td>
+                    <td><strong>{{ mov.running_balance|default(0) }}</strong></td>
+                    <td>${{ "%.2f"|format(mov.unit_cost|default(0)) }}</td>
+                    <td>{{ mov.warehouse_id }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        {% else %}
+        <div class="empty-state">No inventory movements found</div>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,199 @@
+{% extends "base.html" %}
+
+{% block title %}{{ customer.customer_name }} - ERP Data Explorer{% endblock %}
+
+{% block page_title %}Customer Detail{% endblock %}
+
+{% block topbar_actions %}
+<a href="{{ url_for('tables') }}" class="btn btn-secondary">← Back to Tables</a>
+{% endblock %}
+
+{% block content %}
+<!-- Customer Header -->
+<div class="detail-header">
+    <div class="detail-title">👥 {{ customer.customer_name }}</div>
+    <div class="detail-meta">
+        <span>📋 {{ customer.customer_id }}</span>
+        <span>🏭 {{ customer.industry }}</span>
+        <span>📍 {{ customer.region }}</span>
+        <span>⏱️ Payment Terms: {{ customer.payment_terms_days }} days</span>
+    </div>
+    <div class="detail-grid">
+        <div class="detail-item">
+            <div class="detail-item-label">Customer ID</div>
+            <div class="detail-item-value">{{ customer.customer_id }}</div>
+        </div>
+        <div class="detail-item">
+            <div class="detail-item-label">Credit Limit</div>
+            <div class="detail-item-value">${{ "%.2f"|format(customer.credit_limit) }}</div>
+        </div>
+        <div class="detail-item">
+            <div class="detail-item-label">Industry</div>
+            <div class="detail-item-value">{{ customer.industry }}</div>
+        </div>
+        <div class="detail-item">
+            <div class="detail-item-label">Region</div>
+            <div class="detail-item-value">{{ customer.region }}</div>
+        </div>
+    </div>
+</div>
+
+<!-- Profitability Summary -->
+{% if profit_summary and profit_summary.orders > 0 %}
+<div class="card" style="margin-bottom: 25px;">
+    <div class="card-header">
+        <h3 class="card-title">💰 Profitability Summary</h3>
+    </div>
+    <div class="card-body">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 20px;">
+            <div class="detail-item" style="text-align: center;">
+                <div class="detail-item-label">Total Orders</div>
+                <div class="detail-item-value" style="font-size: 1.5rem;">{{ profit_summary.orders|default(0) }}</div>
+            </div>
+            <div class="detail-item" style="text-align: center;">
+                <div class="detail-item-label">Total Revenue</div>
+                <div class="detail-item-value" style="font-size: 1.5rem; color: var(--primary);">
+                    ${{ "%.2f"|format(profit_summary.revenue|default(0)) }}
+                </div>
+            </div>
+            <div class="detail-item" style="text-align: center;">
+                <div class="detail-item-label">Total Profit</div>
+                <div class="detail-item-value" style="font-size: 1.5rem; color: var(--success);">
+                    ${{ "%.2f"|format(profit_summary.profit|default(0)) }}
+                </div>
+            </div>
+            <div class="detail-item" style="text-align: center;">
+                <div class="detail-item-label">Avg Margin</div>
+                <div class="detail-item-value" style="font-size: 1.5rem;">
+                    {{ "%.1f"|format(profit_summary.margin|default(0)) }}%
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endif %}
+
+<!-- Sales Orders -->
+<div class="card" style="margin-bottom: 25px;">
+    <div class="card-header">
+        <h3 class="card-title">🛒 Sales Orders ({{ sales_orders|length }})</h3>
+    </div>
+    <div class="table-container">
+        {% if sales_orders %}
+        <table>
+            <thead>
+                <tr>
+                    <th>SO Number</th>
+                    <th>Product</th>
+                    <th>Qty</th>
+                    <th>Unit Price</th>
+                    <th>Total</th>
+                    <th>Date</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for order in sales_orders[:20] %}
+                <tr>
+                    <td><strong>{{ order.so_number }}</strong></td>
+                    <td>{{ order.product_name or 'N/A' }}</td>
+                    <td>{{ order.quantity }}</td>
+                    <td>${{ "%.2f"|format(order.unit_price) }}</td>
+                    <td>${{ "%.2f"|format(order.total_amount) }}</td>
+                    <td>{{ order.order_date }}</td>
+                    <td>
+                        <span class="badge badge-{{ 'success' if order.status == 'DELIVERED' else 'warning' }}">
+                            {{ order.status }}
+                        </span>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        {% if sales_orders|length > 20 %}
+        <div style="padding: 15px; text-align: center; color: var(--gray-500);">
+            Showing 20 of {{ sales_orders|length }} orders
+        </div>
+        {% endif %}
+        {% else %}
+        <div class="empty-state">No sales orders found</div>
+        {% endif %}
+    </div>
+</div>
+
+<!-- Invoices -->
+<div class="card" style="margin-bottom: 25px;">
+    <div class="card-header">
+        <h3 class="card-title">📄 Invoices ({{ invoices|length }})</h3>
+    </div>
+    <div class="table-container">
+        {% if invoices %}
+        <table>
+            <thead>
+                <tr>
+                    <th>Invoice Number</th>
+                    <th>SO Number</th>
+                    <th>Total Amount</th>
+                    <th>Amount Paid</th>
+                    <th>Due Date</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for invoice in invoices[:20] %}
+                <tr>
+                    <td><strong>{{ invoice.invoice_number }}</strong></td>
+                    <td>{{ invoice.so_number }}</td>
+                    <td>${{ "%.2f"|format(invoice.total_amount) }}</td>
+                    <td>${{ "%.2f"|format(invoice.amount_paid) }}</td>
+                    <td>{{ invoice.due_date }}</td>
+                    <td>
+                        <span class="badge badge-{{ 'success' if invoice.status == 'PAID' else ('danger' if invoice.status == 'OVERDUE' else 'warning') }}">
+                            {{ invoice.status }}
+                        </span>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        {% else %}
+        <div class="empty-state">No invoices found</div>
+        {% endif %}
+    </div>
+</div>
+
+<!-- Payments -->
+<div class="card">
+    <div class="card-header">
+        <h3 class="card-title">💳 Payments ({{ payments|length }})</h3>
+    </div>
+    <div class="table-container">
+        {% if payments %}
+        <table>
+            <thead>
+                <tr>
+                    <th>Payment Number</th>
+                    <th>Invoice</th>
+                    <th>Amount</th>
+                    <th>Date</th>
+                    <th>Method</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for payment in payments[:20] %}
+                <tr>
+                    <td><strong>{{ payment.payment_number }}</strong></td>
+                    <td>{{ payment.invoice_number }}</td>
+                    <td>${{ "%.2f"|format(payment.amount_paid) }}</td>
+                    <td>{{ payment.payment_date }}</td>
+                    <td>{{ payment.payment_method }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        {% else %}
+        <div class="empty-state">No payments found</div>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}

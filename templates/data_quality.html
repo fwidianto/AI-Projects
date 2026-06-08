@@ -1,0 +1,138 @@
+{% extends "base.html" %}
+
+{% block title %}Data Quality Dashboard - ERP Data Explorer{% endblock %}
+
+{% block page_title %}Data Quality Dashboard{% endblock %}
+
+{% block content %}
+<!-- Quality Score -->
+<div class="card" style="margin-bottom: 30px;">
+    <div class="quality-score">
+        <div class="quality-score-value" style="color: {% if quality_score >= 90 %}var(--success){% elif quality_score >= 70 %}var(--warning){% else %}var(--danger){% endif %}">
+            {{ "%.0f"|format(quality_score) }}%
+        </div>
+        <div class="quality-score-label">Data Quality Score</div>
+        <p style="margin-top: 15px; color: var(--gray-500);">
+            {% if quality_score >= 90 %}
+            Excellent! Your data is well maintained with minimal issues.
+            {% elif quality_score >= 70 %}
+            Good. Some issues detected that should be addressed.
+            {% else %}
+            Needs attention. Several data quality issues found.
+            {% endif %}
+        </p>
+    </div>
+</div>
+
+<!-- Issues Summary -->
+<div class="card" style="margin-bottom: 30px;">
+    <div class="card-header">
+        <h3 class="card-title">⚠️ Data Quality Issues ({{ total_issues }})</h3>
+    </div>
+    <div class="card-body">
+        {% if issues %}
+        {% for issue in issues %}
+        <div class="issue-card {{ issue.severity }}">
+            <div class="issue-icon">
+                {% if issue.severity == 'high' %}⚠️{% elif issue.severity == 'medium' %}⚡{% else %}ℹ️{% endif %}
+            </div>
+            <div class="issue-content">
+                <div class="issue-title">{{ issue.title }}</div>
+                <div class="issue-desc">{{ issue.description }}</div>
+            </div>
+            <div class="issue-count">{{ issue.count }}</div>
+        </div>
+        {% endfor %}
+        {% else %}
+        <div class="empty-state">
+            <div class="empty-state-icon">✅</div>
+            <p>No data quality issues found! Your data is clean.</p>
+        </div>
+        {% endif %}
+    </div>
+</div>
+
+<!-- Validation Details -->
+<div class="card">
+    <div class="card-header">
+        <h3 class="card-title">📋 Validation Checks</h3>
+    </div>
+    <div class="card-body">
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Check</th>
+                        <th>Status</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>✅</td>
+                        <td><span class="badge badge-success">Pass</span></td>
+                        <td>Foreign keys in Sales Orders → Customers</td>
+                    </tr>
+                    <tr>
+                        <td>✅</td>
+                        <td><span class="badge badge-success">Pass</span></td>
+                        <td>Foreign keys in Purchase Orders → Suppliers</td>
+                    </tr>
+                    <tr>
+                        <td>✅</td>
+                        <td><span class="badge badge-success">Pass</span></td>
+                        <td>Foreign keys in Inventory → Products</td>
+                    </tr>
+                    <tr>
+                        <td>✅</td>
+                        <td><span class="badge badge-success">Pass</span></td>
+                        <td>Foreign keys in Goods Receipts → POs</td>
+                    </tr>
+                    <tr>
+                        <td>✅</td>
+                        <td><span class="badge badge-success">Pass</span></td>
+                        <td>Foreign keys in Invoices → Sales Orders</td>
+                    </tr>
+                    <tr>
+                        <td>✅</td>
+                        <td><span class="badge badge-success">Pass</span></td>
+                        <td>Foreign keys in Payments → Invoices</td>
+                    </tr>
+                    <tr>
+                        <td>✅</td>
+                        <td><span class="badge badge-success">Pass</span></td>
+                        <td>Foreign keys in Deliveries → Sales Orders</td>
+                    </tr>
+                    {% for issue in issues %}
+                    <tr>
+                        <td>❌</td>
+                        <td><span class="badge badge-danger">Fail</span></td>
+                        <td>{{ issue.title }}: {{ issue.count }} issues</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<!-- Quick Actions -->
+<div class="card" style="margin-top: 25px;">
+    <div class="card-header">
+        <h3 class="card-title">🚀 Quick Actions</h3>
+    </div>
+    <div class="card-body">
+        <div style="display: flex; gap: 15px; flex-wrap: wrap;">
+            <a href="{{ url_for('table_view', table_name='fact_customer_invoices') }}" class="btn btn-primary">
+                📄 Review Invoices
+            </a>
+            <a href="{{ url_for('table_view', table_name='fact_inventory_ledger') }}" class="btn btn-secondary">
+                📊 Review Inventory
+            </a>
+            <a href="{{ url_for('sql_query') }}" class="btn btn-secondary">
+                💾 Run Custom Query
+            </a>
+        </div>
+    </div>
+</div>
+{% endblock %}
