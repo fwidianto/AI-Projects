@@ -108,9 +108,9 @@
             <tr>
                 <td><strong>{{ p.product_name }}</strong></td>
                 <td><span class="badge badge-info">{{ p.category }}</span></td>
-                <td class="number">{{ "{:,}".format(p.units|default(0)|int) }}</td>
-                <td class="number">${{ "{:,.0f}".format(p.revenue) }}</td>
-                <td class="number positive">${{ "{:,.0f}".format(p.profit) }}</td>
+                <td class="number">{{ "{:,}".format(p.units_sold|default(0)|int) }}</td>
+                <td class="number">${{ "{:,.0f}".format(p.total_revenue|default(0)) }}</td>
+                <td class="number positive">${{ "{:,.0f}".format(p.total_profit|default(0)) }}</td>
             </tr>
             {% endfor %}
         </tbody>

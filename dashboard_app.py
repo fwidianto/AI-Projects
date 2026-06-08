@@ -1,11 +1,12 @@
 """
 ERP Analytics Dashboard - Executive Business Intelligence
 Professional dashboard for management reporting and KPI visualization.
+Uses the same database connection as the main app.
 """
 
 import sqlite3
 import os
-from flask import Flask, render_template, request, jsonify, Blueprint
+from flask import render_template, request, jsonify, Blueprint
 from contextlib import contextmanager
 from datetime import datetime
 import json
@@ -15,13 +16,16 @@ dashboard_bp = Blueprint('dashboard', __name__,
                          template_folder='dashboard_templates',
                          static_folder='dashboard_static')
 
-# Database path
-db_path = os.path.expanduser(os.environ.get('DATABASE_PATH', '~/AI-Projects/database/erp_database.db'))
+# Database path - shared with main app
+def get_db_path():
+    """Get database path - uses DATABASE_PATH env var or default"""
+    import os
+    return os.path.expanduser(os.environ.get('DATABASE_PATH', '~/AI-Projects/database/erp_database.db'))
 
 @contextmanager
 def get_db_connection():
     """Context manager for database connections"""
-    conn = sqlite3.connect(db_path)
+    conn = sqlite3.connect(get_db_path())
     conn.row_factory = sqlite3.Row
     try:
         yield conn
@@ -68,8 +72,8 @@ def executive():
         cursor.execute("SELECT COALESCE(SUM(total_amount - amount_paid), 0) as ar FROM fact_customer_invoices WHERE status != 'PAID'")
         outstanding_ar = cursor.fetchone()[0]
         
-        # Outstanding AP
-        cursor.execute("SELECT COALESCE(SUM(total_cost - amount_paid), 0) as ap FROM fact_purchase_orders WHERE status != 'PAID'")
+        # Outstanding AP (fact_purchase_orders doesn't have amount_paid, use status)
+        cursor.execute("SELECT COALESCE(SUM(total_cost), 0) as ap FROM fact_purchase_orders WHERE status != 'RECEIVED'")
         outstanding_ap = cursor.fetchone()[0]
         
         # Inventory Turnover (COGS / Average Inventory)
@@ -185,11 +189,11 @@ def sales():
         total_quotes = cursor.fetchone()[0]
         cursor.execute("SELECT COUNT(*) FROM fact_sales_orders")
         total_orders = cursor.fetchone()[0]
-        cursor.execute("SELECT COUNT(*) FROM fact_delivery_orders WHERE status = 'DELIVERED'")
+        cursor.execute("SELECT COUNT(*) FROM fact_delivery_orders")
         delivered = cursor.fetchone()[0]
         
         # Conversion stats
-        cursor.execute("SELECT COUNT(*) FROM fact_crm_leads WHERE status = 'CONVERTED'")
+        cursor.execute("SELECT COUNT(*) FROM fact_crm_leads WHERE lead_status = 'CONVERTED'")
         converted_leads = cursor.fetchone()[0]
         cursor.execute("SELECT COUNT(*) FROM fact_sales_quotations WHERE status = 'ACCEPTED'")
         accepted_quotes = cursor.fetchone()[0]
