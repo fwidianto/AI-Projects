@@ -16,8 +16,10 @@ a { text-decoration: none; color: inherit; }
 /* ==========================================================
    LAYOUT
    ========================================================== */
-.container { width: 90%; max-width: 1300px; margin: auto; }
-section { padding: 120px 0; }
+.main-wrapper {
+    padding-top: 80px; /* Account for fixed nav */
+}
+.container { width: 90%; max-width: 1300px; margin: auto; padding-bottom: 60px; }
 
 /* ==========================================================
    NAVIGATION BAR
@@ -58,28 +60,28 @@ nav {
    PAGE HEADER
    ========================================================== */
 .page-header {
-    padding-top: 180px;
-    padding-bottom: 60px;
+    padding-top: 120px;
+    padding-bottom: 40px;
     text-align: center;
 }
 .page-header h1 {
-    font-size: 52px;
-    margin-bottom: 20px;
+    font-size: 42px;
+    margin-bottom: 16px;
 }
 .page-header p {
     max-width: 600px;
     margin: auto;
     color: #9ca3af;
-    font-size: 18px;
+    font-size: 16px;
 }
 .ai-badge {
     display: inline-block;
     background: rgba(96, 165, 250, 0.12);
     color: #60a5fa;
-    padding: 10px 20px;
+    padding: 8px 16px;
     border-radius: 999px;
-    font-size: 14px;
-    margin-top: 20px;
+    font-size: 13px;
+    margin-top: 16px;
 }
 
 /* ==========================================================
@@ -88,10 +90,10 @@ nav {
 .section {
     background: #111827;
     border: 1px solid rgba(255, 255, 255, 0.05);
-    border-radius: 28px;
-    padding: 40px;
-    margin-bottom: 30px;
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+    border-radius: 24px;
+    padding: 32px;
+    margin-bottom: 24px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
 }
 .section-header {
     display: flex;
@@ -542,6 +544,7 @@ footer {
         <span class="ai-badge">🤖 Rule-Based Analysis Engine</span>
     </div>
     
+    <div class="main-wrapper">
     <div class="container">
         <!-- Section 1: Executive Summary -->
         <section>
@@ -825,6 +828,7 @@ footer {
             </div>
         </section>
     </div>
+    </div><!-- end main-wrapper -->
     
     <footer>
         <p>AI Executive Advisor • Rule-Based Analytics Engine • ERP Analytics Platform</p>
