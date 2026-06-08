@@ -1,0 +1,501 @@
+product_id,sku,product_name,category,default_selling_price,unit_cost,is_active
+PRD-00000001,SKU-00001,USB-C Cable,Electronics,13.53,,1
+PRD-00000002,SKU-00002,HDMI Cable 6ft,Electronics,7.71,,1
+PRD-00000003,SKU-00003,Wireless Mouse,Electronics,23.3,,1
+PRD-00000004,SKU-00004,Bluetooth Keyboard,Electronics,45.84,,1
+PRD-00000005,SKU-00005,Webcam HD,Electronics,85.66,,1
+PRD-00000006,SKU-00006,USB Hub 7-Port,Electronics,36.84,,1
+PRD-00000007,SKU-00007,Ethernet Switch 8-Port,Electronics,100.58,,1
+PRD-00000008,SKU-00008,Power Strip 6-Outlet,Electronics,17.51,,1
+PRD-00000009,SKU-00009,Surge Protector,Electronics,29.29,,1
+PRD-00000010,SKU-00010,Laptop Stand,Electronics,39.5,,1
+PRD-00000011,SKU-00011,A4 Paper Ream,Office Supplies,7.32,,1
+PRD-00000012,SKU-00012,Ballpoint Pens 12-Pack,Office Supplies,6.0,,1
+PRD-00000013,SKU-00013,Sticky Notes 3x3,Office Supplies,4.28,,1
+PRD-00000014,SKU-00014,File Folders 100-Pack,Office Supplies,11.82,,1
+PRD-00000015,SKU-00015,Stapler Heavy Duty,Office Supplies,26.11,,1
+PRD-00000016,SKU-00016,Paper Clips Box,Office Supplies,3.03,,1
+PRD-00000017,SKU-00017,Binder Clips Assorted,Office Supplies,3.66,,1
+PRD-00000018,SKU-00018,Desk Organizer,Office Supplies,20.53,,1
+PRD-00000019,SKU-00019,Whiteboard 24x36,Office Supplies,54.63,,1
+PRD-00000020,SKU-00020,Dry Erase Markers,Office Supplies,7.66,,1
+PRD-00000021,SKU-00021,SSD 500GB,Computer Hardware,98.25,,1
+PRD-00000022,SKU-00022,RAM 16GB DDR4,Computer Hardware,74.15,,1
+PRD-00000023,SKU-00023,Mechanical Keyboard,Computer Hardware,123.76,,1
+PRD-00000024,SKU-00024,Monitor 27 inch,Computer Hardware,313.82,,1
+PRD-00000025,SKU-00025,Graphics Card Entry,Computer Hardware,227.42,,1
+PRD-00000026,SKU-00026,CPU Cooler,Computer Hardware,43.74,,1
+PRD-00000027,SKU-00027,PC Case Mid Tower,Computer Hardware,70.22,,1
+PRD-00000028,SKU-00028,Power Supply 650W,Computer Hardware,79.1,,1
+PRD-00000029,SKU-00029,Motherboard B550,Computer Hardware,198.75,,1
+PRD-00000030,SKU-00030,NVMe Cable,Computer Hardware,13.39,,1
+PRD-00000031,SKU-00031,Drill Driver Cordless,Tools,163.81,,1
+PRD-00000032,SKU-00032,Socket Set 40-Piece,Tools,85.5,,1
+PRD-00000033,SKU-00033,Measuring Tape 25ft,Tools,15.15,,1
+PRD-00000034,SKU-00034,Level 24 inch,Tools,39.96,,1
+PRD-00000035,SKU-00035,Screwdriver Set 100pc,Tools,48.17,,1
+PRD-00000036,SKU-00036,Wrench Set Adjustable,Tools,40.61,,1
+PRD-00000037,SKU-00037,Pliers Set 5-Piece,Tools,32.95,,1
+PRD-00000038,SKU-00038,Hammer 16oz,Tools,20.7,,1
+PRD-00000039,SKU-00039,Tape Measure Digital,Tools,27.7,,1
+PRD-00000040,SKU-00040,Utility Knife,Tools,9.2,,1
+PRD-00000041,SKU-00041,USB-C Cable Plus,Electronics,11.22,,1
+PRD-00000042,SKU-00042,HDMI Cable 6ft HD,Electronics,9.73,,1
+PRD-00000043,SKU-00043,Wireless Mouse Plus,Electronics,27.65,,1
+PRD-00000044,SKU-00044,Bluetooth Keyboard Plus,Electronics,48.19,,1
+PRD-00000045,SKU-00045,Webcam HD Premium,Electronics,83.25,,1
+PRD-00000046,SKU-00046,USB Hub 7-Port Lite,Electronics,31.45,,1
+PRD-00000047,SKU-00047,Ethernet Switch 8-Port Lite,Electronics,82.15,,1
+PRD-00000048,SKU-00048,Power Strip 6-Outlet Max,Electronics,21.2,,1
+PRD-00000049,SKU-00049,Surge Protector Plus,Electronics,30.97,,1
+PRD-00000050,SKU-00050,Laptop Stand XL,Electronics,46.46,,1
+PRD-00000051,SKU-00051,A4 Paper Ream HD,Office Supplies,7.18,,1
+PRD-00000052,SKU-00052,Ballpoint Pens 12-Pack Basic,Office Supplies,5.58,,1
+PRD-00000053,SKU-00053,Sticky Notes 3x3 HD,Office Supplies,5.27,,1
+PRD-00000054,SKU-00054,File Folders 100-Pack Pro,Office Supplies,11.93,,1
+PRD-00000055,SKU-00055,Stapler Heavy Duty Pro,Office Supplies,27.28,,1
+PRD-00000056,SKU-00056,Paper Clips Box Basic,Office Supplies,2.78,,1
+PRD-00000057,SKU-00057,Binder Clips Assorted HD,Office Supplies,4.48,,1
+PRD-00000058,SKU-00058,Desk Organizer Lite,Office Supplies,18.27,,1
+PRD-00000059,SKU-00059,Whiteboard 24x36 Premium,Office Supplies,48.42,,1
+PRD-00000060,SKU-00060,Dry Erase Markers Premium,Office Supplies,8.03,,1
+PRD-00000061,SKU-00061,SSD 500GB XL,Computer Hardware,83.15,,1
+PRD-00000062,SKU-00062,RAM 16GB DDR4 Max,Computer Hardware,75.18,,1
+PRD-00000063,SKU-00063,Mechanical Keyboard Basic,Computer Hardware,145.5,,1
+PRD-00000064,SKU-00064,Monitor 27 inch Basic,Computer Hardware,335.5,,1
+PRD-00000065,SKU-00065,Graphics Card Entry XL,Computer Hardware,200.56,,1
+PRD-00000066,SKU-00066,CPU Cooler Plus,Computer Hardware,49.52,,1
+PRD-00000067,SKU-00067,PC Case Mid Tower Plus,Computer Hardware,71.66,,1
+PRD-00000068,SKU-00068,Power Supply 650W XL,Computer Hardware,97.88,,1
+PRD-00000069,SKU-00069,Motherboard B550 Basic,Computer Hardware,185.2,,1
+PRD-00000070,SKU-00070,NVMe Cable Basic,Computer Hardware,12.53,,1
+PRD-00000071,SKU-00071,Drill Driver Cordless Premium,Tools,151.3,,1
+PRD-00000072,SKU-00072,Socket Set 40-Piece Pro,Tools,84.32,,1
+PRD-00000073,SKU-00073,Measuring Tape 25ft Plus,Tools,15.81,,1
+PRD-00000074,SKU-00074,Level 24 inch Max,Tools,37.81,,1
+PRD-00000075,SKU-00075,Screwdriver Set 100pc Lite,Tools,44.16,,1
+PRD-00000076,SKU-00076,Wrench Set Adjustable Basic,Tools,35.89,,1
+PRD-00000077,SKU-00077,Pliers Set 5-Piece Pro,Tools,34.07,,1
+PRD-00000078,SKU-00078,Hammer 16oz Max,Tools,22.82,,1
+PRD-00000079,SKU-00079,Tape Measure Digital XL,Tools,25.05,,1
+PRD-00000080,SKU-00080,Utility Knife Plus,Tools,9.99,,1
+PRD-00000081,SKU-00081,USB-C Cable Max,Electronics,14.32,,1
+PRD-00000082,SKU-00082,HDMI Cable 6ft HD,Electronics,8.05,,1
+PRD-00000083,SKU-00083,Wireless Mouse XL,Electronics,25.29,,1
+PRD-00000084,SKU-00084,Bluetooth Keyboard Pro,Electronics,51.47,,1
+PRD-00000085,SKU-00085,Webcam HD Premium,Electronics,68.46,,1
+PRD-00000086,SKU-00086,USB Hub 7-Port Lite,Electronics,38.97,,1
+PRD-00000087,SKU-00087,Ethernet Switch 8-Port Max,Electronics,82.96,,1
+PRD-00000088,SKU-00088,Power Strip 6-Outlet HD,Electronics,22.26,,1
+PRD-00000089,SKU-00089,Surge Protector Plus,Electronics,26.26,,1
+PRD-00000090,SKU-00090,Laptop Stand Premium,Electronics,50.35,,1
+PRD-00000091,SKU-00091,A4 Paper Ream XL,Office Supplies,7.1,,1
+PRD-00000092,SKU-00092,Ballpoint Pens 12-Pack Premium,Office Supplies,6.79,,1
+PRD-00000093,SKU-00093,Sticky Notes 3x3 XL,Office Supplies,4.64,,1
+PRD-00000094,SKU-00094,File Folders 100-Pack Basic,Office Supplies,14.8,,1
+PRD-00000095,SKU-00095,Stapler Heavy Duty HD,Office Supplies,26.59,,1
+PRD-00000096,SKU-00096,Paper Clips Box Basic,Office Supplies,3.43,,1
+PRD-00000097,SKU-00097,Binder Clips Assorted Lite,Office Supplies,3.92,,1
+PRD-00000098,SKU-00098,Desk Organizer Premium,Office Supplies,17.72,,1
+PRD-00000099,SKU-00099,Whiteboard 24x36 HD,Office Supplies,43.45,,1
+PRD-00000100,SKU-00100,Dry Erase Markers Pro,Office Supplies,9.23,,1
+PRD-00000101,SKU-00101,SSD 500GB HD,Computer Hardware,92.38,,1
+PRD-00000102,SKU-00102,RAM 16GB DDR4 Pro,Computer Hardware,60.98,,1
+PRD-00000103,SKU-00103,Mechanical Keyboard Pro,Computer Hardware,119.42,,1
+PRD-00000104,SKU-00104,Monitor 27 inch Pro,Computer Hardware,387.75,,1
+PRD-00000105,SKU-00105,Graphics Card Entry Plus,Computer Hardware,200.84,,1
+PRD-00000106,SKU-00106,CPU Cooler Max,Computer Hardware,48.32,,1
+PRD-00000107,SKU-00107,PC Case Mid Tower HD,Computer Hardware,80.93,,1
+PRD-00000108,SKU-00108,Power Supply 650W Premium,Computer Hardware,83.05,,1
+PRD-00000109,SKU-00109,Motherboard B550 Premium,Computer Hardware,196.59,,1
+PRD-00000110,SKU-00110,NVMe Cable HD,Computer Hardware,11.41,,1
+PRD-00000111,SKU-00111,Drill Driver Cordless Basic,Tools,143.43,,1
+PRD-00000112,SKU-00112,Socket Set 40-Piece Basic,Tools,79.2,,1
+PRD-00000113,SKU-00113,Measuring Tape 25ft Pro,Tools,15.77,,1
+PRD-00000114,SKU-00114,Level 24 inch Plus,Tools,30.38,,1
+PRD-00000115,SKU-00115,Screwdriver Set 100pc Lite,Tools,54.5,,1
+PRD-00000116,SKU-00116,Wrench Set Adjustable Plus,Tools,36.97,,1
+PRD-00000117,SKU-00117,Pliers Set 5-Piece HD,Tools,30.32,,1
+PRD-00000118,SKU-00118,Hammer 16oz XL,Tools,19.52,,1
+PRD-00000119,SKU-00119,Tape Measure Digital Max,Tools,24.71,,1
+PRD-00000120,SKU-00120,Utility Knife Plus,Tools,8.84,,1
+PRD-00000121,SKU-00121,USB-C Cable Plus,Electronics,11.24,,1
+PRD-00000122,SKU-00122,HDMI Cable 6ft Pro,Electronics,10.25,,1
+PRD-00000123,SKU-00123,Wireless Mouse HD,Electronics,22.49,,1
+PRD-00000124,SKU-00124,Bluetooth Keyboard Premium,Electronics,49.71,,1
+PRD-00000125,SKU-00125,Webcam HD Basic,Electronics,89.65,,1
+PRD-00000126,SKU-00126,USB Hub 7-Port XL,Electronics,33.72,,1
+PRD-00000127,SKU-00127,Ethernet Switch 8-Port Basic,Electronics,83.65,,1
+PRD-00000128,SKU-00128,Power Strip 6-Outlet Premium,Electronics,18.7,,1
+PRD-00000129,SKU-00129,Surge Protector Premium,Electronics,26.88,,1
+PRD-00000130,SKU-00130,Laptop Stand Max,Electronics,42.1,,1
+PRD-00000131,SKU-00131,A4 Paper Ream Pro,Office Supplies,8.18,,1
+PRD-00000132,SKU-00132,Ballpoint Pens 12-Pack Pro,Office Supplies,6.44,,1
+PRD-00000133,SKU-00133,Sticky Notes 3x3 Pro,Office Supplies,4.32,,1
+PRD-00000134,SKU-00134,File Folders 100-Pack Premium,Office Supplies,13.0,,1
+PRD-00000135,SKU-00135,Stapler Heavy Duty XL,Office Supplies,21.67,,1
+PRD-00000136,SKU-00136,Paper Clips Box Plus,Office Supplies,3.31,,1
+PRD-00000137,SKU-00137,Binder Clips Assorted Plus,Office Supplies,4.1,,1
+PRD-00000138,SKU-00138,Desk Organizer HD,Office Supplies,19.41,,1
+PRD-00000139,SKU-00139,Whiteboard 24x36 HD,Office Supplies,51.17,,1
+PRD-00000140,SKU-00140,Dry Erase Markers Pro,Office Supplies,9.31,,1
+PRD-00000141,SKU-00141,SSD 500GB Basic,Computer Hardware,94.24,,1
+PRD-00000142,SKU-00142,RAM 16GB DDR4 Lite,Computer Hardware,79.12,,1
+PRD-00000143,SKU-00143,Mechanical Keyboard HD,Computer Hardware,136.61,,1
+PRD-00000144,SKU-00144,Monitor 27 inch Lite,Computer Hardware,322.55,,1
+PRD-00000145,SKU-00145,Graphics Card Entry Basic,Computer Hardware,177.84,,1
+PRD-00000146,SKU-00146,CPU Cooler Max,Computer Hardware,45.4,,1
+PRD-00000147,SKU-00147,PC Case Mid Tower Plus,Computer Hardware,68.22,,1
+PRD-00000148,SKU-00148,Power Supply 650W Plus,Computer Hardware,78.47,,1
+PRD-00000149,SKU-00149,Motherboard B550 HD,Computer Hardware,180.31,,1
+PRD-00000150,SKU-00150,NVMe Cable XL,Computer Hardware,14.68,,1
+PRD-00000151,SKU-00151,Drill Driver Cordless Plus,Tools,167.06,,1
+PRD-00000152,SKU-00152,Socket Set 40-Piece Lite,Tools,74.83,,1
+PRD-00000153,SKU-00153,Measuring Tape 25ft Premium,Tools,16.49,,1
+PRD-00000154,SKU-00154,Level 24 inch Max,Tools,36.16,,1
+PRD-00000155,SKU-00155,Screwdriver Set 100pc Pro,Tools,52.51,,1
+PRD-00000156,SKU-00156,Wrench Set Adjustable Max,Tools,45.17,,1
+PRD-00000157,SKU-00157,Pliers Set 5-Piece Plus,Tools,33.94,,1
+PRD-00000158,SKU-00158,Hammer 16oz XL,Tools,18.58,,1
+PRD-00000159,SKU-00159,Tape Measure Digital Plus,Tools,26.81,,1
+PRD-00000160,SKU-00160,Utility Knife XL,Tools,8.38,,1
+PRD-00000161,SKU-00161,USB-C Cable HD,Electronics,13.84,,1
+PRD-00000162,SKU-00162,HDMI Cable 6ft HD,Electronics,9.5,,1
+PRD-00000163,SKU-00163,Wireless Mouse Max,Electronics,25.03,,1
+PRD-00000164,SKU-00164,Bluetooth Keyboard Max,Electronics,56.07,,1
+PRD-00000165,SKU-00165,Webcam HD Pro,Electronics,70.21,,1
+PRD-00000166,SKU-00166,USB Hub 7-Port Basic,Electronics,38.45,,1
+PRD-00000167,SKU-00167,Ethernet Switch 8-Port Pro,Electronics,76.59,,1
+PRD-00000168,SKU-00168,Power Strip 6-Outlet XL,Electronics,20.81,,1
+PRD-00000169,SKU-00169,Surge Protector Max,Electronics,26.95,,1
+PRD-00000170,SKU-00170,Laptop Stand Premium,Electronics,46.7,,1
+PRD-00000171,SKU-00171,A4 Paper Ream Basic,Office Supplies,8.14,,1
+PRD-00000172,SKU-00172,Ballpoint Pens 12-Pack Plus,Office Supplies,5.23,,1
+PRD-00000173,SKU-00173,Sticky Notes 3x3 XL,Office Supplies,5.06,,1
+PRD-00000174,SKU-00174,File Folders 100-Pack Lite,Office Supplies,13.31,,1
+PRD-00000175,SKU-00175,Stapler Heavy Duty XL,Office Supplies,24.46,,1
+PRD-00000176,SKU-00176,Paper Clips Box Pro,Office Supplies,2.82,,1
+PRD-00000177,SKU-00177,Binder Clips Assorted Pro,Office Supplies,4.47,,1
+PRD-00000178,SKU-00178,Desk Organizer HD,Office Supplies,21.08,,1
+PRD-00000179,SKU-00179,Whiteboard 24x36 Plus,Office Supplies,47.8,,1
+PRD-00000180,SKU-00180,Dry Erase Markers Basic,Office Supplies,10.27,,1
+PRD-00000181,SKU-00181,SSD 500GB XL,Computer Hardware,101.48,,1
+PRD-00000182,SKU-00182,RAM 16GB DDR4 HD,Computer Hardware,77.65,,1
+PRD-00000183,SKU-00183,Mechanical Keyboard XL,Computer Hardware,144.86,,1
+PRD-00000184,SKU-00184,Monitor 27 inch Pro,Computer Hardware,316.32,,1
+PRD-00000185,SKU-00185,Graphics Card Entry Lite,Computer Hardware,216.93,,1
+PRD-00000186,SKU-00186,CPU Cooler Basic,Computer Hardware,50.16,,1
+PRD-00000187,SKU-00187,PC Case Mid Tower HD,Computer Hardware,74.39,,1
+PRD-00000188,SKU-00188,Power Supply 650W Plus,Computer Hardware,86.82,,1
+PRD-00000189,SKU-00189,Motherboard B550 Pro,Computer Hardware,199.35,,1
+PRD-00000190,SKU-00190,NVMe Cable HD,Computer Hardware,11.82,,1
+PRD-00000191,SKU-00191,Drill Driver Cordless Premium,Tools,143.23,,1
+PRD-00000192,SKU-00192,Socket Set 40-Piece HD,Tools,73.34,,1
+PRD-00000193,SKU-00193,Measuring Tape 25ft HD,Tools,14.53,,1
+PRD-00000194,SKU-00194,Level 24 inch Max,Tools,38.81,,1
+PRD-00000195,SKU-00195,Screwdriver Set 100pc Max,Tools,47.76,,1
+PRD-00000196,SKU-00196,Wrench Set Adjustable Basic,Tools,42.14,,1
+PRD-00000197,SKU-00197,Pliers Set 5-Piece Lite,Tools,33.94,,1
+PRD-00000198,SKU-00198,Hammer 16oz Plus,Tools,22.25,,1
+PRD-00000199,SKU-00199,Tape Measure Digital Max,Tools,22.58,,1
+PRD-00000200,SKU-00200,Utility Knife Max,Tools,7.74,,1
+PRD-00000201,SKU-00201,USB-C Cable Basic,Electronics,12.39,,1
+PRD-00000202,SKU-00202,HDMI Cable 6ft Lite,Electronics,8.82,,1
+PRD-00000203,SKU-00203,Wireless Mouse Plus,Electronics,24.13,,1
+PRD-00000204,SKU-00204,Bluetooth Keyboard HD,Electronics,46.31,,1
+PRD-00000205,SKU-00205,Webcam HD Basic,Electronics,68.03,,1
+PRD-00000206,SKU-00206,USB Hub 7-Port HD,Electronics,33.56,,1
+PRD-00000207,SKU-00207,Ethernet Switch 8-Port Plus,Electronics,102.11,,1
+PRD-00000208,SKU-00208,Power Strip 6-Outlet Lite,Electronics,20.73,,1
+PRD-00000209,SKU-00209,Surge Protector Plus,Electronics,31.97,,1
+PRD-00000210,SKU-00210,Laptop Stand Max,Electronics,46.09,,1
+PRD-00000211,SKU-00211,A4 Paper Ream Basic,Office Supplies,7.57,,1
+PRD-00000212,SKU-00212,Ballpoint Pens 12-Pack Max,Office Supplies,6.09,,1
+PRD-00000213,SKU-00213,Sticky Notes 3x3 HD,Office Supplies,4.87,,1
+PRD-00000214,SKU-00214,File Folders 100-Pack Basic,Office Supplies,13.68,,1
+PRD-00000215,SKU-00215,Stapler Heavy Duty XL,Office Supplies,25.86,,1
+PRD-00000216,SKU-00216,Paper Clips Box Max,Office Supplies,2.91,,1
+PRD-00000217,SKU-00217,Binder Clips Assorted Pro,Office Supplies,3.76,,1
+PRD-00000218,SKU-00218,Desk Organizer HD,Office Supplies,19.57,,1
+PRD-00000219,SKU-00219,Whiteboard 24x36 Lite,Office Supplies,49.46,,1
+PRD-00000220,SKU-00220,Dry Erase Markers Premium,Office Supplies,9.46,,1
+PRD-00000221,SKU-00221,SSD 500GB Premium,Computer Hardware,97.92,,1
+PRD-00000222,SKU-00222,RAM 16GB DDR4 XL,Computer Hardware,73.33,,1
+PRD-00000223,SKU-00223,Mechanical Keyboard Max,Computer Hardware,130.59,,1
+PRD-00000224,SKU-00224,Monitor 27 inch Lite,Computer Hardware,307.3,,1
+PRD-00000225,SKU-00225,Graphics Card Entry HD,Computer Hardware,210.36,,1
+PRD-00000226,SKU-00226,CPU Cooler HD,Computer Hardware,50.22,,1
+PRD-00000227,SKU-00227,PC Case Mid Tower XL,Computer Hardware,68.58,,1
+PRD-00000228,SKU-00228,Power Supply 650W HD,Computer Hardware,103.05,,1
+PRD-00000229,SKU-00229,Motherboard B550 Plus,Computer Hardware,177.58,,1
+PRD-00000230,SKU-00230,NVMe Cable HD,Computer Hardware,13.84,,1
+PRD-00000231,SKU-00231,Drill Driver Cordless Basic,Tools,149.74,,1
+PRD-00000232,SKU-00232,Socket Set 40-Piece HD,Tools,71.53,,1
+PRD-00000233,SKU-00233,Measuring Tape 25ft Pro,Tools,16.76,,1
+PRD-00000234,SKU-00234,Level 24 inch Plus,Tools,37.91,,1
+PRD-00000235,SKU-00235,Screwdriver Set 100pc HD,Tools,45.13,,1
+PRD-00000236,SKU-00236,Wrench Set Adjustable Premium,Tools,34.59,,1
+PRD-00000237,SKU-00237,Pliers Set 5-Piece HD,Tools,33.75,,1
+PRD-00000238,SKU-00238,Hammer 16oz Plus,Tools,19.73,,1
+PRD-00000239,SKU-00239,Tape Measure Digital Premium,Tools,26.25,,1
+PRD-00000240,SKU-00240,Utility Knife Lite,Tools,10.2,,1
+PRD-00000241,SKU-00241,USB-C Cable Premium,Electronics,13.43,,1
+PRD-00000242,SKU-00242,HDMI Cable 6ft Basic,Electronics,9.88,,1
+PRD-00000243,SKU-00243,Wireless Mouse Premium,Electronics,27.97,,1
+PRD-00000244,SKU-00244,Bluetooth Keyboard Premium,Electronics,49.24,,1
+PRD-00000245,SKU-00245,Webcam HD HD,Electronics,88.15,,1
+PRD-00000246,SKU-00246,USB Hub 7-Port Max,Electronics,37.78,,1
+PRD-00000247,SKU-00247,Ethernet Switch 8-Port Premium,Electronics,93.41,,1
+PRD-00000248,SKU-00248,Power Strip 6-Outlet Max,Electronics,19.63,,1
+PRD-00000249,SKU-00249,Surge Protector Max,Electronics,27.6,,1
+PRD-00000250,SKU-00250,Laptop Stand Lite,Electronics,43.5,,1
+PRD-00000251,SKU-00251,A4 Paper Ream Plus,Office Supplies,7.12,,1
+PRD-00000252,SKU-00252,Ballpoint Pens 12-Pack HD,Office Supplies,5.78,,1
+PRD-00000253,SKU-00253,Sticky Notes 3x3 XL,Office Supplies,5.3,,1
+PRD-00000254,SKU-00254,File Folders 100-Pack Plus,Office Supplies,12.66,,1
+PRD-00000255,SKU-00255,Stapler Heavy Duty Lite,Office Supplies,25.31,,1
+PRD-00000256,SKU-00256,Paper Clips Box Basic,Office Supplies,2.6,,1
+PRD-00000257,SKU-00257,Binder Clips Assorted Basic,Office Supplies,3.86,,1
+PRD-00000258,SKU-00258,Desk Organizer Pro,Office Supplies,22.13,,1
+PRD-00000259,SKU-00259,Whiteboard 24x36 Basic,Office Supplies,49.64,,1
+PRD-00000260,SKU-00260,Dry Erase Markers Lite,Office Supplies,8.45,,1
+PRD-00000261,SKU-00261,SSD 500GB Basic,Computer Hardware,99.53,,1
+PRD-00000262,SKU-00262,RAM 16GB DDR4 Basic,Computer Hardware,70.79,,1
+PRD-00000263,SKU-00263,Mechanical Keyboard HD,Computer Hardware,129.53,,1
+PRD-00000264,SKU-00264,Monitor 27 inch Max,Computer Hardware,343.25,,1
+PRD-00000265,SKU-00265,Graphics Card Entry Pro,Computer Hardware,193.32,,1
+PRD-00000266,SKU-00266,CPU Cooler Basic,Computer Hardware,49.08,,1
+PRD-00000267,SKU-00267,PC Case Mid Tower Premium,Computer Hardware,90.06,,1
+PRD-00000268,SKU-00268,Power Supply 650W Pro,Computer Hardware,100.98,,1
+PRD-00000269,SKU-00269,Motherboard B550 Pro,Computer Hardware,157.52,,1
+PRD-00000270,SKU-00270,NVMe Cable Basic,Computer Hardware,11.57,,1
+PRD-00000271,SKU-00271,Drill Driver Cordless Premium,Tools,135.67,,1
+PRD-00000272,SKU-00272,Socket Set 40-Piece Max,Tools,77.09,,1
+PRD-00000273,SKU-00273,Measuring Tape 25ft HD,Tools,14.79,,1
+PRD-00000274,SKU-00274,Level 24 inch Lite,Tools,37.73,,1
+PRD-00000275,SKU-00275,Screwdriver Set 100pc Basic,Tools,46.66,,1
+PRD-00000276,SKU-00276,Wrench Set Adjustable Basic,Tools,37.02,,1
+PRD-00000277,SKU-00277,Pliers Set 5-Piece Plus,Tools,29.72,,1
+PRD-00000278,SKU-00278,Hammer 16oz Pro,Tools,22.99,,1
+PRD-00000279,SKU-00279,Tape Measure Digital Lite,Tools,22.92,,1
+PRD-00000280,SKU-00280,Utility Knife Plus,Tools,9.75,,1
+PRD-00000281,SKU-00281,USB-C Cable Pro,Electronics,13.98,,1
+PRD-00000282,SKU-00282,HDMI Cable 6ft HD,Electronics,8.18,,1
+PRD-00000283,SKU-00283,Wireless Mouse Pro,Electronics,25.9,,1
+PRD-00000284,SKU-00284,Bluetooth Keyboard HD,Electronics,44.38,,1
+PRD-00000285,SKU-00285,Webcam HD Plus,Electronics,81.53,,1
+PRD-00000286,SKU-00286,USB Hub 7-Port HD,Electronics,34.62,,1
+PRD-00000287,SKU-00287,Ethernet Switch 8-Port Max,Electronics,97.2,,1
+PRD-00000288,SKU-00288,Power Strip 6-Outlet XL,Electronics,20.63,,1
+PRD-00000289,SKU-00289,Surge Protector Plus,Electronics,32.49,,1
+PRD-00000290,SKU-00290,Laptop Stand XL,Electronics,52.4,,1
+PRD-00000291,SKU-00291,A4 Paper Ream Plus,Office Supplies,8.18,,1
+PRD-00000292,SKU-00292,Ballpoint Pens 12-Pack Max,Office Supplies,6.13,,1
+PRD-00000293,SKU-00293,Sticky Notes 3x3 Basic,Office Supplies,4.84,,1
+PRD-00000294,SKU-00294,File Folders 100-Pack HD,Office Supplies,11.34,,1
+PRD-00000295,SKU-00295,Stapler Heavy Duty HD,Office Supplies,22.01,,1
+PRD-00000296,SKU-00296,Paper Clips Box Max,Office Supplies,3.3,,1
+PRD-00000297,SKU-00297,Binder Clips Assorted Plus,Office Supplies,4.34,,1
+PRD-00000298,SKU-00298,Desk Organizer Pro,Office Supplies,19.07,,1
+PRD-00000299,SKU-00299,Whiteboard 24x36 Basic,Office Supplies,52.41,,1
+PRD-00000300,SKU-00300,Dry Erase Markers Plus,Office Supplies,9.01,,1
+PRD-00000301,SKU-00301,SSD 500GB Lite,Computer Hardware,76.83,,1
+PRD-00000302,SKU-00302,RAM 16GB DDR4 Basic,Computer Hardware,76.76,,1
+PRD-00000303,SKU-00303,Mechanical Keyboard Plus,Computer Hardware,127.4,,1
+PRD-00000304,SKU-00304,Monitor 27 inch Lite,Computer Hardware,364.23,,1
+PRD-00000305,SKU-00305,Graphics Card Entry Premium,Computer Hardware,212.43,,1
+PRD-00000306,SKU-00306,CPU Cooler Basic,Computer Hardware,41.52,,1
+PRD-00000307,SKU-00307,PC Case Mid Tower Max,Computer Hardware,82.77,,1
+PRD-00000308,SKU-00308,Power Supply 650W Premium,Computer Hardware,89.04,,1
+PRD-00000309,SKU-00309,Motherboard B550 Max,Computer Hardware,170.39,,1
+PRD-00000310,SKU-00310,NVMe Cable HD,Computer Hardware,14.28,,1
+PRD-00000311,SKU-00311,Drill Driver Cordless Plus,Tools,140.04,,1
+PRD-00000312,SKU-00312,Socket Set 40-Piece Premium,Tools,73.84,,1
+PRD-00000313,SKU-00313,Measuring Tape 25ft Premium,Tools,15.3,,1
+PRD-00000314,SKU-00314,Level 24 inch Basic,Tools,33.27,,1
+PRD-00000315,SKU-00315,Screwdriver Set 100pc Premium,Tools,55.25,,1
+PRD-00000316,SKU-00316,Wrench Set Adjustable XL,Tools,39.84,,1
+PRD-00000317,SKU-00317,Pliers Set 5-Piece Lite,Tools,32.67,,1
+PRD-00000318,SKU-00318,Hammer 16oz Lite,Tools,18.67,,1
+PRD-00000319,SKU-00319,Tape Measure Digital Max,Tools,25.41,,1
+PRD-00000320,SKU-00320,Utility Knife HD,Tools,7.87,,1
+PRD-00000321,SKU-00321,USB-C Cable Basic,Electronics,12.95,,1
+PRD-00000322,SKU-00322,HDMI Cable 6ft HD,Electronics,9.5,,1
+PRD-00000323,SKU-00323,Wireless Mouse Premium,Electronics,24.6,,1
+PRD-00000324,SKU-00324,Bluetooth Keyboard Pro,Electronics,43.89,,1
+PRD-00000325,SKU-00325,Webcam HD HD,Electronics,77.7,,1
+PRD-00000326,SKU-00326,USB Hub 7-Port HD,Electronics,32.96,,1
+PRD-00000327,SKU-00327,Ethernet Switch 8-Port Lite,Electronics,89.27,,1
+PRD-00000328,SKU-00328,Power Strip 6-Outlet Lite,Electronics,19.54,,1
+PRD-00000329,SKU-00329,Surge Protector Lite,Electronics,28.66,,1
+PRD-00000330,SKU-00330,Laptop Stand Premium,Electronics,42.83,,1
+PRD-00000331,SKU-00331,A4 Paper Ream Max,Office Supplies,7.34,,1
+PRD-00000332,SKU-00332,Ballpoint Pens 12-Pack HD,Office Supplies,5.66,,1
+PRD-00000333,SKU-00333,Sticky Notes 3x3 XL,Office Supplies,4.53,,1
+PRD-00000334,SKU-00334,File Folders 100-Pack Premium,Office Supplies,12.12,,1
+PRD-00000335,SKU-00335,Stapler Heavy Duty Max,Office Supplies,28.59,,1
+PRD-00000336,SKU-00336,Paper Clips Box HD,Office Supplies,2.81,,1
+PRD-00000337,SKU-00337,Binder Clips Assorted Lite,Office Supplies,3.61,,1
+PRD-00000338,SKU-00338,Desk Organizer Pro,Office Supplies,21.24,,1
+PRD-00000339,SKU-00339,Whiteboard 24x36 XL,Office Supplies,46.61,,1
+PRD-00000340,SKU-00340,Dry Erase Markers Pro,Office Supplies,9.13,,1
+PRD-00000341,SKU-00341,SSD 500GB XL,Computer Hardware,93.71,,1
+PRD-00000342,SKU-00342,RAM 16GB DDR4 Premium,Computer Hardware,61.65,,1
+PRD-00000343,SKU-00343,Mechanical Keyboard Pro,Computer Hardware,132.88,,1
+PRD-00000344,SKU-00344,Monitor 27 inch Premium,Computer Hardware,347.76,,1
+PRD-00000345,SKU-00345,Graphics Card Entry Lite,Computer Hardware,181.05,,1
+PRD-00000346,SKU-00346,CPU Cooler Pro,Computer Hardware,42.57,,1
+PRD-00000347,SKU-00347,PC Case Mid Tower Premium,Computer Hardware,70.73,,1
+PRD-00000348,SKU-00348,Power Supply 650W Plus,Computer Hardware,87.31,,1
+PRD-00000349,SKU-00349,Motherboard B550 Plus,Computer Hardware,184.15,,1
+PRD-00000350,SKU-00350,NVMe Cable Pro,Computer Hardware,11.63,,1
+PRD-00000351,SKU-00351,Drill Driver Cordless Max,Tools,131.32,,1
+PRD-00000352,SKU-00352,Socket Set 40-Piece HD,Tools,70.83,,1
+PRD-00000353,SKU-00353,Measuring Tape 25ft Basic,Tools,15.47,,1
+PRD-00000354,SKU-00354,Level 24 inch HD,Tools,37.88,,1
+PRD-00000355,SKU-00355,Screwdriver Set 100pc Basic,Tools,49.25,,1
+PRD-00000356,SKU-00356,Wrench Set Adjustable Premium,Tools,37.56,,1
+PRD-00000357,SKU-00357,Pliers Set 5-Piece Basic,Tools,28.24,,1
+PRD-00000358,SKU-00358,Hammer 16oz Pro,Tools,20.65,,1
+PRD-00000359,SKU-00359,Tape Measure Digital Plus,Tools,28.35,,1
+PRD-00000360,SKU-00360,Utility Knife HD,Tools,9.33,,1
+PRD-00000361,SKU-00361,USB-C Cable Max,Electronics,13.62,,1
+PRD-00000362,SKU-00362,HDMI Cable 6ft XL,Electronics,8.29,,1
+PRD-00000363,SKU-00363,Wireless Mouse Plus,Electronics,22.42,,1
+PRD-00000364,SKU-00364,Bluetooth Keyboard Basic,Electronics,49.25,,1
+PRD-00000365,SKU-00365,Webcam HD Premium,Electronics,74.98,,1
+PRD-00000366,SKU-00366,USB Hub 7-Port HD,Electronics,32.77,,1
+PRD-00000367,SKU-00367,Ethernet Switch 8-Port Max,Electronics,95.47,,1
+PRD-00000368,SKU-00368,Power Strip 6-Outlet Premium,Electronics,17.42,,1
+PRD-00000369,SKU-00369,Surge Protector HD,Electronics,33.8,,1
+PRD-00000370,SKU-00370,Laptop Stand HD,Electronics,44.96,,1
+PRD-00000371,SKU-00371,A4 Paper Ream HD,Office Supplies,8.34,,1
+PRD-00000372,SKU-00372,Ballpoint Pens 12-Pack Max,Office Supplies,6.58,,1
+PRD-00000373,SKU-00373,Sticky Notes 3x3 Plus,Office Supplies,4.33,,1
+PRD-00000374,SKU-00374,File Folders 100-Pack Max,Office Supplies,13.36,,1
+PRD-00000375,SKU-00375,Stapler Heavy Duty Max,Office Supplies,24.53,,1
+PRD-00000376,SKU-00376,Paper Clips Box Premium,Office Supplies,3.16,,1
+PRD-00000377,SKU-00377,Binder Clips Assorted Basic,Office Supplies,4.52,,1
+PRD-00000378,SKU-00378,Desk Organizer Premium,Office Supplies,19.62,,1
+PRD-00000379,SKU-00379,Whiteboard 24x36 Pro,Office Supplies,55.83,,1
+PRD-00000380,SKU-00380,Dry Erase Markers Lite,Office Supplies,9.27,,1
+PRD-00000381,SKU-00381,SSD 500GB Pro,Computer Hardware,78.96,,1
+PRD-00000382,SKU-00382,RAM 16GB DDR4 Pro,Computer Hardware,80.48,,1
+PRD-00000383,SKU-00383,Mechanical Keyboard Max,Computer Hardware,132.96,,1
+PRD-00000384,SKU-00384,Monitor 27 inch XL,Computer Hardware,346.89,,1
+PRD-00000385,SKU-00385,Graphics Card Entry Premium,Computer Hardware,224.95,,1
+PRD-00000386,SKU-00386,CPU Cooler XL,Computer Hardware,52.85,,1
+PRD-00000387,SKU-00387,PC Case Mid Tower Basic,Computer Hardware,83.22,,1
+PRD-00000388,SKU-00388,Power Supply 650W Premium,Computer Hardware,102.65,,1
+PRD-00000389,SKU-00389,Motherboard B550 Premium,Computer Hardware,171.78,,1
+PRD-00000390,SKU-00390,NVMe Cable Lite,Computer Hardware,12.29,,1
+PRD-00000391,SKU-00391,Drill Driver Cordless Plus,Tools,166.09,,1
+PRD-00000392,SKU-00392,Socket Set 40-Piece Lite,Tools,77.87,,1
+PRD-00000393,SKU-00393,Measuring Tape 25ft Premium,Tools,14.04,,1
+PRD-00000394,SKU-00394,Level 24 inch Basic,Tools,38.28,,1
+PRD-00000395,SKU-00395,Screwdriver Set 100pc Pro,Tools,49.31,,1
+PRD-00000396,SKU-00396,Wrench Set Adjustable Lite,Tools,37.02,,1
+PRD-00000397,SKU-00397,Pliers Set 5-Piece Plus,Tools,34.22,,1
+PRD-00000398,SKU-00398,Hammer 16oz Basic,Tools,22.18,,1
+PRD-00000399,SKU-00399,Tape Measure Digital Pro,Tools,26.17,,1
+PRD-00000400,SKU-00400,Utility Knife Premium,Tools,8.76,,1
+PRD-00000401,SKU-00401,USB-C Cable HD,Electronics,13.06,,1
+PRD-00000402,SKU-00402,HDMI Cable 6ft Premium,Electronics,9.33,,1
+PRD-00000403,SKU-00403,Wireless Mouse Pro,Electronics,22.77,,1
+PRD-00000404,SKU-00404,Bluetooth Keyboard XL,Electronics,56.4,,1
+PRD-00000405,SKU-00405,Webcam HD Premium,Electronics,89.13,,1
+PRD-00000406,SKU-00406,USB Hub 7-Port Premium,Electronics,31.02,,1
+PRD-00000407,SKU-00407,Ethernet Switch 8-Port HD,Electronics,95.65,,1
+PRD-00000408,SKU-00408,Power Strip 6-Outlet Max,Electronics,20.29,,1
+PRD-00000409,SKU-00409,Surge Protector Basic,Electronics,26.33,,1
+PRD-00000410,SKU-00410,Laptop Stand Plus,Electronics,45.46,,1
+PRD-00000411,SKU-00411,A4 Paper Ream Plus,Office Supplies,8.34,,1
+PRD-00000412,SKU-00412,Ballpoint Pens 12-Pack XL,Office Supplies,5.99,,1
+PRD-00000413,SKU-00413,Sticky Notes 3x3 Max,Office Supplies,5.0,,1
+PRD-00000414,SKU-00414,File Folders 100-Pack Max,Office Supplies,12.66,,1
+PRD-00000415,SKU-00415,Stapler Heavy Duty Premium,Office Supplies,28.59,,1
+PRD-00000416,SKU-00416,Paper Clips Box HD,Office Supplies,2.95,,1
+PRD-00000417,SKU-00417,Binder Clips Assorted XL,Office Supplies,3.85,,1
+PRD-00000418,SKU-00418,Desk Organizer XL,Office Supplies,22.17,,1
+PRD-00000419,SKU-00419,Whiteboard 24x36 Max,Office Supplies,54.08,,1
+PRD-00000420,SKU-00420,Dry Erase Markers Basic,Office Supplies,8.56,,1
+PRD-00000421,SKU-00421,SSD 500GB Max,Computer Hardware,98.64,,1
+PRD-00000422,SKU-00422,RAM 16GB DDR4 Max,Computer Hardware,74.74,,1
+PRD-00000423,SKU-00423,Mechanical Keyboard Premium,Computer Hardware,144.23,,1
+PRD-00000424,SKU-00424,Monitor 27 inch Premium,Computer Hardware,354.04,,1
+PRD-00000425,SKU-00425,Graphics Card Entry Lite,Computer Hardware,189.94,,1
+PRD-00000426,SKU-00426,CPU Cooler Basic,Computer Hardware,45.37,,1
+PRD-00000427,SKU-00427,PC Case Mid Tower Lite,Computer Hardware,88.86,,1
+PRD-00000428,SKU-00428,Power Supply 650W HD,Computer Hardware,91.93,,1
+PRD-00000429,SKU-00429,Motherboard B550 HD,Computer Hardware,199.21,,1
+PRD-00000430,SKU-00430,NVMe Cable Basic,Computer Hardware,11.21,,1
+PRD-00000431,SKU-00431,Drill Driver Cordless Premium,Tools,159.22,,1
+PRD-00000432,SKU-00432,Socket Set 40-Piece Basic,Tools,77.26,,1
+PRD-00000433,SKU-00433,Measuring Tape 25ft XL,Tools,14.97,,1
+PRD-00000434,SKU-00434,Level 24 inch Pro,Tools,31.07,,1
+PRD-00000435,SKU-00435,Screwdriver Set 100pc Lite,Tools,55.53,,1
+PRD-00000436,SKU-00436,Wrench Set Adjustable Premium,Tools,35.19,,1
+PRD-00000437,SKU-00437,Pliers Set 5-Piece Premium,Tools,25.63,,1
+PRD-00000438,SKU-00438,Hammer 16oz XL,Tools,19.45,,1
+PRD-00000439,SKU-00439,Tape Measure Digital XL,Tools,21.8,,1
+PRD-00000440,SKU-00440,Utility Knife Max,Tools,8.55,,1
+PRD-00000441,SKU-00441,USB-C Cable Basic,Electronics,13.57,,1
+PRD-00000442,SKU-00442,HDMI Cable 6ft Lite,Electronics,9.94,,1
+PRD-00000443,SKU-00443,Wireless Mouse Basic,Electronics,28.39,,1
+PRD-00000444,SKU-00444,Bluetooth Keyboard Premium,Electronics,55.57,,1
+PRD-00000445,SKU-00445,Webcam HD Pro,Electronics,82.81,,1
+PRD-00000446,SKU-00446,USB Hub 7-Port HD,Electronics,36.37,,1
+PRD-00000447,SKU-00447,Ethernet Switch 8-Port Max,Electronics,103.42,,1
+PRD-00000448,SKU-00448,Power Strip 6-Outlet Plus,Electronics,19.59,,1
+PRD-00000449,SKU-00449,Surge Protector Plus,Electronics,32.33,,1
+PRD-00000450,SKU-00450,Laptop Stand Plus,Electronics,45.21,,1
+PRD-00000451,SKU-00451,A4 Paper Ream Max,Office Supplies,8.96,,1
+PRD-00000452,SKU-00452,Ballpoint Pens 12-Pack Pro,Office Supplies,5.67,,1
+PRD-00000453,SKU-00453,Sticky Notes 3x3 Pro,Office Supplies,4.68,,1
+PRD-00000454,SKU-00454,File Folders 100-Pack Lite,Office Supplies,12.72,,1
+PRD-00000455,SKU-00455,Stapler Heavy Duty HD,Office Supplies,25.22,,1
+PRD-00000456,SKU-00456,Paper Clips Box XL,Office Supplies,2.69,,1
+PRD-00000457,SKU-00457,Binder Clips Assorted Plus,Office Supplies,4.12,,1
+PRD-00000458,SKU-00458,Desk Organizer Basic,Office Supplies,20.71,,1
+PRD-00000459,SKU-00459,Whiteboard 24x36 HD,Office Supplies,49.96,,1
+PRD-00000460,SKU-00460,Dry Erase Markers XL,Office Supplies,8.27,,1
+PRD-00000461,SKU-00461,SSD 500GB Max,Computer Hardware,88.9,,1
+PRD-00000462,SKU-00462,RAM 16GB DDR4 Pro,Computer Hardware,78.37,,1
+PRD-00000463,SKU-00463,Mechanical Keyboard Premium,Computer Hardware,145.64,,1
+PRD-00000464,SKU-00464,Monitor 27 inch XL,Computer Hardware,305.25,,1
+PRD-00000465,SKU-00465,Graphics Card Entry Lite,Computer Hardware,229.25,,1
+PRD-00000466,SKU-00466,CPU Cooler Max,Computer Hardware,47.91,,1
+PRD-00000467,SKU-00467,PC Case Mid Tower Basic,Computer Hardware,84.56,,1
+PRD-00000468,SKU-00468,Power Supply 650W Premium,Computer Hardware,99.31,,1
+PRD-00000469,SKU-00469,Motherboard B550 HD,Computer Hardware,206.95,,1
+PRD-00000470,SKU-00470,NVMe Cable Premium,Computer Hardware,11.46,,1
+PRD-00000471,SKU-00471,Drill Driver Cordless Basic,Tools,153.23,,1
+PRD-00000472,SKU-00472,Socket Set 40-Piece Max,Tools,91.81,,1
+PRD-00000473,SKU-00473,Measuring Tape 25ft Max,Tools,12.84,,1
+PRD-00000474,SKU-00474,Level 24 inch Basic,Tools,32.62,,1
+PRD-00000475,SKU-00475,Screwdriver Set 100pc Pro,Tools,56.15,,1
+PRD-00000476,SKU-00476,Wrench Set Adjustable Premium,Tools,43.98,,1
+PRD-00000477,SKU-00477,Pliers Set 5-Piece Max,Tools,32.47,,1
+PRD-00000478,SKU-00478,Hammer 16oz HD,Tools,20.63,,1
+PRD-00000479,SKU-00479,Tape Measure Digital Lite,Tools,22.88,,1
+PRD-00000480,SKU-00480,Utility Knife HD,Tools,9.32,,1
+PRD-00000481,SKU-00481,USB-C Cable XL,Electronics,13.49,,1
+PRD-00000482,SKU-00482,HDMI Cable 6ft Pro,Electronics,8.47,,1
+PRD-00000483,SKU-00483,Wireless Mouse Premium,Electronics,21.49,,1
+PRD-00000484,SKU-00484,Bluetooth Keyboard Lite,Electronics,53.47,,1
+PRD-00000485,SKU-00485,Webcam HD Plus,Electronics,89.82,,1
+PRD-00000486,SKU-00486,USB Hub 7-Port Lite,Electronics,37.59,,1
+PRD-00000487,SKU-00487,Ethernet Switch 8-Port XL,Electronics,81.91,,1
+PRD-00000488,SKU-00488,Power Strip 6-Outlet Lite,Electronics,20.18,,1
+PRD-00000489,SKU-00489,Surge Protector Max,Electronics,32.96,,1
+PRD-00000490,SKU-00490,Laptop Stand Max,Electronics,51.7,,1
+PRD-00000491,SKU-00491,A4 Paper Ream Premium,Office Supplies,9.11,,1
+PRD-00000492,SKU-00492,Ballpoint Pens 12-Pack Max,Office Supplies,6.43,,1
+PRD-00000493,SKU-00493,Sticky Notes 3x3 Lite,Office Supplies,5.45,,1
+PRD-00000494,SKU-00494,File Folders 100-Pack Premium,Office Supplies,14.79,,1
+PRD-00000495,SKU-00495,Stapler Heavy Duty XL,Office Supplies,26.9,,1
+PRD-00000496,SKU-00496,Paper Clips Box HD,Office Supplies,3.31,,1
+PRD-00000497,SKU-00497,Binder Clips Assorted Basic,Office Supplies,4.55,,1
+PRD-00000498,SKU-00498,Desk Organizer Lite,Office Supplies,17.53,,1
+PRD-00000499,SKU-00499,Whiteboard 24x36 Basic,Office Supplies,42.7,,1
+PRD-00000500,SKU-00500,Dry Erase Markers Plus,Office Supplies,8.87,,1

@@ -1,0 +1,1001 @@
+customer_id,customer_name,industry,region,country,credit_limit,payment_terms_days,is_active
+CUST-00000001,Acme Corp,Hospitality,Central,Canada,5000.0,45,1
+CUST-00000002,TechStart Inc,Government,South,Canada,100000.0,15,1
+CUST-00000003,Global Solutions,Government,East,United States,10000.0,45,1
+CUST-00000004,Metro Services,Real Estate,East,Canada,25000.0,15,1
+CUST-00000005,Premier Industries,Healthcare,South,Mexico,50000.0,15,1
+CUST-00000006,Sunrise Enterprises,Healthcare,North,United States,100000.0,30,1
+CUST-00000007,Pinnacle Group,Transportation,West,Canada,25000.0,30,1
+CUST-00000008,Horizon Tech,Hospitality,East,Mexico,25000.0,15,1
+CUST-00000009,Summit Partners,Energy,North,United States,10000.0,15,1
+CUST-00000010,Valley Systems,Finance,North,Canada,50000.0,60,1
+CUST-00000011,Coastal Manufacturing,Technology,Central,Canada,50000.0,45,1
+CUST-00000012,Mountain Logistics,Education,Central,United States,25000.0,60,1
+CUST-00000013,Central Trading,Retail,East,Mexico,100000.0,60,1
+CUST-00000014,Eastern Supplies,Agriculture,East,United States,10000.0,60,1
+CUST-00000015,Western Distributors,Government,North,United States,10000.0,45,1
+CUST-00000016,Northern Holdings,Education,South,Canada,25000.0,45,1
+CUST-00000017,Southern Ventures,Retail,North,Canada,50000.0,30,1
+CUST-00000018,Atlas Corporation,Healthcare,West,Mexico,10000.0,45,1
+CUST-00000019,Titan Industries,Retail,West,Mexico,5000.0,60,1
+CUST-00000020,Omega Enterprises,Manufacturing,West,United States,25000.0,60,1
+CUST-00000021,Edwards-Williams Ltd,Transportation,West,Canada,5000.0,60,1
+CUST-00000022,Figueroa Inc LLC,Hospitality,South,Mexico,50000.0,45,1
+CUST-00000023,Tran-Silva LLC,Transportation,North,United States,50000.0,60,1
+CUST-00000024,"Butler, Hernandez and Rivera Ltd",Retail,West,Canada,25000.0,30,1
+CUST-00000025,Hudson-Sanchez Corp,Consulting,South,United States,100000.0,15,1
+CUST-00000026,"Pena, Cohen and Scott Ltd",Agriculture,South,Canada,25000.0,30,1
+CUST-00000027,Levy-May Inc,Retail,South,Canada,10000.0,30,1
+CUST-00000028,Murray-Oconnor Ltd,Healthcare,North,United States,50000.0,60,1
+CUST-00000029,Jackson-Cortez Ltd,Consulting,Central,Canada,100000.0,45,1
+CUST-00000030,White-Preston Corp,Healthcare,West,United States,50000.0,60,1
+CUST-00000031,"Bernard, Warren and Combs Corp",Consulting,East,Mexico,5000.0,45,1
+CUST-00000032,Landry Ltd Ltd,Retail,East,Canada,50000.0,15,1
+CUST-00000033,Duran Group LLC,Hospitality,East,United States,5000.0,60,1
+CUST-00000034,Kirby and Sons Co,Government,Central,Mexico,5000.0,60,1
+CUST-00000035,Mann Inc Ltd,Finance,South,Canada,100000.0,60,1
+CUST-00000036,Wagner LLC Ltd,Healthcare,North,Canada,5000.0,45,1
+CUST-00000037,Williamson Ltd LLC,Agriculture,South,United States,10000.0,60,1
+CUST-00000038,"Durham, Hopkins and Smith Co",Agriculture,Central,Mexico,10000.0,45,1
+CUST-00000039,"Arnold, Smith and Moreno Corp",Energy,East,Canada,50000.0,45,1
+CUST-00000040,Nichols-Mitchell Ltd,Manufacturing,East,United States,25000.0,15,1
+CUST-00000041,"Li, Craig and Drake Ltd",Finance,West,Canada,25000.0,30,1
+CUST-00000042,Rodriguez Inc Corp,Retail,Central,Mexico,10000.0,45,1
+CUST-00000043,"Hernandez, Lee and Fox Corp",Finance,West,United States,100000.0,15,1
+CUST-00000044,Adams-Sanders Corp,Agriculture,West,Mexico,25000.0,30,1
+CUST-00000045,Chung-Stevens Ltd,Retail,West,Mexico,25000.0,15,1
+CUST-00000046,Branch and Sons Corp,Construction,South,United States,25000.0,60,1
+CUST-00000047,Sutton-Abbott Inc,Education,South,United States,5000.0,45,1
+CUST-00000048,"Frey, Santos and Johnson LLC",Agriculture,Central,Mexico,100000.0,15,1
+CUST-00000049,Gray-Tran Corp,Energy,Central,United States,100000.0,60,1
+CUST-00000050,Walsh Ltd Inc,Healthcare,South,Mexico,100000.0,30,1
+CUST-00000051,Miller Group Co,Manufacturing,West,Canada,10000.0,60,1
+CUST-00000052,"Mueller, Knight and Hodge Ltd",Construction,West,United States,100000.0,30,1
+CUST-00000053,Jacobson Inc Corp,Consulting,West,United States,25000.0,60,1
+CUST-00000054,Lewis Ltd Co,Consulting,East,Canada,100000.0,60,1
+CUST-00000055,"Alvarez, Williams and Jones Inc",Media,South,Mexico,10000.0,45,1
+CUST-00000056,Lam-Elliott LLC,Finance,West,Canada,100000.0,15,1
+CUST-00000057,White LLC Ltd,Media,North,Canada,5000.0,30,1
+CUST-00000058,Ali PLC Corp,Technology,Central,United States,50000.0,15,1
+CUST-00000059,Goodwin Ltd Inc,Media,West,Canada,5000.0,60,1
+CUST-00000060,Hickman-Evans LLC,Transportation,Central,Canada,10000.0,60,1
+CUST-00000061,"Allen, Davenport and Price LLC",Hospitality,South,United States,25000.0,15,1
+CUST-00000062,"Rivera, Campos and Taylor Corp",Consulting,South,United States,5000.0,45,1
+CUST-00000063,"Ramsey, Mason and Mccann Co",Real Estate,South,Mexico,50000.0,60,1
+CUST-00000064,Davis and Sons Ltd,Manufacturing,North,United States,25000.0,30,1
+CUST-00000065,Peterson PLC Inc,Agriculture,Central,Mexico,50000.0,15,1
+CUST-00000066,"Sanders, Ayala and Johnson Corp",Education,East,United States,5000.0,30,1
+CUST-00000067,Bowers-Hayes Co,Finance,Central,Canada,5000.0,15,1
+CUST-00000068,Kelly Group Co,Government,Central,United States,100000.0,30,1
+CUST-00000069,Lopez-Willis Inc,Construction,West,United States,100000.0,45,1
+CUST-00000070,Miller-Montgomery Inc,Government,West,United States,5000.0,45,1
+CUST-00000071,Marquez Inc LLC,Agriculture,Central,Mexico,100000.0,15,1
+CUST-00000072,Moore-Dawson Co,Media,West,United States,50000.0,45,1
+CUST-00000073,"Moore, Price and Ward Corp",Real Estate,North,Canada,5000.0,45,1
+CUST-00000074,Smith LLC Inc,Real Estate,North,Mexico,25000.0,30,1
+CUST-00000075,Ward-Nelson LLC,Hospitality,Central,Canada,10000.0,60,1
+CUST-00000076,Miller Group Co,Finance,South,United States,5000.0,60,1
+CUST-00000077,Hawkins-Hunt LLC,Construction,South,United States,10000.0,15,1
+CUST-00000078,Johnson LLC Corp,Energy,East,Mexico,50000.0,60,1
+CUST-00000079,"Davis, George and Nguyen Corp",Manufacturing,South,Canada,25000.0,15,1
+CUST-00000080,Smith-Gutierrez Corp,Construction,North,Canada,50000.0,60,1
+CUST-00000081,Hardy PLC Co,Energy,West,Canada,10000.0,60,1
+CUST-00000082,Armstrong and Sons Co,Hospitality,Central,Canada,5000.0,60,1
+CUST-00000083,"James, Taylor and Turner LLC",Transportation,Central,United States,100000.0,45,1
+CUST-00000084,Thomas-Jackson Corp,Retail,North,Canada,25000.0,45,1
+CUST-00000085,Fisher-Washington Co,Government,West,United States,50000.0,45,1
+CUST-00000086,Ward and Sons Co,Manufacturing,East,Mexico,50000.0,45,1
+CUST-00000087,"Weber, Wheeler and Gonzalez LLC",Retail,West,Canada,100000.0,30,1
+CUST-00000088,Taylor Inc LLC,Healthcare,Central,Mexico,50000.0,15,1
+CUST-00000089,Cook-Oliver Inc,Retail,South,Mexico,25000.0,45,1
+CUST-00000090,Alexander-Jordan Co,Government,North,Mexico,10000.0,60,1
+CUST-00000091,"Mccann, Taylor and Flores Corp",Hospitality,West,United States,100000.0,30,1
+CUST-00000092,"Harris, Edwards and Oconnell Ltd",Hospitality,West,Canada,25000.0,30,1
+CUST-00000093,Carter-Neal LLC,Manufacturing,South,Canada,100000.0,60,1
+CUST-00000094,Faulkner-Casey Ltd,Retail,East,Canada,50000.0,30,1
+CUST-00000095,Bennett-Velasquez Ltd,Construction,West,United States,5000.0,30,1
+CUST-00000096,Diaz-Frederick LLC,Technology,South,Mexico,50000.0,15,1
+CUST-00000097,Vargas PLC Corp,Finance,East,Mexico,5000.0,45,1
+CUST-00000098,Maldonado PLC Corp,Media,South,Mexico,10000.0,45,1
+CUST-00000099,Benton Group Ltd,Education,North,United States,10000.0,30,1
+CUST-00000100,"Clark, Salinas and Guerra Co",Manufacturing,East,Mexico,100000.0,45,1
+CUST-00000101,Fuentes Group Co,Consulting,Central,United States,100000.0,15,1
+CUST-00000102,"Porter, Schultz and Allen LLC",Construction,West,Mexico,50000.0,60,1
+CUST-00000103,"Moore, Henderson and Bennett Co",Media,Central,United States,10000.0,45,1
+CUST-00000104,Ewing-Mendoza LLC,Technology,West,Mexico,100000.0,45,1
+CUST-00000105,Ferguson-Mclean Inc,Energy,Central,Mexico,100000.0,30,1
+CUST-00000106,"Barnes, Johnson and Schmitt Inc",Transportation,Central,United States,5000.0,30,1
+CUST-00000107,"Woodard, Herrera and Little Corp",Healthcare,South,Canada,10000.0,45,1
+CUST-00000108,Rodriguez and Sons Ltd,Energy,East,United States,25000.0,30,1
+CUST-00000109,"Ortega, Jackson and Salazar Ltd",Construction,South,Mexico,25000.0,15,1
+CUST-00000110,"Terrell, Byrd and Ross Ltd",Finance,South,Mexico,100000.0,30,1
+CUST-00000111,Sheppard-Jordan Inc,Finance,Central,Mexico,100000.0,45,1
+CUST-00000112,Garcia and Sons Ltd,Manufacturing,North,United States,5000.0,45,1
+CUST-00000113,"Burgess, Grant and Watts Inc",Consulting,Central,Canada,100000.0,15,1
+CUST-00000114,Griffin Group Co,Energy,Central,Canada,25000.0,60,1
+CUST-00000115,Barton-Chapman Inc,Consulting,West,Canada,50000.0,15,1
+CUST-00000116,"Hernandez, Cuevas and Webb LLC",Healthcare,West,Canada,50000.0,60,1
+CUST-00000117,Perry-Nixon Inc,Hospitality,Central,United States,25000.0,45,1
+CUST-00000118,Guerra Ltd Corp,Transportation,South,Canada,100000.0,15,1
+CUST-00000119,Bailey LLC Corp,Education,West,United States,25000.0,60,1
+CUST-00000120,Mueller-Boyd Inc,Healthcare,North,United States,25000.0,60,1
+CUST-00000121,Alvarez-Kim Ltd,Transportation,South,United States,25000.0,45,1
+CUST-00000122,"Chavez, Jones and Williams Inc",Consulting,South,Canada,100000.0,60,1
+CUST-00000123,"Wilson, Sweeney and Wong Co",Energy,East,Canada,5000.0,15,1
+CUST-00000124,"Marsh, Spears and Yang Co",Agriculture,West,United States,10000.0,45,1
+CUST-00000125,"Thompson, Moore and Castro LLC",Manufacturing,East,Canada,100000.0,60,1
+CUST-00000126,Hall-Sullivan Corp,Agriculture,North,United States,50000.0,30,1
+CUST-00000127,Lopez Ltd Corp,Real Estate,East,Canada,25000.0,15,1
+CUST-00000128,Foster-Mclaughlin Co,Manufacturing,Central,Mexico,10000.0,45,1
+CUST-00000129,Cole Group Ltd,Construction,North,Canada,100000.0,60,1
+CUST-00000130,Smith-Lewis Ltd,Construction,Central,Mexico,100000.0,15,1
+CUST-00000131,Goodwin-Stokes Inc,Retail,West,Canada,25000.0,45,1
+CUST-00000132,Ray PLC Inc,Education,Central,Mexico,50000.0,15,1
+CUST-00000133,Diaz and Sons LLC,Manufacturing,South,Mexico,25000.0,60,1
+CUST-00000134,Wilson-Lambert Ltd,Technology,South,Mexico,100000.0,30,1
+CUST-00000135,Rose-Fowler Corp,Energy,Central,Canada,10000.0,60,1
+CUST-00000136,"Price, Long and Wilson Ltd",Real Estate,East,Mexico,25000.0,60,1
+CUST-00000137,Bruce-Williamson Ltd,Construction,West,United States,25000.0,45,1
+CUST-00000138,"Mccarthy, Evans and Mendez LLC",Transportation,Central,Canada,5000.0,60,1
+CUST-00000139,Powers LLC Corp,Finance,Central,Mexico,10000.0,15,1
+CUST-00000140,Allen Inc Ltd,Technology,South,Mexico,100000.0,60,1
+CUST-00000141,Brooks and Sons Inc,Media,South,United States,100000.0,15,1
+CUST-00000142,"Price, Carlson and Andrews Inc",Manufacturing,West,Canada,50000.0,30,1
+CUST-00000143,Lopez-Reid Co,Real Estate,South,Canada,100000.0,60,1
+CUST-00000144,"Ellison, Arias and Thompson LLC",Real Estate,South,Mexico,10000.0,45,1
+CUST-00000145,Burns and Sons Co,Agriculture,West,Canada,10000.0,60,1
+CUST-00000146,Edwards Group Ltd,Hospitality,Central,Canada,25000.0,60,1
+CUST-00000147,"Brown, Howard and Smith Inc",Education,East,Mexico,25000.0,30,1
+CUST-00000148,Lee Group Corp,Consulting,East,Mexico,10000.0,60,1
+CUST-00000149,"Wagner, Simpson and Cohen Corp",Technology,East,Mexico,25000.0,45,1
+CUST-00000150,Mckinney-Wallace LLC,Government,Central,Canada,50000.0,45,1
+CUST-00000151,Miller Inc Inc,Construction,North,Canada,5000.0,45,1
+CUST-00000152,Carter LLC Co,Finance,East,Mexico,50000.0,30,1
+CUST-00000153,Medina and Sons Inc,Media,Central,Canada,100000.0,45,1
+CUST-00000154,Cunningham-Barton Inc,Retail,Central,Mexico,100000.0,30,1
+CUST-00000155,Dunn-Wilson Inc,Manufacturing,Central,United States,10000.0,15,1
+CUST-00000156,Adams PLC LLC,Transportation,East,Mexico,50000.0,15,1
+CUST-00000157,Weaver-Sherman Inc,Manufacturing,Central,United States,50000.0,60,1
+CUST-00000158,"Alexander, Robinson and Colema Co",Finance,South,Canada,25000.0,45,1
+CUST-00000159,"Greer, Potter and Evans LLC",Energy,North,Mexico,100000.0,30,1
+CUST-00000160,Cole LLC Ltd,Real Estate,North,United States,50000.0,30,1
+CUST-00000161,Gonzales Inc LLC,Media,West,Canada,10000.0,45,1
+CUST-00000162,Clark Ltd LLC,Manufacturing,East,Mexico,100000.0,15,1
+CUST-00000163,"Norris, Callahan and Bishop Corp",Construction,West,Mexico,100000.0,60,1
+CUST-00000164,Martin-Taylor Inc,Media,Central,Canada,25000.0,30,1
+CUST-00000165,Li Inc LLC,Hospitality,South,Mexico,50000.0,45,1
+CUST-00000166,"Bell, Campbell and Ryan Inc",Manufacturing,East,Canada,100000.0,30,1
+CUST-00000167,Werner-Carter Inc,Government,West,Canada,100000.0,45,1
+CUST-00000168,"Adams, Hodge and Duke LLC",Transportation,North,United States,10000.0,60,1
+CUST-00000169,"Ochoa, Taylor and Brady Corp",Energy,South,United States,25000.0,60,1
+CUST-00000170,Sellers-Riddle Inc,Technology,East,Canada,25000.0,15,1
+CUST-00000171,"Martinez, Cline and Wright Corp",Finance,East,Mexico,10000.0,15,1
+CUST-00000172,"Morris, Wright and Bridges LLC",Technology,East,United States,50000.0,45,1
+CUST-00000173,Burns-Ray LLC,Finance,East,Canada,100000.0,30,1
+CUST-00000174,Burton-Brooks Inc,Healthcare,West,United States,50000.0,45,1
+CUST-00000175,Schultz Inc Co,Real Estate,Central,Canada,100000.0,30,1
+CUST-00000176,Robertson-Ramirez Inc,Finance,Central,United States,100000.0,60,1
+CUST-00000177,Gibson-Freeman Ltd,Real Estate,East,United States,100000.0,15,1
+CUST-00000178,"Smith, Schroeder and Oconnor LLC",Media,Central,Mexico,10000.0,30,1
+CUST-00000179,"Stanton, Reid and Terry Inc",Hospitality,Central,Canada,5000.0,30,1
+CUST-00000180,Flynn Group Ltd,Technology,North,Mexico,50000.0,15,1
+CUST-00000181,Donaldson and Sons Co,Healthcare,Central,Canada,50000.0,15,1
+CUST-00000182,Adams-Clayton Ltd,Technology,East,Mexico,5000.0,60,1
+CUST-00000183,Kelley-Anderson Corp,Media,North,Mexico,10000.0,15,1
+CUST-00000184,Kramer-Shannon LLC,Transportation,East,Mexico,5000.0,15,1
+CUST-00000185,Williams Ltd LLC,Energy,West,United States,25000.0,60,1
+CUST-00000186,Smith-Noble Inc,Consulting,South,Mexico,50000.0,45,1
+CUST-00000187,Alexander Inc Co,Technology,West,Canada,5000.0,30,1
+CUST-00000188,Harris-Barker Corp,Retail,South,Mexico,50000.0,30,1
+CUST-00000189,Khan LLC Inc,Media,North,United States,25000.0,60,1
+CUST-00000190,Baxter LLC Ltd,Transportation,Central,Canada,10000.0,30,1
+CUST-00000191,Pena LLC Co,Hospitality,South,Canada,10000.0,15,1
+CUST-00000192,Watson Ltd LLC,Consulting,West,Mexico,5000.0,30,1
+CUST-00000193,Williams Ltd Inc,Retail,North,Mexico,5000.0,60,1
+CUST-00000194,Barber-Fischer Ltd,Finance,North,United States,5000.0,60,1
+CUST-00000195,Rios-Padilla Co,Education,Central,United States,5000.0,30,1
+CUST-00000196,Lewis Inc Ltd,Construction,South,Mexico,100000.0,45,1
+CUST-00000197,Wheeler PLC Ltd,Government,East,United States,25000.0,30,1
+CUST-00000198,"Wallace, Smith and Cooper Ltd",Education,West,Canada,25000.0,15,1
+CUST-00000199,Mcneil Group Ltd,Government,South,Mexico,50000.0,60,1
+CUST-00000200,"Anderson, Jones and Reyes LLC",Hospitality,West,Mexico,25000.0,60,1
+CUST-00000201,"Shaffer, Garcia and Richardson Co",Healthcare,East,Canada,10000.0,60,1
+CUST-00000202,Taylor-Ayala Inc,Media,South,Canada,10000.0,60,1
+CUST-00000203,May Ltd LLC,Agriculture,West,Canada,100000.0,30,1
+CUST-00000204,Jones PLC Co,Education,East,United States,25000.0,15,1
+CUST-00000205,Bishop and Sons Co,Media,East,United States,100000.0,30,1
+CUST-00000206,Bell-Lewis LLC,Construction,West,Mexico,100000.0,15,1
+CUST-00000207,"Hernandez, Jenkins and Parks LLC",Education,Central,Mexico,100000.0,30,1
+CUST-00000208,Miller Inc Co,Education,East,Canada,5000.0,30,1
+CUST-00000209,Goodwin PLC Inc,Real Estate,North,Mexico,50000.0,30,1
+CUST-00000210,"Cruz, Richmond and Edwards Ltd",Real Estate,South,Canada,10000.0,45,1
+CUST-00000211,Wright Ltd Corp,Transportation,West,Mexico,25000.0,45,1
+CUST-00000212,Wright PLC Corp,Hospitality,Central,Canada,50000.0,15,1
+CUST-00000213,"Griffith, Mitchell and Pugh Co",Consulting,East,United States,25000.0,45,1
+CUST-00000214,Abbott Ltd Co,Manufacturing,Central,United States,10000.0,15,1
+CUST-00000215,Harris-Lawson Corp,Agriculture,Central,Mexico,50000.0,45,1
+CUST-00000216,Adkins LLC Inc,Education,East,United States,50000.0,30,1
+CUST-00000217,"Brown, Hurst and Blevins Co",Agriculture,East,Canada,50000.0,60,1
+CUST-00000218,Cruz-Allen Co,Healthcare,East,United States,10000.0,60,1
+CUST-00000219,"Wheeler, Rice and Levine Inc",Energy,Central,Mexico,5000.0,15,1
+CUST-00000220,Peck-Anderson LLC,Media,North,United States,50000.0,30,1
+CUST-00000221,"Fisher, Payne and Thompson Inc",Retail,South,United States,10000.0,60,1
+CUST-00000222,Best-Townsend Corp,Manufacturing,Central,Mexico,100000.0,60,1
+CUST-00000223,Matthews Inc Co,Manufacturing,North,Mexico,100000.0,60,1
+CUST-00000224,Lewis-Livingston LLC,Manufacturing,Central,Mexico,25000.0,45,1
+CUST-00000225,Hunter-Fuller LLC,Agriculture,West,United States,5000.0,15,1
+CUST-00000226,"Wang, Henderson and Morales Ltd",Healthcare,South,United States,100000.0,45,1
+CUST-00000227,"Herrera, Jensen and Ramirez Corp",Construction,West,United States,25000.0,60,1
+CUST-00000228,Miller-Mccall Co,Government,South,Mexico,10000.0,45,1
+CUST-00000229,Herrera Group LLC,Finance,North,United States,50000.0,60,1
+CUST-00000230,"Walters, Davenport and Becker Co",Agriculture,West,United States,5000.0,30,1
+CUST-00000231,Collins Group LLC,Technology,West,Mexico,25000.0,15,1
+CUST-00000232,"Ashley, Allen and Sanchez Ltd",Energy,North,United States,10000.0,60,1
+CUST-00000233,Wilson-Salazar Corp,Manufacturing,North,Mexico,25000.0,15,1
+CUST-00000234,Parker Ltd Inc,Energy,East,United States,10000.0,30,1
+CUST-00000235,"Yang, Wilson and Zimmerman Co",Energy,North,Canada,10000.0,30,1
+CUST-00000236,"Smith, Crawford and Reed Ltd",Media,West,Mexico,100000.0,45,1
+CUST-00000237,"Logan, Le and Jackson Co",Consulting,South,Mexico,5000.0,45,1
+CUST-00000238,Brady LLC LLC,Retail,West,United States,5000.0,45,1
+CUST-00000239,"Tanner, Wise and Johnson Ltd",Consulting,Central,Mexico,50000.0,45,1
+CUST-00000240,Nelson-Brown LLC,Finance,East,Canada,50000.0,30,1
+CUST-00000241,"Proctor, Burton and Crawford Corp",Agriculture,West,Canada,10000.0,60,1
+CUST-00000242,"Ward, Porter and Bradley LLC",Consulting,Central,Canada,10000.0,15,1
+CUST-00000243,Moore-Ayala LLC,Construction,South,Canada,10000.0,60,1
+CUST-00000244,"Craig, Wilson and Yang Corp",Hospitality,North,United States,5000.0,45,1
+CUST-00000245,Williams Inc Co,Hospitality,East,United States,10000.0,15,1
+CUST-00000246,Williams LLC Inc,Transportation,West,Mexico,100000.0,60,1
+CUST-00000247,Mora-White LLC,Manufacturing,North,Canada,100000.0,15,1
+CUST-00000248,Tran Ltd Ltd,Government,East,Canada,5000.0,45,1
+CUST-00000249,"Rios, Walker and Wright Co",Transportation,North,Mexico,100000.0,30,1
+CUST-00000250,"Flores, Mckenzie and Duncan Ltd",Agriculture,South,Mexico,50000.0,30,1
+CUST-00000251,Shaw Inc Inc,Construction,East,Canada,50000.0,30,1
+CUST-00000252,Walker PLC LLC,Healthcare,West,Canada,50000.0,45,1
+CUST-00000253,Finley Inc Co,Consulting,North,Canada,25000.0,30,1
+CUST-00000254,Cline-Ayala Co,Government,Central,United States,50000.0,15,1
+CUST-00000255,Murphy-Tran Inc,Construction,North,Canada,25000.0,60,1
+CUST-00000256,Wood LLC Corp,Technology,East,Canada,100000.0,30,1
+CUST-00000257,"Mueller, Stevenson and Sanchez Corp",Hospitality,Central,Mexico,10000.0,60,1
+CUST-00000258,Vargas-Snyder Corp,Healthcare,West,Canada,25000.0,60,1
+CUST-00000259,Oconnor PLC Ltd,Consulting,South,Canada,50000.0,45,1
+CUST-00000260,Hernandez Group Co,Hospitality,North,Mexico,10000.0,30,1
+CUST-00000261,Hall LLC Ltd,Manufacturing,West,Mexico,10000.0,60,1
+CUST-00000262,"Franco, Wiley and Tapia Corp",Media,North,Canada,50000.0,30,1
+CUST-00000263,Blake Group Corp,Education,East,Mexico,10000.0,60,1
+CUST-00000264,"Acosta, Garcia and Moreno Co",Retail,West,Mexico,50000.0,60,1
+CUST-00000265,Barnes Inc Ltd,Agriculture,West,Mexico,5000.0,45,1
+CUST-00000266,Dawson Inc Ltd,Government,North,United States,10000.0,45,1
+CUST-00000267,Morse PLC Inc,Finance,Central,United States,100000.0,60,1
+CUST-00000268,Haynes-Watson Corp,Consulting,West,United States,5000.0,15,1
+CUST-00000269,"Miller, Davis and Anderson Corp",Education,Central,Mexico,100000.0,30,1
+CUST-00000270,Jones-Bradley Co,Hospitality,West,Canada,100000.0,30,1
+CUST-00000271,Bates-Anderson Corp,Manufacturing,West,United States,25000.0,60,1
+CUST-00000272,Green-Edwards LLC,Retail,South,Canada,25000.0,45,1
+CUST-00000273,Haynes-Moss Co,Consulting,South,Mexico,50000.0,45,1
+CUST-00000274,Chavez-Hall Co,Retail,West,Mexico,50000.0,45,1
+CUST-00000275,Taylor PLC LLC,Construction,North,Mexico,5000.0,15,1
+CUST-00000276,Moore and Sons Corp,Finance,North,Mexico,10000.0,30,1
+CUST-00000277,Owens-Russell Ltd,Healthcare,Central,United States,25000.0,60,1
+CUST-00000278,"Howard, Townsend and Hayes Co",Education,West,Mexico,10000.0,30,1
+CUST-00000279,Baker-Wilson Co,Transportation,North,Mexico,100000.0,30,1
+CUST-00000280,Aguirre LLC Co,Government,West,Canada,5000.0,30,1
+CUST-00000281,"Terry, Williams and Huff Inc",Construction,North,Mexico,5000.0,30,1
+CUST-00000282,Hernandez-Dawson Corp,Hospitality,South,Canada,5000.0,45,1
+CUST-00000283,Foster-Williams Co,Agriculture,East,Mexico,50000.0,60,1
+CUST-00000284,Green-Ewing Ltd,Retail,East,Canada,50000.0,30,1
+CUST-00000285,Crane Group Corp,Energy,Central,Mexico,5000.0,30,1
+CUST-00000286,"Adkins, Wright and Murray Corp",Retail,South,Canada,5000.0,30,1
+CUST-00000287,Martinez Inc Corp,Real Estate,South,Mexico,50000.0,60,1
+CUST-00000288,Anderson Group Ltd,Healthcare,Central,Canada,50000.0,30,1
+CUST-00000289,Parks-Pace Co,Finance,Central,Mexico,10000.0,30,1
+CUST-00000290,Aguilar LLC Co,Construction,South,United States,25000.0,60,1
+CUST-00000291,Johnson Inc Ltd,Manufacturing,East,United States,50000.0,30,1
+CUST-00000292,Orr Group Inc,Media,West,Mexico,100000.0,60,1
+CUST-00000293,Davis LLC Co,Finance,West,Canada,50000.0,60,1
+CUST-00000294,Williams Group Inc,Retail,Central,United States,10000.0,45,1
+CUST-00000295,Jackson PLC LLC,Construction,South,Mexico,25000.0,30,1
+CUST-00000296,Underwood-Foster Co,Government,West,Mexico,100000.0,15,1
+CUST-00000297,Reyes Group Ltd,Retail,East,Mexico,25000.0,15,1
+CUST-00000298,Gomez and Sons Co,Agriculture,South,Canada,5000.0,30,1
+CUST-00000299,Ramirez-Stephenson Corp,Media,North,Canada,25000.0,45,1
+CUST-00000300,Mendez PLC LLC,Technology,North,United States,10000.0,45,1
+CUST-00000301,Holland Group Ltd,Finance,West,United States,100000.0,30,1
+CUST-00000302,Andrade-Mendoza Inc,Media,South,United States,100000.0,45,1
+CUST-00000303,Ramirez and Sons Ltd,Construction,Central,Mexico,10000.0,45,1
+CUST-00000304,Gonzalez-Wilkerson Corp,Construction,Central,Canada,100000.0,15,1
+CUST-00000305,"Wright, Mcknight and Stephens Inc",Consulting,West,United States,25000.0,30,1
+CUST-00000306,Mayo Ltd Inc,Education,South,Mexico,25000.0,30,1
+CUST-00000307,Castillo-Harrington Co,Technology,South,Mexico,25000.0,60,1
+CUST-00000308,Durham-Shaw Co,Technology,North,Mexico,5000.0,60,1
+CUST-00000309,Nelson-Johnson Ltd,Real Estate,East,Mexico,25000.0,60,1
+CUST-00000310,"Robinson, Huang and Osborne Co",Hospitality,Central,United States,5000.0,60,1
+CUST-00000311,Stokes Group Corp,Media,North,Mexico,50000.0,30,1
+CUST-00000312,"Howard, Silva and Hall Co",Media,South,Canada,25000.0,45,1
+CUST-00000313,Garcia Ltd Corp,Hospitality,Central,Mexico,10000.0,60,1
+CUST-00000314,Adams Ltd Corp,Energy,North,United States,5000.0,60,1
+CUST-00000315,Gallagher and Sons LLC,Retail,South,Canada,50000.0,15,1
+CUST-00000316,"Bradford, Salinas and Kelly Co",Education,South,Mexico,25000.0,30,1
+CUST-00000317,Thompson PLC Corp,Retail,East,Canada,5000.0,45,1
+CUST-00000318,Drake-Wolfe Inc,Manufacturing,West,Mexico,25000.0,30,1
+CUST-00000319,"Johnson, Haynes and Meza Co",Finance,North,Mexico,5000.0,15,1
+CUST-00000320,"Thomas, Vaughan and Copeland Inc",Technology,North,United States,100000.0,30,1
+CUST-00000321,Weaver-Thompson Ltd,Finance,West,United States,5000.0,45,1
+CUST-00000322,Davis and Sons LLC,Media,West,Mexico,10000.0,60,1
+CUST-00000323,"Robinson, Fox and Smith LLC",Education,West,United States,5000.0,15,1
+CUST-00000324,"Harris, Anderson and Love Corp",Hospitality,East,United States,50000.0,30,1
+CUST-00000325,Brown-Hernandez Inc,Retail,Central,Mexico,5000.0,30,1
+CUST-00000326,"Stark, Schroeder and Mathis Co",Hospitality,South,Mexico,10000.0,60,1
+CUST-00000327,Yu-Brooks Ltd,Finance,West,United States,5000.0,15,1
+CUST-00000328,"Foster, Garcia and Turner Inc",Consulting,North,Mexico,50000.0,45,1
+CUST-00000329,Daugherty Ltd Co,Hospitality,South,United States,25000.0,15,1
+CUST-00000330,Conner-Yu Inc,Agriculture,Central,Mexico,100000.0,45,1
+CUST-00000331,"Stewart, Mann and Hoffman LLC",Media,East,United States,100000.0,30,1
+CUST-00000332,"Buchanan, Walker and Chapman Co",Construction,North,United States,50000.0,60,1
+CUST-00000333,Gray Ltd LLC,Education,West,Mexico,100000.0,15,1
+CUST-00000334,"Phillips, Thompson and Smith Ltd",Energy,North,Canada,25000.0,30,1
+CUST-00000335,"Fry, Myers and Gamble Co",Media,Central,Canada,25000.0,30,1
+CUST-00000336,"Johnson, Guzman and Mccall Co",Consulting,North,United States,100000.0,15,1
+CUST-00000337,"Walker, Cunningham and Zuniga LLC",Construction,South,United States,5000.0,60,1
+CUST-00000338,Rivera Inc Ltd,Construction,Central,Canada,50000.0,60,1
+CUST-00000339,Reed LLC LLC,Finance,Central,Mexico,100000.0,30,1
+CUST-00000340,Fields Inc Corp,Retail,East,United States,100000.0,30,1
+CUST-00000341,"Santiago, Daniel and Rogers Inc",Agriculture,East,Canada,100000.0,15,1
+CUST-00000342,Baker and Sons Corp,Real Estate,West,Mexico,10000.0,15,1
+CUST-00000343,"Jones, Scott and Rodriguez Inc",Retail,West,United States,50000.0,15,1
+CUST-00000344,Williams Group Corp,Finance,South,United States,5000.0,30,1
+CUST-00000345,"Barnes, Jackson and Gutierrez LLC",Healthcare,West,Canada,100000.0,45,1
+CUST-00000346,Bell-Bennett Inc,Hospitality,South,Mexico,25000.0,15,1
+CUST-00000347,Kramer-Lane LLC,Hospitality,West,Canada,100000.0,15,1
+CUST-00000348,"Perez, Hayes and Lloyd Corp",Real Estate,Central,Mexico,5000.0,60,1
+CUST-00000349,Phillips LLC Co,Agriculture,East,United States,50000.0,30,1
+CUST-00000350,Lynn-Jones Corp,Healthcare,East,United States,100000.0,15,1
+CUST-00000351,Barron and Sons Inc,Real Estate,Central,United States,5000.0,15,1
+CUST-00000352,"Jones, Mcmahon and Spence Inc",Manufacturing,West,Canada,50000.0,30,1
+CUST-00000353,Wheeler-Austin Inc,Energy,North,Mexico,50000.0,30,1
+CUST-00000354,Bush-Reynolds Corp,Education,West,Mexico,25000.0,45,1
+CUST-00000355,"Martin, Preston and Moore LLC",Government,East,United States,100000.0,15,1
+CUST-00000356,Rivera and Sons Inc,Education,Central,United States,50000.0,15,1
+CUST-00000357,Terry-Bowen Co,Media,East,Canada,25000.0,15,1
+CUST-00000358,"Fernandez, Guerrero and Evans Ltd",Technology,North,Canada,10000.0,45,1
+CUST-00000359,Williams PLC Ltd,Consulting,East,Mexico,100000.0,30,1
+CUST-00000360,"Larsen, Hernandez and Ward Co",Hospitality,Central,Canada,10000.0,30,1
+CUST-00000361,Miller-Colon Inc,Manufacturing,West,United States,10000.0,45,1
+CUST-00000362,"Greene, Gonzalez and Johnson LLC",Hospitality,North,Mexico,50000.0,45,1
+CUST-00000363,Little Inc LLC,Education,Central,United States,50000.0,60,1
+CUST-00000364,Anthony-Parker LLC,Healthcare,East,United States,5000.0,30,1
+CUST-00000365,Ruiz-Jacobson Ltd,Transportation,East,Canada,5000.0,15,1
+CUST-00000366,Davis-Stephens Ltd,Healthcare,West,United States,100000.0,15,1
+CUST-00000367,Watson Group Co,Finance,South,United States,25000.0,45,1
+CUST-00000368,Lopez-Williams Corp,Energy,West,Mexico,25000.0,45,1
+CUST-00000369,Marshall-Perez Co,Construction,South,United States,10000.0,30,1
+CUST-00000370,Elliott-Hernandez Ltd,Retail,South,United States,10000.0,60,1
+CUST-00000371,"Contreras, Miller and Cooper Co",Hospitality,West,United States,100000.0,45,1
+CUST-00000372,"Gutierrez, Avila and Perez Inc",Technology,East,Canada,25000.0,15,1
+CUST-00000373,Randall PLC LLC,Healthcare,East,Mexico,100000.0,15,1
+CUST-00000374,Sheppard-Mcdaniel Inc,Media,East,United States,5000.0,30,1
+CUST-00000375,Armstrong-Young Corp,Transportation,Central,United States,25000.0,45,1
+CUST-00000376,Miller-Orr Inc,Manufacturing,West,Canada,100000.0,30,1
+CUST-00000377,"Johnson, Duncan and Black LLC",Technology,North,United States,5000.0,15,1
+CUST-00000378,"Byrd, Oliver and Martinez LLC",Media,South,United States,10000.0,60,1
+CUST-00000379,Thompson-Joyce Corp,Finance,North,Mexico,100000.0,45,1
+CUST-00000380,Stokes and Sons LLC,Manufacturing,North,United States,50000.0,30,1
+CUST-00000381,Henderson Ltd LLC,Energy,East,United States,5000.0,60,1
+CUST-00000382,Harris-Carson LLC,Healthcare,Central,Canada,50000.0,60,1
+CUST-00000383,Flowers LLC LLC,Transportation,West,United States,25000.0,30,1
+CUST-00000384,Bartlett-Sloan Inc,Construction,East,Canada,10000.0,15,1
+CUST-00000385,Miller PLC Ltd,Government,Central,United States,25000.0,60,1
+CUST-00000386,Arnold-Gates Co,Energy,Central,Canada,5000.0,15,1
+CUST-00000387,"Ellis, Marks and Buchanan Corp",Transportation,South,Canada,10000.0,30,1
+CUST-00000388,"Matthews, Harrington and Rodri Ltd",Consulting,North,Canada,25000.0,60,1
+CUST-00000389,Hernandez PLC Ltd,Consulting,West,Canada,100000.0,45,1
+CUST-00000390,"Chang, Ayers and Buckley Co",Construction,South,United States,25000.0,30,1
+CUST-00000391,"Chan, Floyd and Dillon LLC",Energy,East,United States,50000.0,45,1
+CUST-00000392,Humphrey-Baker Ltd,Education,South,United States,10000.0,30,1
+CUST-00000393,"Washington, Lynch and Johnson Corp",Agriculture,North,United States,100000.0,60,1
+CUST-00000394,Powell-Montgomery Corp,Energy,South,United States,10000.0,45,1
+CUST-00000395,"Steele, Williams and Preston Corp",Energy,Central,United States,25000.0,30,1
+CUST-00000396,Vaughn-Williams Ltd,Education,West,Mexico,25000.0,30,1
+CUST-00000397,Mccall-Prince Co,Manufacturing,North,United States,10000.0,30,1
+CUST-00000398,Morgan LLC LLC,Agriculture,West,United States,25000.0,30,1
+CUST-00000399,Ramirez-Vasquez Inc,Hospitality,South,Canada,5000.0,15,1
+CUST-00000400,"Cohen, Compton and Perez Inc",Government,South,United States,100000.0,45,1
+CUST-00000401,Mccann-Ramos LLC,Hospitality,West,Mexico,5000.0,45,1
+CUST-00000402,Adams-Butler Corp,Hospitality,South,United States,50000.0,60,1
+CUST-00000403,"Davis, Alexander and Mcintyre Corp",Healthcare,Central,Mexico,100000.0,45,1
+CUST-00000404,Figueroa-Malone Inc,Finance,Central,United States,50000.0,45,1
+CUST-00000405,Nicholson-Robertson Corp,Healthcare,South,Mexico,5000.0,60,1
+CUST-00000406,Jones Ltd Ltd,Manufacturing,South,Mexico,25000.0,30,1
+CUST-00000407,"Powell, Deleon and Warren Ltd",Retail,West,United States,25000.0,15,1
+CUST-00000408,"Johnson, Lee and Whitaker Inc",Hospitality,East,United States,5000.0,45,1
+CUST-00000409,Wright Group Co,Manufacturing,East,United States,10000.0,15,1
+CUST-00000410,Hull Ltd Corp,Construction,North,Mexico,5000.0,15,1
+CUST-00000411,Hill Group Co,Technology,West,United States,50000.0,60,1
+CUST-00000412,"Sanders, Leblanc and Maldonado Co",Hospitality,Central,Canada,5000.0,60,1
+CUST-00000413,Watson PLC Ltd,Finance,South,United States,50000.0,15,1
+CUST-00000414,Thompson-Harrell LLC,Construction,North,Canada,25000.0,15,1
+CUST-00000415,"Arnold, Cooper and Monroe LLC",Hospitality,South,Canada,10000.0,15,1
+CUST-00000416,Curry-Barker Ltd,Energy,North,Canada,100000.0,60,1
+CUST-00000417,Johnson-Williams LLC,Transportation,South,Mexico,50000.0,30,1
+CUST-00000418,"Chan, Lewis and Walker LLC",Retail,East,United States,10000.0,60,1
+CUST-00000419,Byrd LLC Ltd,Real Estate,Central,Canada,25000.0,45,1
+CUST-00000420,"Ortiz, Smith and Deleon Inc",Retail,North,Canada,100000.0,60,1
+CUST-00000421,"Smith, Buck and Holland Inc",Manufacturing,East,United States,50000.0,15,1
+CUST-00000422,"Owen, Walker and Franklin Corp",Media,Central,Canada,10000.0,15,1
+CUST-00000423,Marquez-Fletcher LLC,Education,South,Mexico,25000.0,15,1
+CUST-00000424,Coleman-Bennett Co,Media,North,Canada,50000.0,60,1
+CUST-00000425,Stevens-Robinson Co,Energy,East,United States,100000.0,60,1
+CUST-00000426,Byrd-Holloway Inc,Hospitality,West,Canada,10000.0,60,1
+CUST-00000427,Silva-Smith LLC,Construction,West,Canada,25000.0,30,1
+CUST-00000428,"Levy, Franco and Hoffman Corp",Government,North,United States,5000.0,15,1
+CUST-00000429,"Lynch, Evans and Rodriguez Corp",Consulting,Central,Canada,100000.0,30,1
+CUST-00000430,Rogers LLC Ltd,Manufacturing,West,Mexico,50000.0,60,1
+CUST-00000431,"Nguyen, Hill and Douglas Ltd",Energy,South,Canada,25000.0,15,1
+CUST-00000432,"Evans, Hernandez and Cannon Co",Energy,North,Mexico,100000.0,30,1
+CUST-00000433,Trujillo PLC LLC,Consulting,West,United States,10000.0,30,1
+CUST-00000434,Guerrero-Becker Inc,Healthcare,North,Canada,5000.0,60,1
+CUST-00000435,"Johnson, Jimenez and Phillips Inc",Media,South,Mexico,25000.0,45,1
+CUST-00000436,Sullivan-Doyle LLC,Retail,West,Mexico,50000.0,45,1
+CUST-00000437,"Erickson, Armstrong and Lee Corp",Agriculture,West,United States,100000.0,60,1
+CUST-00000438,"Reeves, Parks and Little LLC",Transportation,South,United States,100000.0,15,1
+CUST-00000439,Knox-Powers LLC,Government,North,Canada,100000.0,45,1
+CUST-00000440,"Evans, Jackson and Sandoval Co",Construction,West,Mexico,50000.0,60,1
+CUST-00000441,"White, Davis and Anderson LLC",Healthcare,East,Canada,10000.0,60,1
+CUST-00000442,Hardy-Hansen LLC,Transportation,East,Mexico,10000.0,15,1
+CUST-00000443,Arroyo LLC Co,Energy,East,Canada,5000.0,45,1
+CUST-00000444,"Davis, Kelly and Garner Corp",Construction,East,Canada,5000.0,30,1
+CUST-00000445,Fisher-Eaton Inc,Construction,West,Canada,25000.0,60,1
+CUST-00000446,Green-Carter Ltd,Finance,North,United States,50000.0,30,1
+CUST-00000447,Ruiz Ltd Co,Real Estate,West,Mexico,25000.0,15,1
+CUST-00000448,"Carpenter, Oliver and Kennedy Ltd",Consulting,South,United States,25000.0,60,1
+CUST-00000449,Mason Ltd Inc,Consulting,Central,Mexico,5000.0,30,1
+CUST-00000450,Moreno-Gutierrez Inc,Energy,South,United States,10000.0,15,1
+CUST-00000451,Taylor and Sons Co,Manufacturing,East,Mexico,10000.0,45,1
+CUST-00000452,Ortiz-Hudson Corp,Media,West,Mexico,50000.0,15,1
+CUST-00000453,Thomas-Huffman LLC,Education,East,Canada,100000.0,60,1
+CUST-00000454,Maxwell Group Inc,Media,West,Mexico,100000.0,45,1
+CUST-00000455,Welch-Thompson Corp,Healthcare,East,Mexico,5000.0,45,1
+CUST-00000456,"Brown, Hayes and Clark LLC",Transportation,North,United States,100000.0,30,1
+CUST-00000457,Johnston and Sons Inc,Finance,South,Mexico,10000.0,45,1
+CUST-00000458,Glover-Chan Co,Agriculture,North,Mexico,5000.0,60,1
+CUST-00000459,Mendez Ltd Inc,Finance,South,Mexico,5000.0,30,1
+CUST-00000460,Powell-Sanford Corp,Government,East,Mexico,25000.0,60,1
+CUST-00000461,Smith-Ferguson Co,Media,East,Canada,25000.0,30,1
+CUST-00000462,"Watson, Smith and Morris Co",Construction,Central,Mexico,50000.0,15,1
+CUST-00000463,"Lee, Rhodes and Sims LLC",Agriculture,East,Mexico,100000.0,45,1
+CUST-00000464,Perez LLC Corp,Finance,North,Canada,5000.0,45,1
+CUST-00000465,Anderson-Reyes Corp,Finance,East,Canada,25000.0,45,1
+CUST-00000466,"Torres, Brown and Williams Inc",Healthcare,Central,United States,5000.0,60,1
+CUST-00000467,Bryant-Meyer Corp,Finance,South,Mexico,5000.0,60,1
+CUST-00000468,"Morgan, Barron and Cowan Corp",Construction,West,Canada,50000.0,15,1
+CUST-00000469,Ferrell-Henry Ltd,Real Estate,Central,United States,25000.0,30,1
+CUST-00000470,Martin Group Ltd,Finance,West,Mexico,25000.0,45,1
+CUST-00000471,Perez Ltd Inc,Media,Central,United States,25000.0,15,1
+CUST-00000472,Clark Inc Co,Healthcare,East,Mexico,100000.0,30,1
+CUST-00000473,"Wagner, Martinez and Dawson Corp",Finance,North,United States,25000.0,30,1
+CUST-00000474,Brooks Ltd Corp,Transportation,East,Canada,25000.0,45,1
+CUST-00000475,Wise-Dean Co,Media,North,Canada,5000.0,15,1
+CUST-00000476,"Vang, Stanley and Valdez Co",Energy,South,Mexico,5000.0,60,1
+CUST-00000477,Williams Inc Ltd,Construction,West,United States,10000.0,30,1
+CUST-00000478,Wallace-Martinez Inc,Hospitality,West,Mexico,50000.0,30,1
+CUST-00000479,Wells-Hernandez Corp,Media,South,United States,50000.0,45,1
+CUST-00000480,"Jennings, Smith and Fisher Inc",Hospitality,North,United States,50000.0,45,1
+CUST-00000481,Bates LLC Inc,Consulting,South,Mexico,10000.0,60,1
+CUST-00000482,"Obrien, Taylor and Rivas LLC",Healthcare,Central,Canada,50000.0,60,1
+CUST-00000483,Hunt PLC Co,Technology,West,United States,5000.0,30,1
+CUST-00000484,Campbell Inc Corp,Manufacturing,East,Mexico,10000.0,15,1
+CUST-00000485,Gonzalez-Gonzalez LLC,Finance,South,United States,25000.0,45,1
+CUST-00000486,Decker-Dudley Inc,Retail,West,Mexico,100000.0,45,1
+CUST-00000487,Warner-Phillips Inc,Retail,North,Canada,25000.0,60,1
+CUST-00000488,Kelley and Sons Ltd,Government,Central,Canada,50000.0,30,1
+CUST-00000489,"Fitzpatrick, Rivera and Smith Corp",Energy,West,Canada,10000.0,30,1
+CUST-00000490,"Davis, Rodriguez and Andrews Co",Manufacturing,South,United States,10000.0,30,1
+CUST-00000491,Hernandez-Davis LLC,Government,Central,United States,5000.0,45,1
+CUST-00000492,"Jones, Cummings and Conway LLC",Transportation,East,Mexico,100000.0,15,1
+CUST-00000493,"Hall, Hinton and Phillips Ltd",Manufacturing,North,Mexico,5000.0,15,1
+CUST-00000494,Williams-Li LLC,Transportation,West,Canada,5000.0,45,1
+CUST-00000495,Phelps LLC Co,Real Estate,South,United States,5000.0,45,1
+CUST-00000496,"Edwards, Rodgers and Davis Co",Finance,North,Mexico,100000.0,45,1
+CUST-00000497,Smith and Sons Ltd,Government,South,Canada,5000.0,15,1
+CUST-00000498,"Holland, Murphy and Kline Corp",Retail,North,Canada,10000.0,30,1
+CUST-00000499,"Adams, Quinn and Watson Corp",Media,Central,United States,25000.0,60,1
+CUST-00000500,White-Morales Corp,Healthcare,North,Mexico,50000.0,30,1
+CUST-00000501,Nelson-Cruz Co,Hospitality,South,United States,5000.0,15,1
+CUST-00000502,Marsh-Banks LLC,Media,Central,Mexico,50000.0,30,1
+CUST-00000503,Wilson Ltd LLC,Consulting,Central,United States,5000.0,45,1
+CUST-00000504,"Brown, Dunlap and Moore Inc",Technology,East,Canada,50000.0,15,1
+CUST-00000505,Pruitt-Webb LLC,Media,South,United States,25000.0,45,1
+CUST-00000506,"Gregory, White and James Corp",Transportation,North,United States,5000.0,15,1
+CUST-00000507,Carr-Huffman Inc,Finance,South,Canada,25000.0,60,1
+CUST-00000508,"Mcpherson, Anderson and Knapp Ltd",Construction,North,Canada,25000.0,30,1
+CUST-00000509,Clay Group LLC,Transportation,West,Canada,25000.0,60,1
+CUST-00000510,Brown Ltd Co,Consulting,West,Mexico,10000.0,15,1
+CUST-00000511,Smith-Oneill Inc,Real Estate,North,United States,5000.0,60,1
+CUST-00000512,"Saunders, Ray and Cunningham Ltd",Technology,Central,Mexico,50000.0,30,1
+CUST-00000513,"Marks, Stone and Watts Ltd",Transportation,East,Mexico,5000.0,30,1
+CUST-00000514,"Davis, Stanley and Wright Co",Energy,West,United States,50000.0,60,1
+CUST-00000515,Alvarado-Davidson LLC,Retail,East,Mexico,25000.0,15,1
+CUST-00000516,Combs PLC Ltd,Consulting,Central,Mexico,100000.0,30,1
+CUST-00000517,"Brown, Schneider and Moore Corp",Agriculture,Central,Mexico,100000.0,15,1
+CUST-00000518,Christian-Booth Co,Finance,South,Canada,25000.0,60,1
+CUST-00000519,Walton LLC Inc,Media,Central,Mexico,5000.0,15,1
+CUST-00000520,Rivera LLC Inc,Agriculture,West,Canada,10000.0,15,1
+CUST-00000521,Hunter PLC Co,Hospitality,South,Canada,25000.0,15,1
+CUST-00000522,"Gray, Montoya and Miller Ltd",Education,Central,Mexico,50000.0,60,1
+CUST-00000523,Solis-West Inc,Retail,West,Canada,100000.0,60,1
+CUST-00000524,West-Wilson LLC,Media,West,Canada,25000.0,15,1
+CUST-00000525,Mcgee-Smith Co,Real Estate,North,United States,50000.0,60,1
+CUST-00000526,Gutierrez-Hawkins LLC,Agriculture,Central,United States,5000.0,45,1
+CUST-00000527,Petersen PLC Ltd,Agriculture,South,Mexico,50000.0,45,1
+CUST-00000528,"Walsh, Wu and Hart Corp",Media,North,United States,50000.0,45,1
+CUST-00000529,"Powers, Clements and Cox Ltd",Consulting,Central,Mexico,50000.0,45,1
+CUST-00000530,Velasquez Group Co,Retail,North,Mexico,10000.0,15,1
+CUST-00000531,Castro-Harvey Corp,Hospitality,East,Mexico,100000.0,45,1
+CUST-00000532,Moran-Cox LLC,Manufacturing,South,Canada,10000.0,60,1
+CUST-00000533,Wilson-Malone LLC,Construction,Central,United States,10000.0,15,1
+CUST-00000534,Smith LLC Co,Education,West,United States,25000.0,15,1
+CUST-00000535,"Brandt, Carter and Boyd Co",Manufacturing,Central,United States,50000.0,60,1
+CUST-00000536,"Rodriguez, Prince and Vasquez Ltd",Agriculture,South,Canada,5000.0,15,1
+CUST-00000537,"Newton, Ortiz and King Ltd",Energy,West,Mexico,50000.0,30,1
+CUST-00000538,Lopez Group Ltd,Healthcare,South,United States,50000.0,45,1
+CUST-00000539,Bryant and Sons Ltd,Energy,West,Canada,100000.0,30,1
+CUST-00000540,"Morgan, Sherman and Williams Corp",Transportation,East,Canada,50000.0,30,1
+CUST-00000541,"Monroe, Chapman and Barton Inc",Transportation,Central,Mexico,100000.0,45,1
+CUST-00000542,Ellis-Lawrence Ltd,Media,East,Mexico,100000.0,30,1
+CUST-00000543,"Taylor, Porter and Moreno Inc",Education,Central,Mexico,25000.0,45,1
+CUST-00000544,Tran Group Inc,Real Estate,South,Mexico,100000.0,45,1
+CUST-00000545,"Webb, Romero and Morse LLC",Consulting,East,Mexico,50000.0,60,1
+CUST-00000546,Holt and Sons Ltd,Construction,West,United States,100000.0,15,1
+CUST-00000547,"Ochoa, Garcia and Sandoval LLC",Transportation,South,United States,5000.0,30,1
+CUST-00000548,"Andrade, Gordon and Cruz Corp",Consulting,South,Canada,25000.0,30,1
+CUST-00000549,"Moon, Farmer and Hill LLC",Real Estate,East,United States,100000.0,15,1
+CUST-00000550,Waller-Chavez Corp,Media,West,United States,100000.0,30,1
+CUST-00000551,Taylor PLC Ltd,Transportation,South,Mexico,25000.0,15,1
+CUST-00000552,"Tanner, Hunt and Cameron Co",Transportation,West,Mexico,25000.0,15,1
+CUST-00000553,"Valencia, Joseph and Walls LLC",Real Estate,East,United States,100000.0,60,1
+CUST-00000554,"Robinson, Clark and Klein Inc",Energy,East,Mexico,100000.0,30,1
+CUST-00000555,"Reed, Chambers and Zavala Inc",Construction,West,United States,5000.0,30,1
+CUST-00000556,"Hester, Thompson and Daniels Inc",Real Estate,Central,United States,50000.0,15,1
+CUST-00000557,"Morris, Wilson and Bell Co",Construction,Central,Canada,10000.0,30,1
+CUST-00000558,Aguilar-Bender Ltd,Media,East,United States,25000.0,60,1
+CUST-00000559,"Butler, Adkins and Skinner Inc",Manufacturing,South,Canada,100000.0,15,1
+CUST-00000560,Rich-Henderson Ltd,Media,East,Canada,100000.0,45,1
+CUST-00000561,Mills Inc LLC,Consulting,East,Mexico,10000.0,30,1
+CUST-00000562,Thomas-Santiago Ltd,Retail,Central,United States,50000.0,60,1
+CUST-00000563,Adams and Sons LLC,Hospitality,South,United States,25000.0,45,1
+CUST-00000564,Vega-Thomas Corp,Construction,South,Mexico,100000.0,60,1
+CUST-00000565,Vaughn LLC Ltd,Media,North,United States,25000.0,60,1
+CUST-00000566,Molina Inc Inc,Energy,Central,Mexico,10000.0,15,1
+CUST-00000567,Cervantes-Garcia Corp,Transportation,North,Canada,25000.0,45,1
+CUST-00000568,"Stevenson, Hancock and Newton LLC",Energy,Central,Canada,100000.0,60,1
+CUST-00000569,"Price, Dixon and Robles Co",Manufacturing,East,Mexico,10000.0,45,1
+CUST-00000570,"Roberts, Beck and House Ltd",Retail,North,United States,100000.0,15,1
+CUST-00000571,Butler-French LLC,Education,South,Mexico,50000.0,15,1
+CUST-00000572,"Edwards, Arnold and Smith Inc",Agriculture,West,Mexico,5000.0,30,1
+CUST-00000573,Harris-Melton LLC,Technology,East,United States,5000.0,15,1
+CUST-00000574,Greer-Pruitt LLC,Healthcare,East,Mexico,5000.0,30,1
+CUST-00000575,"Mckinney, Richardson and Chapm Corp",Transportation,West,Canada,50000.0,60,1
+CUST-00000576,"Morrison, Parsons and Brandt Corp",Manufacturing,West,Mexico,5000.0,15,1
+CUST-00000577,Cole-Lucero Ltd,Retail,Central,United States,5000.0,45,1
+CUST-00000578,Lopez and Sons Ltd,Retail,East,Mexico,25000.0,15,1
+CUST-00000579,"Palmer, Bennett and Patterson Corp",Consulting,West,Canada,50000.0,15,1
+CUST-00000580,"Baker, Martin and Singleton Co",Healthcare,Central,United States,10000.0,60,1
+CUST-00000581,Rivera Ltd Ltd,Construction,South,Canada,25000.0,15,1
+CUST-00000582,Williams LLC Ltd,Media,Central,United States,5000.0,15,1
+CUST-00000583,"Williams, Randolph and Gilbert LLC",Government,Central,Canada,100000.0,15,1
+CUST-00000584,"Turner, Tyler and Pierce Corp",Education,East,United States,50000.0,30,1
+CUST-00000585,Bowers LLC Inc,Healthcare,South,Mexico,25000.0,30,1
+CUST-00000586,"Robinson, White and Jones LLC",Healthcare,Central,United States,100000.0,60,1
+CUST-00000587,"Moore, Daniels and Powell Ltd",Retail,East,Mexico,5000.0,45,1
+CUST-00000588,Walker-Lewis LLC,Education,Central,Canada,25000.0,45,1
+CUST-00000589,Rivera-Carter Inc,Finance,South,United States,25000.0,15,1
+CUST-00000590,"Moreno, Barajas and Colon Inc",Hospitality,West,Canada,25000.0,45,1
+CUST-00000591,"Smith, Caldwell and Griffin Ltd",Healthcare,Central,Mexico,25000.0,45,1
+CUST-00000592,"Austin, Oliver and Haley Co",Healthcare,North,Canada,10000.0,30,1
+CUST-00000593,"Blackwell, James and Hogan Co",Construction,East,United States,25000.0,60,1
+CUST-00000594,Cruz PLC Co,Technology,East,Canada,50000.0,15,1
+CUST-00000595,"Campbell, Pruitt and Short Inc",Finance,Central,United States,25000.0,30,1
+CUST-00000596,Robertson-Hicks Ltd,Education,East,Mexico,5000.0,15,1
+CUST-00000597,Williams-Villanueva LLC,Media,Central,Mexico,5000.0,60,1
+CUST-00000598,Flores Inc Ltd,Education,North,Mexico,25000.0,60,1
+CUST-00000599,Jackson PLC Inc,Hospitality,West,United States,100000.0,45,1
+CUST-00000600,"Smith, Jones and Santiago Inc",Technology,Central,Mexico,5000.0,60,1
+CUST-00000601,Hancock Group Corp,Agriculture,North,Mexico,10000.0,30,1
+CUST-00000602,Harris Ltd Ltd,Healthcare,West,United States,10000.0,30,1
+CUST-00000603,"Rowe, Lucas and Case Co",Hospitality,North,United States,50000.0,30,1
+CUST-00000604,"Parks, Johnson and Love LLC",Construction,East,United States,5000.0,30,1
+CUST-00000605,Miller Inc Ltd,Energy,East,Canada,50000.0,60,1
+CUST-00000606,Bauer PLC LLC,Manufacturing,East,United States,100000.0,45,1
+CUST-00000607,Andrews and Sons Corp,Government,Central,Mexico,10000.0,60,1
+CUST-00000608,Russell-Hayes Co,Hospitality,Central,Mexico,5000.0,45,1
+CUST-00000609,Hamilton-Smith Co,Energy,South,Mexico,50000.0,45,1
+CUST-00000610,"Wilson, Smith and Cortez Corp",Technology,West,Mexico,5000.0,30,1
+CUST-00000611,Avila PLC Co,Healthcare,South,United States,100000.0,45,1
+CUST-00000612,Haynes Inc Inc,Healthcare,South,United States,25000.0,15,1
+CUST-00000613,Reilly-Rodriguez Inc,Transportation,East,Mexico,5000.0,60,1
+CUST-00000614,"Turner, Miller and Hubbard Co",Technology,South,Mexico,10000.0,60,1
+CUST-00000615,James-Short LLC,Education,North,United States,100000.0,30,1
+CUST-00000616,Wells PLC Inc,Finance,Central,United States,100000.0,30,1
+CUST-00000617,Taylor Group LLC,Healthcare,East,United States,100000.0,60,1
+CUST-00000618,"Phillips, Walters and Evans Ltd",Government,North,Mexico,25000.0,15,1
+CUST-00000619,"Wong, Bernard and Smith Inc",Technology,Central,Canada,50000.0,30,1
+CUST-00000620,"Thomas, Williams and Armstrong Inc",Media,West,Mexico,10000.0,30,1
+CUST-00000621,Medina-Arroyo Ltd,Finance,Central,Canada,10000.0,45,1
+CUST-00000622,Clark-Figueroa Co,Government,Central,United States,10000.0,60,1
+CUST-00000623,"Cooper, Gutierrez and Brewer Co",Healthcare,North,United States,10000.0,60,1
+CUST-00000624,"Thomas, White and Jensen Inc",Government,North,United States,50000.0,15,1
+CUST-00000625,Lee-White Ltd,Agriculture,North,United States,50000.0,30,1
+CUST-00000626,"Phelps, York and Randolph Ltd",Agriculture,North,Mexico,50000.0,60,1
+CUST-00000627,"Murray, Dunn and Roberts Corp",Media,North,Mexico,100000.0,60,1
+CUST-00000628,King and Sons Inc,Consulting,West,Canada,25000.0,15,1
+CUST-00000629,"Carpenter, Lynn and Howard Co",Healthcare,East,Canada,10000.0,15,1
+CUST-00000630,"Rios, Garcia and Harvey Corp",Government,Central,Canada,25000.0,30,1
+CUST-00000631,Stewart Group LLC,Real Estate,North,Mexico,100000.0,15,1
+CUST-00000632,Jensen-Torres Ltd,Manufacturing,West,Mexico,10000.0,45,1
+CUST-00000633,"Hernandez, Knight and Aguirre Co",Hospitality,North,United States,50000.0,45,1
+CUST-00000634,Jackson-Edwards Corp,Media,Central,Canada,100000.0,45,1
+CUST-00000635,Joseph Ltd Ltd,Construction,West,United States,50000.0,60,1
+CUST-00000636,Hill-Ward Inc,Hospitality,Central,Mexico,50000.0,45,1
+CUST-00000637,"Quinn, Humphrey and Ford Corp",Government,East,Mexico,50000.0,30,1
+CUST-00000638,Hampton-Tucker LLC,Real Estate,South,Canada,10000.0,15,1
+CUST-00000639,Thompson PLC Inc,Agriculture,West,Canada,100000.0,15,1
+CUST-00000640,Wilkinson and Sons Inc,Transportation,North,United States,10000.0,60,1
+CUST-00000641,"Gonzalez, Gross and Sims Ltd",Transportation,North,United States,25000.0,30,1
+CUST-00000642,"Jones, Smith and Hunter Corp",Retail,Central,United States,50000.0,60,1
+CUST-00000643,Hess PLC Ltd,Finance,Central,Canada,100000.0,15,1
+CUST-00000644,Hammond-Lewis Inc,Finance,West,Canada,5000.0,30,1
+CUST-00000645,Arnold PLC Ltd,Construction,South,United States,100000.0,30,1
+CUST-00000646,"Kennedy, Rowe and Diaz Ltd",Healthcare,North,Canada,10000.0,15,1
+CUST-00000647,Vance PLC Inc,Retail,East,Canada,25000.0,60,1
+CUST-00000648,"Vincent, Anderson and Mason Co",Government,South,Mexico,5000.0,15,1
+CUST-00000649,Sanders PLC LLC,Agriculture,East,Mexico,100000.0,45,1
+CUST-00000650,Bates PLC Corp,Media,East,United States,100000.0,30,1
+CUST-00000651,"Martin, Palmer and Griffin Co",Energy,West,Mexico,5000.0,45,1
+CUST-00000652,Knight PLC Inc,Transportation,Central,United States,100000.0,15,1
+CUST-00000653,"Brennan, Thomas and Dennis Ltd",Construction,East,United States,100000.0,45,1
+CUST-00000654,Williams-Juarez Ltd,Media,Central,Canada,50000.0,60,1
+CUST-00000655,Brown LLC Ltd,Technology,South,Canada,50000.0,60,1
+CUST-00000656,Williams and Sons Ltd,Media,North,Canada,5000.0,45,1
+CUST-00000657,"Velez, Ward and Harrison LLC",Transportation,South,Mexico,10000.0,45,1
+CUST-00000658,Keith-Williams Co,Hospitality,Central,Mexico,5000.0,45,1
+CUST-00000659,"Nguyen, Padilla and Boyd Inc",Construction,North,Canada,25000.0,15,1
+CUST-00000660,Davenport-Baker Ltd,Energy,South,Canada,25000.0,45,1
+CUST-00000661,"Hudson, Bennett and Gray Inc",Energy,Central,Canada,10000.0,30,1
+CUST-00000662,"Valdez, Houston and Black Co",Real Estate,South,United States,10000.0,45,1
+CUST-00000663,Kaufman-Walker Inc,Education,South,United States,100000.0,45,1
+CUST-00000664,Gomez-Parrish Inc,Consulting,North,United States,5000.0,60,1
+CUST-00000665,Sparks-Eaton Ltd,Manufacturing,Central,United States,50000.0,45,1
+CUST-00000666,Shaw and Sons Ltd,Hospitality,West,Mexico,25000.0,60,1
+CUST-00000667,Martin-Jones Inc,Consulting,Central,Canada,50000.0,30,1
+CUST-00000668,"Campbell, Hernandez and Moore Ltd",Healthcare,North,Mexico,50000.0,60,1
+CUST-00000669,"Love, Wilson and Hall Ltd",Manufacturing,Central,Canada,50000.0,30,1
+CUST-00000670,Cortez-Olson Co,Retail,Central,Canada,25000.0,15,1
+CUST-00000671,Mendoza-Garza LLC,Finance,South,Canada,100000.0,15,1
+CUST-00000672,"Whitaker, Johnson and Williams Corp",Hospitality,Central,Canada,10000.0,45,1
+CUST-00000673,"Vargas, Taylor and Hunt Inc",Construction,West,Mexico,25000.0,45,1
+CUST-00000674,"Thomas, Jackson and Nielsen Inc",Technology,West,United States,50000.0,45,1
+CUST-00000675,"Mullen, Greene and Elliott Corp",Media,West,Canada,50000.0,30,1
+CUST-00000676,Johns Ltd Ltd,Healthcare,Central,Mexico,10000.0,15,1
+CUST-00000677,"Nicholson, Valentine and Robin Corp",Consulting,South,Mexico,50000.0,60,1
+CUST-00000678,"Haney, Dillon and Jackson Inc",Healthcare,South,Canada,5000.0,30,1
+CUST-00000679,Burke-Norton Co,Technology,South,Mexico,100000.0,45,1
+CUST-00000680,Hanson PLC Co,Construction,East,Mexico,100000.0,15,1
+CUST-00000681,Jackson-Jennings Co,Retail,South,United States,10000.0,45,1
+CUST-00000682,Carlson-Jones Co,Media,North,Canada,25000.0,45,1
+CUST-00000683,Cruz-Rodriguez Corp,Hospitality,Central,Mexico,25000.0,45,1
+CUST-00000684,Mills PLC LLC,Transportation,North,Canada,100000.0,30,1
+CUST-00000685,"Barnes, Hernandez and Davis Ltd",Government,Central,United States,25000.0,45,1
+CUST-00000686,Valenzuela-Greene Corp,Finance,Central,Canada,50000.0,15,1
+CUST-00000687,"Gordon, Wilson and Olson Co",Government,East,Canada,10000.0,30,1
+CUST-00000688,Winters PLC Corp,Transportation,Central,Mexico,50000.0,15,1
+CUST-00000689,Prince Ltd LLC,Healthcare,East,United States,25000.0,45,1
+CUST-00000690,"Reynolds, Fisher and Golden Corp",Real Estate,East,Mexico,50000.0,45,1
+CUST-00000691,"Moreno, Perez and Lang Co",Consulting,East,Mexico,100000.0,60,1
+CUST-00000692,Bell-Ballard Co,Healthcare,South,United States,10000.0,30,1
+CUST-00000693,"Johnston, Coleman and Scott Corp",Real Estate,North,United States,10000.0,60,1
+CUST-00000694,Kent Inc LLC,Retail,North,Canada,100000.0,15,1
+CUST-00000695,George-Stephens LLC,Consulting,West,Mexico,5000.0,15,1
+CUST-00000696,Lopez-Fletcher Corp,Government,South,United States,50000.0,45,1
+CUST-00000697,Lane Inc Inc,Education,East,Canada,10000.0,30,1
+CUST-00000698,"Smith, Pena and Watts Ltd",Media,South,United States,5000.0,45,1
+CUST-00000699,Ortiz-Rodriguez Corp,Media,West,Canada,100000.0,45,1
+CUST-00000700,Pearson-King Ltd,Technology,South,Mexico,100000.0,30,1
+CUST-00000701,"Henderson, Diaz and Hill Ltd",Government,West,Mexico,100000.0,60,1
+CUST-00000702,"Sanders, Harris and Arnold Ltd",Finance,Central,Canada,25000.0,60,1
+CUST-00000703,"Olson, Wood and Peters Ltd",Education,North,Canada,25000.0,45,1
+CUST-00000704,Hinton-Lane Co,Construction,South,Canada,5000.0,15,1
+CUST-00000705,"Sanders, Taylor and Shields Ltd",Media,South,Canada,25000.0,60,1
+CUST-00000706,Adkins Group Ltd,Manufacturing,West,Canada,25000.0,15,1
+CUST-00000707,"Avery, Garcia and Romero Co",Consulting,East,Mexico,10000.0,15,1
+CUST-00000708,Owen-Mendez Ltd,Hospitality,South,Canada,100000.0,60,1
+CUST-00000709,"Mann, Martin and Oconnell Co",Education,South,Mexico,50000.0,60,1
+CUST-00000710,Brock and Sons Inc,Construction,North,Canada,10000.0,45,1
+CUST-00000711,Frost-Graham Corp,Finance,Central,Canada,50000.0,30,1
+CUST-00000712,Baker LLC LLC,Healthcare,South,Canada,5000.0,60,1
+CUST-00000713,Lynch Ltd Ltd,Technology,East,Mexico,100000.0,60,1
+CUST-00000714,Arias-Morales Inc,Hospitality,North,United States,5000.0,15,1
+CUST-00000715,"Meyer, Dawson and Harper Inc",Retail,East,Canada,10000.0,60,1
+CUST-00000716,Bowman Group LLC,Education,North,United States,5000.0,60,1
+CUST-00000717,Harris Ltd Inc,Hospitality,West,Canada,50000.0,45,1
+CUST-00000718,"Mitchell, Johnson and Greene Co",Real Estate,North,Canada,5000.0,30,1
+CUST-00000719,"Hale, Gilbert and Craig LLC",Construction,West,United States,100000.0,60,1
+CUST-00000720,Allen-Smith Inc,Education,East,Canada,5000.0,15,1
+CUST-00000721,Miller LLC Inc,Transportation,West,United States,5000.0,30,1
+CUST-00000722,Gomez-Foster Co,Real Estate,North,Mexico,10000.0,60,1
+CUST-00000723,"Gonzalez, Smith and Padilla Co",Finance,East,Canada,10000.0,15,1
+CUST-00000724,Dunn Ltd Ltd,Agriculture,North,Canada,50000.0,45,1
+CUST-00000725,"Herman, Bailey and Richmond Inc",Hospitality,North,Mexico,10000.0,15,1
+CUST-00000726,Perez-Mccarty Inc,Finance,West,Canada,5000.0,30,1
+CUST-00000727,Spears-Andrews Corp,Government,North,Canada,10000.0,15,1
+CUST-00000728,Thompson-Hunter LLC,Government,West,Mexico,100000.0,30,1
+CUST-00000729,"Jones, Phillips and Arroyo Corp",Consulting,North,United States,10000.0,60,1
+CUST-00000730,"Frye, Walter and Li LLC",Finance,Central,Canada,5000.0,15,1
+CUST-00000731,"Wright, Ramos and Bennett Corp",Finance,South,Mexico,100000.0,15,1
+CUST-00000732,Carrillo-Todd Inc,Technology,South,Canada,100000.0,45,1
+CUST-00000733,Maldonado-Mosley Co,Real Estate,South,United States,50000.0,45,1
+CUST-00000734,Olson LLC Inc,Construction,North,Canada,50000.0,45,1
+CUST-00000735,Reyes and Sons Ltd,Real Estate,West,United States,100000.0,30,1
+CUST-00000736,"Haynes, Mcbride and Gutierrez Ltd",Hospitality,East,Mexico,50000.0,45,1
+CUST-00000737,Black-Smith Ltd,Energy,Central,United States,5000.0,30,1
+CUST-00000738,Wright-Davis Co,Construction,East,Mexico,25000.0,60,1
+CUST-00000739,"Goodman, Peterson and Spencer LLC",Consulting,Central,Canada,10000.0,15,1
+CUST-00000740,Woods LLC Ltd,Media,East,Mexico,10000.0,45,1
+CUST-00000741,Shannon LLC LLC,Finance,Central,Canada,10000.0,60,1
+CUST-00000742,Valentine Ltd Ltd,Healthcare,Central,Canada,25000.0,60,1
+CUST-00000743,Porter and Sons Corp,Retail,North,Mexico,5000.0,15,1
+CUST-00000744,Moss LLC Inc,Healthcare,North,United States,5000.0,60,1
+CUST-00000745,Perez and Sons Inc,Retail,North,Mexico,50000.0,60,1
+CUST-00000746,"Kelly, Maxwell and Wilson Ltd",Government,Central,Canada,5000.0,45,1
+CUST-00000747,Lowe Ltd Inc,Government,North,United States,10000.0,60,1
+CUST-00000748,Austin-Duran LLC,Technology,North,Canada,100000.0,60,1
+CUST-00000749,"Rubio, Charles and Watson Corp",Consulting,North,Mexico,25000.0,15,1
+CUST-00000750,Vasquez-Galloway LLC,Media,East,United States,10000.0,15,1
+CUST-00000751,"Melton, Henry and Joyce LLC",Real Estate,South,Mexico,50000.0,30,1
+CUST-00000752,"Ramirez, Walker and Ray Inc",Agriculture,South,Mexico,10000.0,60,1
+CUST-00000753,Fox Group LLC,Consulting,Central,Canada,50000.0,60,1
+CUST-00000754,Ayers-Johnson LLC,Healthcare,South,Mexico,50000.0,45,1
+CUST-00000755,Long-Parks Inc,Agriculture,Central,Canada,25000.0,45,1
+CUST-00000756,Bryant Inc Ltd,Hospitality,East,Canada,50000.0,45,1
+CUST-00000757,"Holmes, Stewart and Smith Ltd",Education,Central,Mexico,10000.0,60,1
+CUST-00000758,"Clark, Carpenter and Nguyen Ltd",Energy,East,Canada,50000.0,60,1
+CUST-00000759,"Hensley, Lopez and Baker Co",Manufacturing,North,Canada,100000.0,15,1
+CUST-00000760,Ruiz-Austin Ltd,Healthcare,East,United States,25000.0,30,1
+CUST-00000761,White-Coleman Inc,Media,East,United States,25000.0,30,1
+CUST-00000762,Haynes-Watson LLC,Manufacturing,West,Canada,10000.0,30,1
+CUST-00000763,Ramirez-White Corp,Hospitality,Central,United States,10000.0,45,1
+CUST-00000764,Krause Ltd Corp,Retail,Central,Canada,100000.0,30,1
+CUST-00000765,Olsen Ltd LLC,Real Estate,East,Canada,10000.0,60,1
+CUST-00000766,Brock-Peters Ltd,Media,North,Mexico,25000.0,15,1
+CUST-00000767,Gonzalez-Marsh Ltd,Transportation,North,United States,25000.0,45,1
+CUST-00000768,"Hernandez, Shaffer and Thompso Co",Transportation,North,United States,100000.0,15,1
+CUST-00000769,Taylor-Barry Co,Manufacturing,East,Mexico,5000.0,45,1
+CUST-00000770,"Holmes, Le and Floyd Ltd",Government,South,Canada,100000.0,30,1
+CUST-00000771,King-Garrison Inc,Manufacturing,West,Canada,100000.0,15,1
+CUST-00000772,Ross Ltd Inc,Transportation,East,Canada,10000.0,30,1
+CUST-00000773,Brown LLC Corp,Retail,West,Mexico,5000.0,60,1
+CUST-00000774,Combs-Davis Corp,Retail,West,Mexico,50000.0,30,1
+CUST-00000775,"Cook, Ward and Castro Inc",Technology,Central,United States,50000.0,60,1
+CUST-00000776,Cooper-Jenkins Ltd,Education,Central,Mexico,100000.0,30,1
+CUST-00000777,Dillon-Mccarty Inc,Retail,East,Canada,25000.0,15,1
+CUST-00000778,Ray Ltd LLC,Finance,West,Canada,25000.0,45,1
+CUST-00000779,"Ryan, Krause and Mitchell Inc",Hospitality,East,Mexico,5000.0,45,1
+CUST-00000780,Nunez-Freeman Inc,Hospitality,Central,Canada,100000.0,30,1
+CUST-00000781,"Griffin, Miller and Austin Co",Manufacturing,South,United States,25000.0,30,1
+CUST-00000782,Welch-Thomas LLC,Retail,North,United States,100000.0,30,1
+CUST-00000783,Davidson LLC Corp,Manufacturing,East,Mexico,5000.0,45,1
+CUST-00000784,Welch-Duncan Co,Technology,North,Canada,10000.0,30,1
+CUST-00000785,Miller LLC Inc,Agriculture,Central,Canada,100000.0,60,1
+CUST-00000786,Edwards Ltd Ltd,Real Estate,South,Mexico,5000.0,60,1
+CUST-00000787,Page-Jacobs Ltd,Energy,Central,United States,25000.0,30,1
+CUST-00000788,Nelson-Wallace LLC,Construction,South,Mexico,100000.0,45,1
+CUST-00000789,Adkins-Meyer LLC,Technology,North,United States,50000.0,45,1
+CUST-00000790,Gutierrez-White Corp,Media,North,United States,25000.0,60,1
+CUST-00000791,Martinez and Sons Inc,Transportation,Central,Mexico,5000.0,45,1
+CUST-00000792,"King, Manning and Brady Co",Media,Central,Mexico,5000.0,30,1
+CUST-00000793,Jackson Inc Inc,Agriculture,West,Mexico,5000.0,15,1
+CUST-00000794,Brown Group Inc,Energy,Central,Canada,25000.0,60,1
+CUST-00000795,"Brown, Wise and Warren Co",Real Estate,South,United States,25000.0,45,1
+CUST-00000796,Garcia PLC Corp,Finance,East,United States,100000.0,45,1
+CUST-00000797,Miller Group LLC,Finance,East,Canada,5000.0,45,1
+CUST-00000798,Perez-Rojas Inc,Healthcare,East,Canada,10000.0,15,1
+CUST-00000799,Sims-Anderson Co,Agriculture,Central,Mexico,10000.0,60,1
+CUST-00000800,Johnson Ltd Inc,Government,South,Canada,25000.0,45,1
+CUST-00000801,Dalton-Nguyen Co,Agriculture,South,United States,10000.0,30,1
+CUST-00000802,Mcdonald-Pitts Inc,Construction,Central,United States,50000.0,30,1
+CUST-00000803,Dunn-Taylor Ltd,Energy,South,Canada,5000.0,15,1
+CUST-00000804,"Ryan, Garza and Bryant Inc",Hospitality,South,Mexico,5000.0,45,1
+CUST-00000805,"Fields, Elliott and Mills Co",Transportation,East,Canada,25000.0,30,1
+CUST-00000806,"Ferguson, Stout and Olson Inc",Retail,South,United States,5000.0,45,1
+CUST-00000807,Ballard Group Ltd,Government,Central,United States,100000.0,30,1
+CUST-00000808,Diaz-Green Inc,Finance,North,Canada,5000.0,60,1
+CUST-00000809,Smith-Mills Inc,Agriculture,Central,Canada,25000.0,30,1
+CUST-00000810,Cooper Group Co,Technology,West,United States,10000.0,30,1
+CUST-00000811,"Smith, Weeks and Arroyo Inc",Manufacturing,West,United States,25000.0,60,1
+CUST-00000812,Evans-Cannon Inc,Real Estate,South,United States,5000.0,30,1
+CUST-00000813,Harper-Robles Co,Media,Central,Canada,25000.0,60,1
+CUST-00000814,"Brooks, Jenkins and Castro Inc",Transportation,West,United States,100000.0,60,1
+CUST-00000815,Wright-Espinoza Corp,Transportation,Central,Mexico,100000.0,15,1
+CUST-00000816,"Price, Gray and Baker Ltd",Retail,West,Canada,5000.0,30,1
+CUST-00000817,Garrett-Black Ltd,Agriculture,West,Mexico,5000.0,60,1
+CUST-00000818,"Aguirre, Cohen and Mitchell Ltd",Consulting,North,United States,25000.0,60,1
+CUST-00000819,"Patel, Adams and Lopez Co",Energy,East,Canada,50000.0,30,1
+CUST-00000820,White LLC Co,Construction,Central,United States,100000.0,30,1
+CUST-00000821,Walsh PLC Co,Media,West,United States,100000.0,15,1
+CUST-00000822,Nelson-Dean Inc,Consulting,Central,Mexico,100000.0,30,1
+CUST-00000823,Flores and Sons Co,Transportation,East,Canada,5000.0,30,1
+CUST-00000824,Booker Inc Co,Government,South,Canada,5000.0,45,1
+CUST-00000825,Compton LLC Corp,Real Estate,South,Mexico,5000.0,15,1
+CUST-00000826,Martinez-Gonzales LLC,Real Estate,West,Mexico,25000.0,15,1
+CUST-00000827,Hall and Sons Ltd,Real Estate,West,Mexico,100000.0,30,1
+CUST-00000828,Snyder LLC Co,Agriculture,West,United States,10000.0,45,1
+CUST-00000829,Collins-Lloyd Ltd,Media,South,United States,10000.0,30,1
+CUST-00000830,Ford-Moody LLC,Transportation,East,Canada,50000.0,45,1
+CUST-00000831,Miller-Christensen Inc,Retail,South,United States,5000.0,45,1
+CUST-00000832,Brown Group LLC,Technology,West,Canada,100000.0,15,1
+CUST-00000833,Daniels and Sons Ltd,Energy,West,United States,10000.0,60,1
+CUST-00000834,Huang LLC Co,Transportation,West,United States,100000.0,15,1
+CUST-00000835,Clayton-Martinez Inc,Energy,Central,Canada,100000.0,30,1
+CUST-00000836,"Wright, Wise and Ramos LLC",Healthcare,South,United States,25000.0,15,1
+CUST-00000837,"Vang, Gonzalez and Moss Inc",Media,North,Mexico,100000.0,45,1
+CUST-00000838,Boyd and Sons Corp,Energy,North,United States,5000.0,60,1
+CUST-00000839,Price-Ali Inc,Healthcare,East,Mexico,100000.0,30,1
+CUST-00000840,Moore-Chandler Co,Real Estate,Central,Canada,5000.0,15,1
+CUST-00000841,"Pineda, Meyer and King Corp",Hospitality,East,Canada,5000.0,60,1
+CUST-00000842,"Evans, Ward and Williams Ltd",Retail,East,Canada,10000.0,15,1
+CUST-00000843,"Robinson, Rodriguez and Chen Corp",Hospitality,Central,Canada,100000.0,30,1
+CUST-00000844,Smith-Bauer Inc,Government,North,United States,100000.0,15,1
+CUST-00000845,"Wilson, Mccormick and Smith Co",Real Estate,Central,Mexico,25000.0,60,1
+CUST-00000846,Perkins Ltd Ltd,Media,East,Canada,100000.0,45,1
+CUST-00000847,Barker-Moore Inc,Government,Central,Canada,100000.0,60,1
+CUST-00000848,Wright Group Co,Consulting,South,Mexico,10000.0,45,1
+CUST-00000849,Parks LLC Inc,Manufacturing,North,United States,50000.0,15,1
+CUST-00000850,"Brown, Kelly and Moore Inc",Consulting,Central,Canada,50000.0,15,1
+CUST-00000851,"Moody, Martinez and Hall Corp",Hospitality,Central,Mexico,10000.0,15,1
+CUST-00000852,"Kramer, Sherman and Trujillo Inc",Real Estate,East,Canada,5000.0,45,1
+CUST-00000853,Quinn-Smith Corp,Agriculture,Central,Canada,5000.0,15,1
+CUST-00000854,Howard-Taylor Corp,Hospitality,West,Mexico,100000.0,15,1
+CUST-00000855,Washington Group Inc,Education,East,Canada,50000.0,60,1
+CUST-00000856,"Phillips, Terry and Lopez LLC",Finance,South,Canada,10000.0,60,1
+CUST-00000857,Stephens LLC Ltd,Energy,East,Canada,50000.0,15,1
+CUST-00000858,"Mcdonald, Dillon and George Ltd",Construction,Central,Mexico,25000.0,15,1
+CUST-00000859,"Martin, Schmidt and Cole Inc",Government,East,Canada,5000.0,30,1
+CUST-00000860,Weaver-Gibson Corp,Media,North,Canada,50000.0,30,1
+CUST-00000861,"Hunter, Gross and Andrade Ltd",Government,West,United States,100000.0,15,1
+CUST-00000862,"Vincent, Parsons and Allen Corp",Real Estate,East,Mexico,5000.0,45,1
+CUST-00000863,"Brown, Coffey and Fuentes Co",Retail,West,United States,25000.0,60,1
+CUST-00000864,Warren Group Corp,Education,Central,Canada,10000.0,15,1
+CUST-00000865,"Moore, Campbell and Ortiz Corp",Consulting,North,United States,5000.0,60,1
+CUST-00000866,Rodriguez-Mills Ltd,Manufacturing,West,Mexico,10000.0,30,1
+CUST-00000867,Williams and Sons Corp,Energy,West,Mexico,100000.0,45,1
+CUST-00000868,Russo and Sons Corp,Healthcare,North,Mexico,10000.0,30,1
+CUST-00000869,Washington Inc LLC,Technology,West,Mexico,100000.0,15,1
+CUST-00000870,Duncan Group LLC,Construction,North,Mexico,100000.0,15,1
+CUST-00000871,"Burns, Hanson and Garza Corp",Technology,North,United States,100000.0,45,1
+CUST-00000872,Diaz PLC LLC,Government,East,Mexico,10000.0,45,1
+CUST-00000873,"Jones, Conrad and Clark Inc",Education,East,Canada,100000.0,45,1
+CUST-00000874,Hebert-Collier Co,Finance,North,Canada,10000.0,30,1
+CUST-00000875,Owen-Brown Corp,Retail,North,Mexico,100000.0,15,1
+CUST-00000876,"Paul, Zamora and Short Inc",Agriculture,East,Mexico,25000.0,45,1
+CUST-00000877,"Brown, Jensen and Rice Inc",Real Estate,East,Mexico,10000.0,30,1
+CUST-00000878,"Jones, Torres and Blackburn LLC",Construction,Central,Canada,100000.0,60,1
+CUST-00000879,"Davis, Hardy and Schmidt LLC",Healthcare,North,Canada,5000.0,15,1
+CUST-00000880,Lee Ltd Co,Manufacturing,North,Canada,50000.0,30,1
+CUST-00000881,Hudson and Sons Ltd,Energy,Central,Mexico,50000.0,45,1
+CUST-00000882,"Curry, Perry and Garcia Corp",Hospitality,South,Mexico,100000.0,15,1
+CUST-00000883,"Ray, Craig and Park Co",Government,South,United States,50000.0,15,1
+CUST-00000884,Andrade-Jackson Co,Construction,West,Canada,10000.0,30,1
+CUST-00000885,Pierce PLC Inc,Media,Central,Canada,25000.0,60,1
+CUST-00000886,Sandoval-Ferguson Inc,Real Estate,East,Canada,50000.0,60,1
+CUST-00000887,"Ramos, Gomez and Edwards LLC",Retail,West,United States,25000.0,60,1
+CUST-00000888,Kirk-Gutierrez Co,Media,South,Canada,25000.0,30,1
+CUST-00000889,"Jordan, Swanson and Franklin Ltd",Retail,West,Mexico,5000.0,45,1
+CUST-00000890,"Gardner, Brooks and Pierce Ltd",Finance,North,Canada,100000.0,60,1
+CUST-00000891,"King, Nixon and West Co",Government,West,United States,100000.0,30,1
+CUST-00000892,Smith-Johnson Ltd,Healthcare,West,Canada,5000.0,45,1
+CUST-00000893,Larson-Holmes Inc,Media,Central,Canada,50000.0,45,1
+CUST-00000894,Smith-Joyce Ltd,Real Estate,South,United States,5000.0,60,1
+CUST-00000895,Foley Inc LLC,Government,Central,Canada,25000.0,15,1
+CUST-00000896,"Short, Ellison and Dixon Co",Healthcare,East,Canada,5000.0,15,1
+CUST-00000897,"Howe, Moore and Johnson Ltd",Consulting,West,Canada,50000.0,15,1
+CUST-00000898,Moore-Baker LLC,Education,South,Mexico,5000.0,30,1
+CUST-00000899,"Wright, Scott and Evans Inc",Technology,Central,Canada,50000.0,60,1
+CUST-00000900,"Ross, Hardin and Navarro Inc",Education,East,Canada,100000.0,45,1
+CUST-00000901,"Nguyen, Olson and Freeman Co",Real Estate,East,United States,100000.0,15,1
+CUST-00000902,"Warner, Weiss and Davis Ltd",Agriculture,West,United States,25000.0,15,1
+CUST-00000903,"Evans, Cross and Johnston Corp",Energy,Central,United States,5000.0,45,1
+CUST-00000904,Deleon LLC LLC,Media,East,United States,10000.0,60,1
+CUST-00000905,Hobbs-Hamilton Ltd,Transportation,East,Mexico,50000.0,60,1
+CUST-00000906,Kane and Sons Co,Transportation,Central,United States,10000.0,60,1
+CUST-00000907,"Delgado, Guzman and Smith Inc",Education,Central,Canada,25000.0,60,1
+CUST-00000908,"Reyes, Torres and Williams Inc",Construction,South,United States,5000.0,15,1
+CUST-00000909,"Cunningham, Murphy and Wolfe LLC",Healthcare,West,Mexico,50000.0,30,1
+CUST-00000910,Williams Ltd LLC,Healthcare,West,Canada,100000.0,60,1
+CUST-00000911,Maddox-Mullins Ltd,Healthcare,West,Mexico,50000.0,60,1
+CUST-00000912,"Wagner, Walker and Roberts Co",Hospitality,South,United States,50000.0,15,1
+CUST-00000913,Hernandez-Rogers Ltd,Technology,South,Mexico,100000.0,45,1
+CUST-00000914,Duncan-Williams Co,Energy,Central,Mexico,25000.0,15,1
+CUST-00000915,Baker-Ross LLC,Government,West,Mexico,25000.0,15,1
+CUST-00000916,Ayala-Anderson Ltd,Technology,North,United States,100000.0,45,1
+CUST-00000917,Castillo and Sons Co,Agriculture,North,Mexico,100000.0,15,1
+CUST-00000918,Foster-Duncan Inc,Technology,North,Mexico,100000.0,45,1
+CUST-00000919,"Gilbert, Fitzgerald and Sanche Ltd",Manufacturing,East,Mexico,5000.0,60,1
+CUST-00000920,Adams Group Co,Agriculture,West,Mexico,25000.0,60,1
+CUST-00000921,Cohen-Johnston Corp,Consulting,East,Canada,10000.0,15,1
+CUST-00000922,Powers Group Ltd,Real Estate,East,Mexico,100000.0,45,1
+CUST-00000923,Bailey-Flores LLC,Finance,West,Mexico,10000.0,15,1
+CUST-00000924,"Rios, Carrillo and Jackson Corp",Consulting,Central,United States,25000.0,60,1
+CUST-00000925,Jensen-Branch LLC,Healthcare,Central,United States,25000.0,45,1
+CUST-00000926,Hanson-Alexander Inc,Government,East,Canada,25000.0,15,1
+CUST-00000927,Gonzalez LLC LLC,Government,South,Mexico,10000.0,60,1
+CUST-00000928,Todd Inc Corp,Consulting,South,Canada,10000.0,60,1
+CUST-00000929,Singh and Sons Inc,Consulting,Central,United States,25000.0,15,1
+CUST-00000930,"Mcintosh, Melton and Wilkins Inc",Government,South,Canada,50000.0,60,1
+CUST-00000931,Cooper Inc Inc,Finance,West,Mexico,10000.0,30,1
+CUST-00000932,Cole-Johnson Ltd,Real Estate,East,United States,25000.0,15,1
+CUST-00000933,Singh and Sons LLC,Healthcare,West,Canada,50000.0,45,1
+CUST-00000934,Payne LLC Co,Real Estate,Central,United States,50000.0,60,1
+CUST-00000935,"Webb, Blair and Thomas Co",Construction,South,Mexico,50000.0,15,1
+CUST-00000936,"Barnett, Bennett and Escobar Corp",Energy,West,Canada,25000.0,15,1
+CUST-00000937,"Williams, Jackson and Campbell LLC",Energy,Central,Mexico,25000.0,60,1
+CUST-00000938,"Williamson, Brown and Pena Ltd",Energy,East,Canada,25000.0,45,1
+CUST-00000939,Jones Ltd LLC,Construction,Central,Canada,50000.0,30,1
+CUST-00000940,Alvarado-Durham Ltd,Consulting,South,Mexico,25000.0,30,1
+CUST-00000941,Lin-Smith Corp,Agriculture,North,Mexico,5000.0,15,1
+CUST-00000942,"Hughes, Whitney and Romero LLC",Transportation,North,Mexico,5000.0,60,1
+CUST-00000943,"Garcia, Stewart and Delacruz Corp",Education,East,Canada,10000.0,15,1
+CUST-00000944,"Miller, Gonzalez and Rasmussen LLC",Government,North,United States,100000.0,30,1
+CUST-00000945,"House, Smith and Wright Ltd",Finance,North,Mexico,5000.0,15,1
+CUST-00000946,"Torres, Burns and Garner Ltd",Healthcare,West,Mexico,100000.0,30,1
+CUST-00000947,Reed LLC LLC,Real Estate,South,Canada,25000.0,60,1
+CUST-00000948,Garrett-Young LLC,Finance,West,Canada,50000.0,45,1
+CUST-00000949,"Hill, Brown and Scott Corp",Healthcare,North,Canada,5000.0,60,1
+CUST-00000950,Zamora-Briggs Co,Hospitality,North,Canada,25000.0,30,1
+CUST-00000951,Raymond LLC Co,Retail,West,United States,100000.0,60,1
+CUST-00000952,Hernandez Group Inc,Finance,West,United States,10000.0,60,1
+CUST-00000953,"Taylor, Blair and Meyer Inc",Government,North,Canada,25000.0,15,1
+CUST-00000954,"Salazar, Garrett and Perez LLC",Retail,North,Mexico,25000.0,60,1
+CUST-00000955,Berry Group LLC,Energy,West,United States,5000.0,15,1
+CUST-00000956,Browning-Murphy Co,Construction,South,Mexico,25000.0,60,1
+CUST-00000957,"Anderson, Delgado and Carpente Ltd",Manufacturing,Central,Mexico,50000.0,60,1
+CUST-00000958,"Mcbride, Huffman and Parker Co",Transportation,North,Mexico,10000.0,15,1
+CUST-00000959,"Roach, Browning and Jordan Co",Real Estate,West,United States,100000.0,45,1
+CUST-00000960,Douglas PLC Corp,Finance,East,Canada,5000.0,15,1
+CUST-00000961,Stewart PLC Corp,Agriculture,East,United States,50000.0,45,1
+CUST-00000962,"Fry, Wilson and Stewart Inc",Healthcare,Central,United States,50000.0,30,1
+CUST-00000963,Acosta LLC Corp,Real Estate,West,United States,25000.0,60,1
+CUST-00000964,Ali-Turner LLC,Energy,West,Mexico,10000.0,30,1
+CUST-00000965,"Peck, Shannon and Mahoney LLC",Education,North,Mexico,100000.0,30,1
+CUST-00000966,Hernandez-Lopez Co,Transportation,North,Mexico,25000.0,60,1
+CUST-00000967,Lopez PLC Ltd,Media,West,United States,5000.0,45,1
+CUST-00000968,"Adams, Bradley and Hall LLC",Hospitality,North,Canada,5000.0,30,1
+CUST-00000969,Hall Inc Ltd,Technology,Central,United States,100000.0,30,1
+CUST-00000970,Miller-Chan LLC,Manufacturing,South,Canada,5000.0,60,1
+CUST-00000971,Shaw PLC Ltd,Manufacturing,South,Mexico,10000.0,15,1
+CUST-00000972,Joseph-Brooks Inc,Finance,North,Canada,5000.0,60,1
+CUST-00000973,Henry-Taylor Ltd,Healthcare,Central,United States,5000.0,15,1
+CUST-00000974,Perez Group Co,Government,Central,United States,5000.0,30,1
+CUST-00000975,Schaefer Group Co,Hospitality,West,Canada,5000.0,30,1
+CUST-00000976,Newton and Sons Corp,Media,South,United States,100000.0,30,1
+CUST-00000977,Jones Group Corp,Retail,North,Canada,10000.0,60,1
+CUST-00000978,"Burns, Nguyen and Ellis Inc",Real Estate,East,Mexico,10000.0,60,1
+CUST-00000979,Patterson Inc Inc,Energy,Central,United States,10000.0,15,1
+CUST-00000980,"Moss, James and Edwards Ltd",Transportation,South,United States,50000.0,15,1
+CUST-00000981,"Crosby, Armstrong and Herrera LLC",Manufacturing,South,United States,100000.0,45,1
+CUST-00000982,"Liu, Buchanan and Meyer Co",Real Estate,West,Mexico,10000.0,30,1
+CUST-00000983,Bryant-Rich Inc,Finance,East,Mexico,50000.0,60,1
+CUST-00000984,Stone Group Inc,Healthcare,Central,Mexico,5000.0,30,1
+CUST-00000985,"Williams, Hughes and Hubbard Co",Government,North,Mexico,25000.0,45,1
+CUST-00000986,Lee Group Co,Manufacturing,Central,United States,10000.0,15,1
+CUST-00000987,Wilkerson-Ayala Ltd,Retail,Central,Canada,100000.0,30,1
+CUST-00000988,Murray-Henderson Co,Consulting,South,Canada,5000.0,30,1
+CUST-00000989,"Ellison, Vaughn and Mckee LLC",Consulting,South,Mexico,50000.0,60,1
+CUST-00000990,Gallegos-Hayes Inc,Healthcare,North,United States,25000.0,45,1
+CUST-00000991,"Mason, White and Richards Inc",Transportation,East,Canada,100000.0,60,1
+CUST-00000992,"Payne, Long and Morris LLC",Retail,North,Mexico,10000.0,30,1
+CUST-00000993,White PLC LLC,Technology,Central,United States,5000.0,30,1
+CUST-00000994,"Huang, Khan and Davis Co",Government,Central,Canada,50000.0,30,1
+CUST-00000995,Holt-Meadows Corp,Education,North,Canada,10000.0,15,1
+CUST-00000996,Higgins Inc Inc,Real Estate,West,United States,50000.0,30,1
+CUST-00000997,Wilson Group LLC,Technology,Central,Canada,5000.0,60,1
+CUST-00000998,"Cox, Mills and Cruz Inc",Education,Central,Canada,10000.0,60,1
+CUST-00000999,"Salazar, Moore and Pierce Corp",Healthcare,West,Mexico,10000.0,45,1
+CUST-00001000,Tate LLC Corp,Education,East,United States,5000.0,15,1

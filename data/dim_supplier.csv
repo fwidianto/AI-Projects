@@ -1,0 +1,101 @@
+supplier_id,supplier_name,country,supplier_type,contact_name,email,phone,is_active
+SUP-00000001,Global Tech Supply,South Korea,Importer,Allison Hill,donaldgarcia@mcclain.com,833-589-0838,1
+SUP-00000002,Prime Industrial,Japan,Wholesaler,Donald Booth,helenpeterson@lewis.com,361-855-9407,1
+SUP-00000003,FastParts Direct,Australia,Importer,Edward Fuller,barbara10@perez.com,664-375-2553,1
+SUP-00000004,QualitySource Inc,Canada,Distributor,Carolyn Daniel,stevennelson@watts.com,505.964.1395,1
+SUP-00000005,Reliable Components,Spain,Manufacturer,Thomas Ellis,donald88@burgess-patterson.org,(353)828-7101x2269,1
+SUP-00000006,Premier Materials,Japan,Importer,Zachary Rice,frazierdanny@potter.com,(727)404-8281x48932,1
+SUP-00000007,ValueFirst Supply,Netherlands,Distributor,Paula Moreno,georgetracy@hickman.com,4399117182,1
+SUP-00000008,Alliance Trading,South Korea,Manufacturer,Carmen Rose,ibrandt@vaughn.com,587.213.3150x983,1
+SUP-00000009,Summit Distribution,South Korea,Wholesaler,Mark Perez,heathchad@ramirez.com,+1-329-397-3763,1
+SUP-00000010,Peak Performance,Netherlands,Importer,Heather Jenkins,nuneztracey@brown.com,633-938-7262,1
+SUP-00000011,Elite Imports,South Korea,Wholesaler,Thomas Ramos,williamsyvette@novak.com,(977)436-0260x64746,1
+SUP-00000012,Advanced Logistics,Canada,Distributor,Daniel Brown,adkinsbrian@woods.com,312.819.1361x93990,1
+SUP-00000013,Central Supplies,United States,Manufacturer,Krystal Stewart,james53@foster-powers.com,651.407.9911x838,1
+SUP-00000014,United Parts,United Kingdom,Wholesaler,Shirley Suarez,justin78@turner.net,4846124118,1
+SUP-00000015,National Distribution,Canada,Manufacturer,Daniel Cooper,william40@walters.com,2523427868,1
+SUP-00000016,Pacific Trading Co,Germany,Distributor,Stephen Mckee,davenportbrandi@jordan.com,(405)433-1586x923,1
+SUP-00000017,Atlantic Supply,Italy,Wholesaler,Allison Doyle,kimberly63@moore-haynes.biz,2735375433,1
+SUP-00000018,Mountain Components,France,Wholesaler,Donald Jones,michael86@zavala.com,329-840-1965x569,1
+SUP-00000019,Valley Industrial,Japan,Distributor,Cheryl Williams,zsmith@mcdaniel.com,(861)659-5148x465,1
+SUP-00000020,Coastal Distributors,Netherlands,Wholesaler,Cheryl Ortega,lbyrd@carroll.com,336-699-5777x3872,1
+SUP-00000021,Global Tech Supply #21,South Korea,Manufacturer,Mackenzie Rogers,emilywalker@hernandez.com,391.876.9367x6320,1
+SUP-00000022,Prime Industrial #22,Australia,Wholesaler,Robert Dominguez,pwilliams@bryant.net,+1-495-979-8687,1
+SUP-00000023,FastParts Direct #23,Japan,Wholesaler,Paul Larsen,katie87@allen.com,855-881-2236x231,1
+SUP-00000024,QualitySource Inc #24,United Kingdom,Manufacturer,John Brown,xprice@shah.org,(670)854-6688x9373,1
+SUP-00000025,Reliable Components #25,India,Importer,Mr. Michael Yates,marycalhoun@ferguson.com,562-972-0465,1
+SUP-00000026,Premier Materials #26,Germany,Wholesaler,Philip Gray,fking@smith-ryan.com,510.403.3092,1
+SUP-00000027,ValueFirst Supply #27,Spain,Distributor,Brian Gould,xlyons@jackson-lawson.com,001-324-619-0496x63193,1
+SUP-00000028,Alliance Trading #28,Australia,Importer,Lindsay Martinez,reedross@jones-holland.com,(971)865-7262x84987,1
+SUP-00000029,Summit Distribution #29,Canada,Importer,Leslie Morris,mariahmiller@sanchez-marshall.org,+1-665-207-5273x54549,1
+SUP-00000030,Peak Performance #30,China,Importer,Cheryl Allen,wfreeman@vaughn.info,701.843.6349x578,1
+SUP-00000031,Elite Imports #31,United States,Wholesaler,Krista Bell MD,john13@wilson-herrera.com,537.649.8941,1
+SUP-00000032,Advanced Logistics #32,United Kingdom,Distributor,Christopher Smith,joshuamccann@carter.info,209-647-7752,1
+SUP-00000033,Central Supplies #33,Canada,Wholesaler,Karen Short,kvasquez@parks.com,831-986-9993,1
+SUP-00000034,United Parts #34,Canada,Distributor,Elizabeth Chapman,ntorres@lynch.com,001-933-641-2328x12067,1
+SUP-00000035,National Distribution #35,South Korea,Manufacturer,Dwayne Campbell,ojones@french-weber.com,(918)332-4210x24994,1
+SUP-00000036,Pacific Trading Co #36,United States,Importer,Eric Powell,vincent77@george.com,+1-940-913-9904x902,1
+SUP-00000037,Atlantic Supply #37,Germany,Distributor,Catherine Richards,ecosta@ortiz-morris.com,(356)774-6807,1
+SUP-00000038,Mountain Components #38,Brazil,Distributor,Brian Barton,sandovalamy@brown-stone.org,001-577-403-4824x77109,1
+SUP-00000039,Valley Industrial #39,Canada,Distributor,Adam Russell,victoriadurham@valentine-holland.com,448.346.7737x8263,1
+SUP-00000040,Coastal Distributors #40,Japan,Distributor,Richard Perry,lori44@carpenter.info,+1-575-558-8675,1
+SUP-00000041,Global Tech Supply #41,Australia,Distributor,Cynthia Rowe,floresthomas@hughes-alvarado.com,802.489.5171x8702,1
+SUP-00000042,Prime Industrial #42,France,Distributor,Richard Baker,vsantos@villarreal.info,+1-309-313-4316,1
+SUP-00000043,FastParts Direct #43,Brazil,Manufacturer,Michael Berger,nguyenbrian@brooks-thomas.net,(992)622-1969x37923,1
+SUP-00000044,QualitySource Inc #44,United Kingdom,Distributor,Michael Nolan,rsantana@moore.org,664-674-3671x3695,1
+SUP-00000045,Reliable Components #45,Mexico,Importer,Ronald Foster,knightgina@beltran.com,001-739-453-3942x10470,1
+SUP-00000046,Premier Materials #46,Brazil,Distributor,Edward Burgess,jamesbuchanan@schmidt-mcintyre.com,374-851-7123x685,1
+SUP-00000047,ValueFirst Supply #47,Canada,Manufacturer,Joshua Gibson,brenda51@hall.net,393-517-4612x00471,1
+SUP-00000048,Alliance Trading #48,Mexico,Manufacturer,Brandy Chavez,umatthews@mcclure.com,796.240.5377x3515,1
+SUP-00000049,Summit Distribution #49,France,Distributor,Colton Martinez,ndavis@fowler.com,529.731.8393,1
+SUP-00000050,Peak Performance #50,Japan,Importer,Rachel Carlson,michele22@king.com,(205)439-5024,1
+SUP-00000051,Elite Imports #51,United States,Distributor,Kelly Reese,xwest@wheeler.org,3849700766,1
+SUP-00000052,Advanced Logistics #52,United Kingdom,Manufacturer,Jill Lam,charlene12@weber-richards.com,(998)547-8961x1836,1
+SUP-00000053,Central Supplies #53,Mexico,Wholesaler,Ronald Ross,edwardslarry@brooks-hernandez.info,211-716-1528,1
+SUP-00000054,United Parts #54,China,Manufacturer,Jennifer Russo,uparrish@schmitt.com,(319)683-2731x585,1
+SUP-00000055,National Distribution #55,India,Manufacturer,Renee Bruce,lynchdiane@adams.com,850-922-9612x01836,1
+SUP-00000056,Pacific Trading Co #56,Spain,Wholesaler,Jacob Griffith,wareeric@williams.biz,997.664.3815x6149,1
+SUP-00000057,Atlantic Supply #57,Brazil,Importer,James Greene,harrissierra@duran.com,707-362-2683,1
+SUP-00000058,Mountain Components #58,China,Manufacturer,Patrick Graham,umorse@patterson.com,860-352-9751,1
+SUP-00000059,Valley Industrial #59,Spain,Distributor,Kevin Warren,vharrell@walker-maxwell.com,418.383.5523x12432,1
+SUP-00000060,Coastal Distributors #60,Japan,Manufacturer,Raymond Snyder,kmaldonado@reid.com,(771)377-4490,1
+SUP-00000061,Global Tech Supply #61,India,Importer,Jesse Brown,chase19@hunter.com,393.459.7820x715,1
+SUP-00000062,Prime Industrial #62,Spain,Manufacturer,Michael Ritter,michaelhardin@ortiz-morgan.org,4517518644,1
+SUP-00000063,FastParts Direct #63,United States,Wholesaler,Matthew Rangel,tammy62@fletcher.com,(481)568-5054,1
+SUP-00000064,QualitySource Inc #64,Australia,Wholesaler,Ralph Lee,ericphillips@romero.net,4599296222,1
+SUP-00000065,Reliable Components #65,Italy,Manufacturer,Jackson Ball,wbishop@bowers.info,859.477.4688,1
+SUP-00000066,Premier Materials #66,Spain,Wholesaler,Rebecca Taylor,brett75@villa.com,812-247-8261x3750,1
+SUP-00000067,ValueFirst Supply #67,Canada,Manufacturer,James Hughes,brooksanthony@combs.com,(220)347-2779,1
+SUP-00000068,Alliance Trading #68,France,Distributor,Daniel Hernandez,srodriguez@turner.com,(897)211-7980x89324,1
+SUP-00000069,Summit Distribution #69,Canada,Distributor,Cynthia Butler,millsmichael@stephens.com,(770)465-4051x5319,1
+SUP-00000070,Peak Performance #70,United Kingdom,Importer,Joshua Li,mariacohen@mendoza.info,8439030548,1
+SUP-00000071,Elite Imports #71,Italy,Importer,Paul Lee,michelle05@martinez-richardson.biz,001-876-452-7758x4161,1
+SUP-00000072,Advanced Logistics #72,Spain,Wholesaler,Erica Miller,kirk96@norris.info,4592640165,1
+SUP-00000073,Central Supplies #73,Canada,Manufacturer,Lawrence Harrington,martinezjoel@diaz.org,(775)857-1928,1
+SUP-00000074,United Parts #74,Australia,Distributor,Donald Horne,fitzgeraldvictor@mcintyre-wilson.com,001-973-394-7312x172,1
+SUP-00000075,National Distribution #75,Italy,Wholesaler,Tracy Downs,jenna88@vance-york.com,(783)913-2370x589,1
+SUP-00000076,Pacific Trading Co #76,Netherlands,Distributor,Kristen Salazar,jonesraymond@higgins.org,425-417-7852,1
+SUP-00000077,Atlantic Supply #77,Italy,Importer,Thomas Brown,holmeskevin@morris.com,(384)414-3842x498,1
+SUP-00000078,Mountain Components #78,Australia,Wholesaler,Lauren Jackson,megan90@miller.org,839-669-0784x473,1
+SUP-00000079,Valley Industrial #79,Italy,Wholesaler,Michael Moore,nwashington@lawson-edwards.com,001-956-525-8815x3714,1
+SUP-00000080,Coastal Distributors #80,India,Manufacturer,Anthony Dougherty,kwright@peck-griffith.com,001-527-787-7470x16873,1
+SUP-00000081,Global Tech Supply #81,France,Wholesaler,Douglas Harper,amitchell@jordan.com,001-965-606-0983x58416,1
+SUP-00000082,Prime Industrial #82,France,Importer,Lisa Carr,theresalong@grant-diaz.com,798.968.0002,1
+SUP-00000083,FastParts Direct #83,France,Distributor,Brittany Barry,markaustin@long.com,001-258-788-7947,1
+SUP-00000084,QualitySource Inc #84,South Korea,Wholesaler,Brian Butler,laura09@baker-rios.org,001-430-597-2896,1
+SUP-00000085,Reliable Components #85,Canada,Manufacturer,Travis Rodriguez,alexanderrobert@vaughn-jenkins.org,702.783.8578x6527,1
+SUP-00000086,Premier Materials #86,Australia,Manufacturer,Sharon Becker,chelsea33@grant-walker.com,001-843-775-7584x41986,1
+SUP-00000087,ValueFirst Supply #87,Canada,Wholesaler,Regina Roberts,stephanie15@douglas-burgess.com,584.584.2199,1
+SUP-00000088,Alliance Trading #88,Canada,Importer,Taylor Perez,briangutierrez@kennedy.net,(367)573-4540,1
+SUP-00000089,Summit Distribution #89,Brazil,Distributor,Miranda Zuniga,robertmonroe@osborn.info,(640)904-9915,1
+SUP-00000090,Peak Performance #90,China,Manufacturer,Kimberly Snyder DVM,znelson@rivera.info,+1-742-305-4932x9668,1
+SUP-00000091,Elite Imports #91,Japan,Importer,Brandon Holden,pmorris@green.info,001-445-849-9045x30174,1
+SUP-00000092,Advanced Logistics #92,South Korea,Manufacturer,Tammy Barron,hannah45@walker.info,001-795-368-7833x9187,1
+SUP-00000093,Central Supplies #93,Italy,Importer,Ashley Poole,ashleyhernandez@bond-ramos.com,001-297-918-7072x867,1
+SUP-00000094,United Parts #94,Australia,Wholesaler,Elizabeth Johnson,lisa39@williams.com,+1-801-770-4622,1
+SUP-00000095,National Distribution #95,Australia,Manufacturer,Janet Kane DVM,qmiller@anderson.net,(582)930-0478x6863,1
+SUP-00000096,Pacific Trading Co #96,United Kingdom,Importer,Donald Pineda,johnsondonna@miranda.com,819-907-9030,1
+SUP-00000097,Atlantic Supply #97,France,Manufacturer,Daniel Shields,taylorvictoria@cabrera.org,499-853-4283x64408,1
+SUP-00000098,Mountain Components #98,Japan,Distributor,Amber Cooper,ufloyd@butler.net,833.542.7086x6882,1
+SUP-00000099,Valley Industrial #99,Mexico,Wholesaler,Gary Miller,fboone@hardy.org,+1-501-539-8373x540,1
+SUP-00000100,Coastal Distributors #100,Germany,Manufacturer,Autumn Key,srocha@padilla.com,001-746-578-5445x87717,1

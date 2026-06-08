@@ -1,0 +1,4 @@
+warehouse_id,warehouse_name,location,capacity,manager_name
+WH-001,Main Distribution Center,"Chicago, IL",50000,John Smith
+WH-002,East Coast Hub,"Newark, NJ",35000,Maria Garcia
+WH-003,West Coast Center,"Los Angeles, CA",40000,David Chen
