@@ -16,6 +16,14 @@ app = Flask(__name__)
 db_path = os.path.expanduser(os.environ.get('DATABASE_PATH', '~/AI-Projects/database/erp_database.db'))
 app.config['DATABASE'] = db_path
 
+# Add max/min to Jinja2 environment
+from jinja2 import Environment
+def max_func(*args):
+    return max(*args)
+def min_func(*args):
+    return min(*args)
+app.jinja_env.globals.update(max=max_func, min=min_func)
+
 # ========================================
 # DATABASE CONNECTION
 # ========================================
