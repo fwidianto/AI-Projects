@@ -46,16 +46,14 @@ def executive():
         # Revenue (last 12 months)
         cursor.execute("""
             SELECT COALESCE(SUM(total_revenue), 0) as revenue 
-            FROM analytics_fact_sales 
-            WHERE order_year >= (SELECT MAX(order_year) FROM analytics_fact_sales) - 1
+            FROM analytics_fact_sales
         """)
         revenue = cursor.fetchone()[0]
         
         # Gross Profit
         cursor.execute("""
-            SELECT COALESCE(SUM(total_profit), 0) as profit 
-            FROM analytics_fact_sales 
-            WHERE order_year >= (SELECT MAX(order_year) FROM analytics_fact_sales) - 1
+            SELECT COALESCE(SUM(gross_profit), 0) as profit 
+            FROM analytics_fact_sales
         """)
         gross_profit = cursor.fetchone()[0]
         
@@ -74,20 +72,15 @@ def executive():
         cursor.execute("SELECT COALESCE(SUM(total_cost - amount_paid), 0) as ap FROM fact_purchase_orders WHERE status != 'PAID'")
         outstanding_ap = cursor.fetchone()[0]
         
-        # Inventory Turnover (Cost of Goods Sold / Average Inventory)
-        cursor.execute("""
-            SELECT COALESCE(SUM(total_cost), 0) as cogs 
-            FROM analytics_fact_sales 
-            WHERE order_year >= (SELECT MAX(order_year) FROM analytics_fact_sales) - 1
-        """)
+        # Inventory Turnover (COGS / Average Inventory)
+        cursor.execute("SELECT COALESCE(SUM(cost_of_goods_sold), 0) as cogs FROM analytics_fact_sales")
         cogs = cursor.fetchone()[0]
         inv_turnover = (cogs / inventory_value) if inventory_value > 0 else 0
         
-        # Monthly Revenue Trend (last 12 months)
+        # Monthly Revenue Trend
         cursor.execute("""
             SELECT year, month, SUM(total_revenue) as revenue, SUM(total_profit) as profit
             FROM analytics_monthly_trends
-            WHERE (year * 12 + month) >= (SELECT MAX(year * 12 + month) FROM analytics_monthly_trends) - 12
             GROUP BY year, month
             ORDER BY year, month
         """)
@@ -113,7 +106,7 @@ def executive():
         """)
         top_customers = [dict_from_row(row) for row in cursor.fetchall()]
         
-        # Sales Funnel (Lead → Quotation → SO)
+        # Sales Funnel
         cursor.execute("SELECT COUNT(*) FROM fact_crm_leads")
         leads = cursor.fetchone()[0]
         cursor.execute("SELECT COUNT(*) FROM fact_sales_quotations")
@@ -149,7 +142,7 @@ def sales():
         
         # Revenue by Month (last 24 months)
         cursor.execute("""
-            SELECT year, month, SUM(total_revenue) as revenue, SUM(total_profit) as profit, SUM(gross_margin) as margin
+            SELECT year, month, SUM(total_revenue) as revenue, SUM(total_profit) as profit
             FROM analytics_monthly_trends
             GROUP BY year, month
             ORDER BY year DESC, month DESC
@@ -169,7 +162,7 @@ def sales():
         
         # Revenue by Product Category
         cursor.execute("""
-            SELECT category, SUM(total_revenue) as revenue, SUM(total_profit) as profit, COUNT(*) as orders
+            SELECT category, SUM(total_revenue) as revenue, SUM(total_profit) as profit, SUM(units_sold) as units
             FROM analytics_product_performance
             GROUP BY category
             ORDER BY revenue DESC
@@ -186,25 +179,28 @@ def sales():
         revenue_by_salesperson = [dict_from_row(row) for row in cursor.fetchall()]
         
         # Sales Funnel
-        cursor.execute("SELECT COUNT(*) FROM fact_crm_leads WHERE status = 'CONVERTED'")
-        converted_leads = cursor.fetchone()[0]
         cursor.execute("SELECT COUNT(*) FROM fact_crm_leads")
         total_leads = cursor.fetchone()[0]
-        cursor.execute("SELECT COUNT(*) FROM fact_sales_quotations WHERE status = 'ACCEPTED'")
-        accepted_quotes = cursor.fetchone()[0]
         cursor.execute("SELECT COUNT(*) FROM fact_sales_quotations")
         total_quotes = cursor.fetchone()[0]
-        cursor.execute("SELECT COUNT(*) FROM fact_sales_orders WHERE status != 'CANCELLED'")
-        completed_orders = cursor.fetchone()[0]
         cursor.execute("SELECT COUNT(*) FROM fact_sales_orders")
         total_orders = cursor.fetchone()[0]
+        cursor.execute("SELECT COUNT(*) FROM fact_delivery_orders WHERE status = 'DELIVERED'")
+        delivered = cursor.fetchone()[0]
+        
+        # Conversion stats
+        cursor.execute("SELECT COUNT(*) FROM fact_crm_leads WHERE status = 'CONVERTED'")
+        converted_leads = cursor.fetchone()[0]
+        cursor.execute("SELECT COUNT(*) FROM fact_sales_quotations WHERE status = 'ACCEPTED'")
+        accepted_quotes = cursor.fetchone()[0]
+        cursor.execute("SELECT COUNT(*) FROM fact_sales_orders WHERE status != 'CANCELLED'")
+        completed_orders = cursor.fetchone()[0]
         
         # Top Products
         cursor.execute("""
-            SELECT product_name, category, SUM(total_revenue) as revenue, SUM(total_profit) as profit, SUM(quantity_sold) as units
+            SELECT product_name, category, total_revenue, total_profit, units_sold
             FROM analytics_product_performance
-            GROUP BY product_name, category
-            ORDER BY revenue DESC
+            ORDER BY total_revenue DESC
             LIMIT 10
         """)
         top_products = [dict_from_row(row) for row in cursor.fetchall()]
@@ -235,7 +231,7 @@ def purchasing():
         
         # Purchase Spend by Month
         cursor.execute("""
-            SELECT year, month, SUM(total_cost) as spend, AVG(lead_time_days) as avg_lead_time
+            SELECT year, month, SUM(total_cost) as spend, AVG(days_to_deliver) as avg_lead_time
             FROM analytics_fact_purchases
             GROUP BY year, month
             ORDER BY year DESC, month DESC
@@ -245,8 +241,8 @@ def purchasing():
         
         # Supplier Performance
         cursor.execute("""
-            SELECT supplier_name, country, SUM(total_cost) as spend, AVG(on_time_rate) as on_time, COUNT(*) as orders
-            FROM analytics_supplier_performance
+            SELECT supplier_name, country, SUM(total_cost) as spend, COUNT(*) as orders
+            FROM analytics_fact_purchases
             GROUP BY supplier_name, country
             ORDER BY spend DESC
             LIMIT 15
@@ -255,8 +251,8 @@ def purchasing():
         
         # Top Suppliers by Spend
         cursor.execute("""
-            SELECT supplier_name, SUM(total_cost) as spend, AVG(lead_time_days) as lead_time
-            FROM analytics_supplier_performance
+            SELECT supplier_name, SUM(total_cost) as spend, AVG(days_to_deliver) as lead_time
+            FROM analytics_fact_purchases
             GROUP BY supplier_name
             ORDER BY spend DESC
             LIMIT 10
@@ -275,10 +271,10 @@ def purchasing():
         # Delivery Performance
         cursor.execute("""
             SELECT 
-                SUM(CASE WHEN on_time = 1 THEN 1 ELSE 0 END) as on_time_count,
+                SUM(CASE WHEN on_time_delivery = 1 THEN 1 ELSE 0 END) as on_time_count,
                 COUNT(*) as total_count,
-                AVG(lead_time_days) as avg_lead_time
-            FROM fact_goods_receipts
+                AVG(days_to_deliver) as avg_lead_time
+            FROM analytics_fact_purchases
         """)
         delivery_stats = dict_from_row(cursor.fetchone())
         
@@ -318,40 +314,24 @@ def inventory():
         """)
         inventory_by_category = [dict_from_row(row) for row in cursor.fetchall()]
         
-        # Slow Moving Products (no sales in 90 days)
+        # Slow Moving Products - based on low turnover (high inventory, low sales)
         cursor.execute("""
-            SELECT product_name, category, quantity_on_hand, average_cost, total_value
-            FROM analytics_fact_inventory
-            WHERE last_sale_date < date('now', '-90 days') OR last_sale_date IS NULL
-            ORDER BY total_value DESC
+            SELECT i.product_name, i.category, i.quantity_on_hand, i.average_cost, i.total_value
+            FROM analytics_fact_inventory i
+            JOIN analytics_product_performance p ON i.product_id = p.product_id
+            ORDER BY i.quantity_on_hand DESC, p.units_sold ASC
             LIMIT 15
         """)
         slow_moving = [dict_from_row(row) for row in cursor.fetchall()]
         
         # Fast Moving Products
         cursor.execute("""
-            SELECT product_name, category, SUM(quantity_sold) as units_sold, SUM(total_revenue) as revenue
+            SELECT product_name, category, units_sold, total_revenue
             FROM analytics_product_performance
-            GROUP BY product_name, category
             ORDER BY units_sold DESC
             LIMIT 15
         """)
         fast_moving = [dict_from_row(row) for row in cursor.fetchall()]
-        
-        # Inventory Turnover by Category
-        cursor.execute("""
-            SELECT p.category,
-                   SUM(s.quantity_sold) as units_sold,
-                   AVG(i.average_cost) as avg_cost,
-                   SUM(s.quantity_sold) * AVG(i.average_cost) as estimated_cogs,
-                   SUM(i.total_value) as avg_inventory
-            FROM analytics_product_performance s
-            JOIN dim_product p ON s.product_id = p.product_id
-            JOIN analytics_fact_inventory i ON s.product_id = i.product_id
-            GROUP BY p.category
-            ORDER BY units_sold DESC
-        """)
-        turnover_by_category = [dict_from_row(row) for row in cursor.fetchall()]
         
         # Total Inventory Value
         cursor.execute("SELECT COALESCE(SUM(total_value), 0) as total, SUM(quantity_on_hand) as qty FROM analytics_fact_inventory")
@@ -362,7 +342,6 @@ def inventory():
                          inventory_by_category=inventory_by_category,
                          slow_moving=slow_moving,
                          fast_moving=fast_moving,
-                         turnover_by_category=turnover_by_category,
                          inv_summary=inv_summary)
 
 # ========================================
