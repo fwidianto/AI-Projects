@@ -731,9 +731,9 @@ def get_forecasts():
         # Revenue Forecast
         cursor.execute("""
             SELECT 
-                year, month,
-                SUM(total_revenue) as revenue,
-                SUM(total_profit) as profit
+                year, month, month_name,
+                SUM(total_revenue) as total_revenue,
+                SUM(total_profit) as total_profit
             FROM analytics_monthly_trends
             GROUP BY year, month
             ORDER BY year, month
@@ -741,8 +741,8 @@ def get_forecasts():
         monthly_data = [dict_from_row(row) for row in cursor.fetchall()]
         
         if len(monthly_data) >= 3:
-            revenues = [d['revenue'] for d in monthly_data]
-            profits = [d['profit'] for d in monthly_data]
+            revenues = [d['total_revenue'] for d in monthly_data]
+            profits = [d['total_profit'] for d in monthly_data]
             
             # Simple moving average
             avg_revenue = sum(revenues[-3:]) / 3
