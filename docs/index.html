@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="refresh" content="0; url=https://lasta.pythonanywhere.com">
+    <meta name="robots" content="noindex, nofollow">
+    <title>ERP Analytics Platform</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: white;
+        }
+        .container {
+            text-align: center;
+            padding: 40px;
+        }
+        .logo {
+            font-size: 4rem;
+            margin-bottom: 20px;
+        }
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+        .subtitle {
+            font-size: 1.2rem;
+            color: #94a3b8;
+            margin-bottom: 40px;
+        }
+        .spinner {
+            width: 50px;
+            height: 50px;
+            border: 4px solid #334155;
+            border-top: 4px solid #3b82f6;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 20px;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        .redirect-text {
+            color: #64748b;
+            font-size: 0.9rem;
+        }
+        .links {
+            margin-top: 30px;
+        }
+        .links a {
+            color: #3b82f6;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 0.9rem;
+        }
+        .links a:hover {
+            text-decoration: underline;
+        }
+    </style>
+    <script>
+        // Redirect after a short delay
+        setTimeout(function() {
+            window.location.href = "https://lasta.pythonanywhere.com";
+        }, 1500);
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="logo">📊</div>
+        <h1>ERP Analytics Platform</h1>
+        <p class="subtitle">Business Intelligence & Data Analytics</p>
+        
+        <div class="spinner"></div>
+        <p class="redirect-text">Redirecting to application...</p>
+        
+        <div class="links">
+            <a href="https://lasta.pythonanywhere.com">Open App</a>
+            <a href="https://lasta.pythonanywhere.com/dashboard">Dashboard</a>
+            <a href="https://github.com/fwidianto/AI-Projects">Source Code</a>
+        </div>
+    </div>
+</body>
+</html>
