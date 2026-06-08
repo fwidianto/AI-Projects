@@ -552,37 +552,40 @@
         }
         
         .table-card {
-            background: white;
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border);
             border-radius: 12px;
             padding: 20px;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
             text-decoration: none;
-            color: inherit;
+            color: var(--text-primary);
             transition: all 0.2s;
         }
-        
+
         .table-card:hover {
             transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+            border-color: var(--primary);
         }
-        
+
         .table-card-header {
             display: flex;
             align-items: center;
             gap: 15px;
             margin-bottom: 15px;
         }
-        
+
         .table-card-icon {
             font-size: 1.5rem;
         }
-        
+
         .table-card-title {
             font-weight: 600;
-            color: var(--gray-800);
+            color: var(--text-primary);
         }
-        
+
         .table-card-count {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
             font-size: 0.85rem;
             color: var(--gray-500);
         }
