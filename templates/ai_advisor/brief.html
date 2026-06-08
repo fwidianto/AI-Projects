@@ -1,180 +1,207 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Daily Executive Brief - AI Advisor</title>
-    <style>
-        :root {
-            --primary: #6366f1;
-            --success: #10b981;
-            --warning: #f59e0b;
-            --danger: #ef4444;
-            --gray-100: #f3f4f6;
-            --gray-200: #e5e7eb;
-            --gray-500: #6b7280;
-            --gray-600: #4b5563;
-            --gray-700: #374151;
-            --gray-900: #111827;
-        }
-        
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            background: linear-gradient(135deg, #1e1b4b 0%, #312e81 100%);
-            min-height: 100vh;
-            padding: 40px 20px;
-        }
-        
-        .brief-container {
-            max-width: 800px;
-            margin: 0 auto;
-            background: white;
-            border-radius: 24px;
-            overflow: hidden;
-            box-shadow: 0 25px 50px rgba(0,0,0,0.25);
-        }
-        
-        .brief-header {
-            background: linear-gradient(135deg, var(--primary) 0%, #4f46e5 100%);
-            color: white;
-            padding: 32px;
-            text-align: center;
-        }
-        
-        .brief-header h1 {
-            font-size: 1.75rem;
-            font-weight: 700;
-            margin-bottom: 8px;
-        }
-        
-        .brief-date {
-            font-size: 1rem;
-            opacity: 0.9;
-        }
-        
-        .brief-body { padding: 32px; }
-        
-        .metrics-row {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 16px;
-            margin-bottom: 32px;
-        }
-        
-        .metric-box {
-            background: var(--gray-100);
-            border-radius: 16px;
-            padding: 24px;
-            text-align: center;
-        }
-        
-        .metric-label {
-            font-size: 0.75rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            color: var(--gray-500);
-            margin-bottom: 8px;
-        }
-        
-        .metric-value {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--gray-900);
-        }
-        
-        .metric-change {
-            font-size: 0.875rem;
-            margin-top: 4px;
-        }
-        
-        .metric-change.up { color: var(--success); }
-        .metric-change.down { color: var(--danger); }
-        
-        .brief-section {
-            margin-bottom: 24px;
-        }
-        
-        .brief-section-title {
-            font-size: 0.75rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            color: var(--gray-500);
-            margin-bottom: 12px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-        
-        .brief-card {
-            background: var(--gray-100);
-            border-radius: 16px;
-            padding: 20px;
-        }
-        
-        .brief-card.highlight {
-            background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
-            border-left: 4px solid var(--primary);
-        }
-        
-        .brief-card.warning {
-            background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
-            border-left: 4px solid var(--warning);
-        }
-        
-        .brief-card.danger {
-            background: linear-gradient(135deg, #fee2e2 0%, #fecaca 100%);
-            border-left: 4px solid var(--danger);
-        }
-        
-        .brief-card.success {
-            background: linear-gradient(135deg, #ecfdf5 0%, #d1fae5 100%);
-            border-left: 4px solid var(--success);
-        }
-        
-        .risk-badge {
-            display: inline-block;
-            padding: 4px 12px;
-            border-radius: 20px;
-            font-size: 0.75rem;
-            font-weight: 600;
-        }
-        
-        .risk-badge.Critical { background: #fee2e2; color: #991b1b; }
-        .risk-badge.High { background: #ffedd5; color: #9a3412; }
-        .risk-badge.Medium { background: #fef3c7; color: #92400e; }
-        .risk-badge.Low { background: #d1fae5; color: #065f46; }
-        
-        .brief-footer {
-            padding: 24px 32px;
-            background: var(--gray-100);
-            text-align: center;
-            font-size: 0.75rem;
-            color: var(--gray-500);
-        }
-        
-        .nav-links {
-            display: flex;
-            justify-content: center;
-            gap: 12px;
-            margin-top: 16px;
-        }
-        
-        .nav-links a {
-            color: rgba(255,255,255,0.8);
-            text-decoration: none;
-            font-size: 0.875rem;
-        }
-        
-        .nav-links a:hover { color: white; }
-        
-        @media (max-width: 768px) {
-            .metrics-row { grid-template-columns: 1fr; }
-        }
+/* ==========================================================
+   DAILY EXECUTIVE BRIEF - DARK THEME
+   ========================================================== */
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+    font-family: 'Inter', sans-serif;
+    background: #0b0f19;
+    color: #f3f4f6;
+    line-height: 1.7;
+    min-height: 100vh;
+    padding: 40px 20px;
+}
+a { text-decoration: none; color: inherit; }
+
+/* Navigation */
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 999;
+    backdrop-filter: blur(12px);
+    background: rgba(11, 15, 25, 0.85);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 16px 0;
+}
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    max-width: 1300px;
+    margin: auto;
+}
+.logo { font-size: 20px; font-weight: 700; }
+.nav-links { display: flex; gap: 24px; }
+.nav-links a { color: #d1d5db; font-size: 14px; transition: .3s; }
+.nav-links a:hover { color: #60a5fa; }
+
+/* Brief Container */
+.brief-container {
+    max-width: 800px;
+    margin: 80px auto 0;
+    background: #111827;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 28px;
+    overflow: hidden;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
+}
+
+.brief-header {
+    background: linear-gradient(135deg, #1e1b4b 0%, #312e81 100%);
+    color: white;
+    padding: 40px;
+    text-align: center;
+}
+.brief-header h1 { font-size: 28px; font-weight: 700; margin-bottom: 8px; }
+.brief-date { font-size: 16px; opacity: 0.9; color: #d1d5db; }
+
+.brief-body { padding: 40px; }
+
+/* Metrics Row */
+.metrics-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-bottom: 40px;
+}
+.metric-box {
+    background: #0f172a;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
+    padding: 24px;
+    text-align: center;
+    transition: .3s;
+}
+.metric-box:hover { transform: translateY(-4px); border-color: #60a5fa; }
+.metric-label {
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #9ca3af;
+    letter-spacing: 1px;
+    margin-bottom: 12px;
+}
+.metric-value {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+.metric-change { font-size: 13px; }
+.metric-change.up { color: #22c55e; }
+.metric-change.down { color: #ef4444; }
+.metric-change.neutral { color: #9ca3af; }
+
+/* Brief Sections */
+.brief-section { margin-bottom: 24px; }
+.brief-section-title {
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #60a5fa;
+    letter-spacing: 1px;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.brief-card {
+    background: #0f172a;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
+    padding: 24px;
+    font-size: 16px;
+    color: #d1d5db;
+    line-height: 1.6;
+}
+.brief-card.highlight {
+    background: rgba(96, 165, 250, 0.08);
+    border-color: rgba(96, 165, 250, 0.2);
+}
+.brief-card.warning {
+    background: rgba(245, 158, 11, 0.08);
+    border-color: rgba(245, 158, 11, 0.2);
+}
+.brief-card.danger {
+    background: rgba(239, 68, 68, 0.08);
+    border-color: rgba(239, 68, 68, 0.2);
+}
+.brief-card.success {
+    background: rgba(34, 197, 94, 0.08);
+    border-color: rgba(34, 197, 94, 0.2);
+}
+
+/* Risk Badge */
+.risk-badge {
+    display: inline-block;
+    padding: 6px 14px;
+    border-radius: 999px;
+    font-size: 12px;
+    font-weight: 600;
+}
+.risk-badge.Critical { background: rgba(239, 68, 68, 0.15); color: #ef4444; }
+.risk-badge.High { background: rgba(245, 158, 11, 0.15); color: #f59e0b; }
+.risk-badge.Medium { background: rgba(59, 130, 246, 0.15); color: #60a5fa; }
+.risk-badge.Low { background: rgba(34, 197, 94, 0.15); color: #22c55e; }
+
+/* At a Glance Grid */
+.at-a-glance {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+.at-glance-item {
+    background: rgba(255, 255, 255, 0.02);
+    border-radius: 14px;
+    padding: 20px;
+    text-align: center;
+}
+.at-glance-label {
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #9ca3af;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+}
+.at-glance-value {
+    font-size: 28px;
+    font-weight: 700;
+}
+
+/* Footer */
+.brief-footer {
+    padding: 30px 40px;
+    background: #0f172a;
+    text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+.brief-footer p { color: #6b7280; font-size: 13px; margin-bottom: 16px; }
+.nav-links-bottom { display: flex; justify-content: center; gap: 20px; }
+.nav-links-bottom a { color: #60a5fa; font-size: 14px; }
+.nav-links-bottom a:hover { text-decoration: underline; }
+
+@media (max-width: 768px) {
+    .metrics-row { grid-template-columns: 1fr; }
+    .at-a-glance { grid-template-columns: 1fr; }
+}
     </style>
 </head>
 <body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="/ai-advisor" class="logo">🤖 AI Executive Advisor</a>
+            <div class="nav-links">
+                <a href="/ai-advisor">← Back to Overview</a>
+                <a href="/dashboard">Dashboards</a>
+                <a href="/">Data Explorer</a>
+            </div>
+        </div>
+    </nav>
+    
     <div class="brief-container">
         <div class="brief-header">
             <h1>📋 Daily Executive Brief</h1>
@@ -198,7 +225,7 @@
                 <div class="metric-box">
                     <div class="metric-label">Gross Margin</div>
                     <div class="metric-value">{{ "%.1f"|format(brief.key_metrics.margin) }}%</div>
-                    <div class="metric-change">of revenue</div>
+                    <div class="metric-change neutral">of revenue</div>
                 </div>
                 
                 <div class="metric-box">
@@ -226,7 +253,7 @@
                     <span>⚠️</span> Risk Status
                 </div>
                 <div class="brief-card {% if brief.risk_count > 2 %}danger{% elif brief.risk_count > 0 %}warning{% else %}success{% endif %}">
-                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                    <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;">
                         <span>{{ brief.top_risk }}</span>
                         <span class="risk-badge {{ brief.ar_risk }}">{{ brief.ar_risk }} AR Risk</span>
                     </div>
@@ -248,36 +275,32 @@
                 <div class="brief-section-title">
                     <span>📊</span> At a Glance
                 </div>
-                <div class="brief-card">
-                    <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px;">
-                        <div>
-                            <div style="font-size: 0.75rem; color: var(--gray-500);">Slow Inventory</div>
-                            <div style="font-size: 1.25rem; font-weight: 600;">{{ "%.0f"|format(brief.key_metrics.slow_inventory_pct) }}%</div>
-                        </div>
-                        <div>
-                            <div style="font-size: 0.75rem; color: var(--gray-500);">Overdue AR</div>
-                            <div style="font-size: 1.25rem; font-weight: 600;">{{ "%.0f"|format(brief.key_metrics.overdue_pct) }}%</div>
-                        </div>
-                        <div>
-                            <div style="font-size: 0.75rem; color: var(--gray-500);">Opportunities</div>
-                            <div style="font-size: 1.25rem; font-weight: 600;">{{ brief.opportunity_count }}</div>
-                        </div>
-                        <div>
-                            <div style="font-size: 0.75rem; color: var(--gray-500);">Recommendations</div>
-                            <div style="font-size: 1.25rem; font-weight: 600;">{{ brief.recommendation_count }}</div>
-                        </div>
+                <div class="at-a-glance">
+                    <div class="at-glance-item">
+                        <div class="at-glance-label">Slow Inventory</div>
+                        <div class="at-glance-value">{{ "%.0f"|format(brief.key_metrics.slow_inventory_pct) }}%</div>
+                    </div>
+                    <div class="at-glance-item">
+                        <div class="at-glance-label">Overdue AR</div>
+                        <div class="at-glance-value">{{ "%.0f"|format(brief.key_metrics.overdue_pct) }}%</div>
+                    </div>
+                    <div class="at-glance-item">
+                        <div class="at-glance-label">Opportunities</div>
+                        <div class="at-glance-value">{{ brief.opportunity_count }}</div>
+                    </div>
+                    <div class="at-glance-item">
+                        <div class="at-glance-label">Recommendations</div>
+                        <div class="at-glance-value">{{ brief.recommendation_count }}</div>
                     </div>
                 </div>
             </div>
         </div>
         
         <div class="brief-footer">
-            <div>AI Executive Advisor • Generated {{ brief.date }}</div>
-            <div class="nav-links">
+            <p>AI Executive Advisor • Generated {{ brief.date }}</p>
+            <div class="nav-links-bottom">
                 <a href="/ai-advisor">Full Analysis</a>
-                <span>•</span>
                 <a href="/dashboard">Dashboards</a>
-                <span>•</span>
                 <a href="/">Data Explorer</a>
             </div>
         </div>
