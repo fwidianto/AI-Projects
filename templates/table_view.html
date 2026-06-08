@@ -49,8 +49,6 @@
                     <td>
                         {% if row[col] is none or row[col] == '' %}
                         <span style="color: var(--gray-400);">-</span>
-                        {% elif row[col] is number %}
-                        {{ "%.2f"|format(row[col]) if '.' in row[col]|string else row[col] }}
                         {% else %}
                         {{ row[col] }}
                         {% endif %}
@@ -72,9 +70,9 @@
     <div class="pagination">
         <div class="pagination-info">
             {% if search %}
-            Showing {{ rows|length }} of {{ filtered_count|number_format }} filtered records
+            Showing {{ rows|length }} of {{ filtered_count }} filtered records
             {% else %}
-            Showing {{ rows|length }} of {{ total_count|number_format }} records
+            Showing {{ rows|length }} of {{ total_count }} records
             {% endif %}
         </div>
         

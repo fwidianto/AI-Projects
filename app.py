@@ -983,11 +983,11 @@ def api_schema(table_name):
 
 @app.errorhandler(404)
 def not_found(e):
-    return render_template('error.html', message='Page not found'), 404
+    return render_template('error.html', message='Page not found', tables=TABLES), 404
 
 @app.errorhandler(500)
 def server_error(e):
-    return render_template('error.html', message='Internal server error'), 500
+    return render_template('error.html', message='Internal server error', tables=TABLES), 500
 
 # ========================================
 # MAIN
