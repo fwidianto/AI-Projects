@@ -12,7 +12,9 @@ import io
 import csv
 
 app = Flask(__name__)
-app.config['DATABASE'] = os.path.join(os.path.dirname(__file__), 'database', 'erp_database.db')
+# Use absolute path for PythonAnywhere
+db_path = os.path.expanduser(os.environ.get('DATABASE_PATH', '~/AI-Projects/database/erp_database.db'))
+app.config['DATABASE'] = db_path
 
 # ========================================
 # DATABASE CONNECTION
