@@ -655,8 +655,20 @@
         </div>
         
         <div class="sidebar-section">
+            <div class="sidebar-section-title">AI Executive Advisor</div>
+            <a href="{{ url_for('ai_advisor.index') }}" class="sidebar-link {% if 'ai_advisor' in request.endpoint %}active{% endif %}">
+                <span class="sidebar-link-icon">🤖</span>
+                AI Advisor
+            </a>
+            <a href="{{ url_for('ai_advisor.morning_brief') }}" class="sidebar-link">
+                <span class="sidebar-link-icon">📋</span>
+                Daily Brief
+            </a>
+        </div>
+        
+        <div class="sidebar-section">
             <div class="sidebar-section-title">Analytics Dashboard</div>
-            <a href="{{ url_for('dashboard.executive') }}" class="sidebar-link {% if 'dashboard' in request.endpoint %}active{% endif %}">
+            <a href="{{ url_for('dashboard.executive') }}" class="sidebar-link {% if 'dashboard' in request.endpoint and 'ai_advisor' not in request.endpoint %}active{% endif %}">
                 <span class="sidebar-link-icon">📊</span>
                 Executive View
             </a>

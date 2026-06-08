@@ -28,6 +28,10 @@ app.jinja_env.globals.update(max=max_func, min=min_func)
 from dashboard_app import dashboard_bp
 app.register_blueprint(dashboard_bp)
 
+# Import and register AI Advisor Blueprint
+from ai_advisor import ai_advisor_bp
+app.register_blueprint(ai_advisor_bp)
+
 # Add now variable to all templates
 @app.context_processor
 def inject_now():

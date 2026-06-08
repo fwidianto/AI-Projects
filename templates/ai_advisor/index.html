@@ -1,0 +1,899 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Executive Advisor - ERP Analytics</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+    <style>
+        :root {
+            --primary: #6366f1;
+            --primary-dark: #4f46e5;
+            --success: #10b981;
+            --warning: #f59e0b;
+            --danger: #ef4444;
+            --gray-50: #f9fafb;
+            --gray-100: #f3f4f6;
+            --gray-200: #e5e7eb;
+            --gray-300: #d1d5db;
+            --gray-400: #9ca3af;
+            --gray-500: #6b7280;
+            --gray-600: #4b5563;
+            --gray-700: #374151;
+            --gray-800: #1f2937;
+            --gray-900: #111827;
+        }
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--gray-100);
+            color: var(--gray-800);
+            line-height: 1.5;
+        }
+        
+        /* Navigation */
+        .top-nav {
+            background: linear-gradient(135deg, #1e1b4b 0%, #312e81 100%);
+            color: white;
+            padding: 0 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 64px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+        }
+        
+        .top-nav-left { display: flex; align-items: center; gap: 24px; }
+        
+        .logo {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: white;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .nav-tabs {
+            display: flex;
+            gap: 4px;
+        }
+        
+        .nav-tab {
+            color: rgba(255,255,255,0.7);
+            text-decoration: none;
+            padding: 8px 16px;
+            border-radius: 6px;
+            font-size: 0.875rem;
+            font-weight: 500;
+            transition: all 0.2s;
+        }
+        
+        .nav-tab:hover { background: rgba(255,255,255,0.1); color: white; }
+        .nav-tab.active { background: var(--primary); color: white; }
+        
+        .top-nav-right { display: flex; align-items: center; gap: 16px; }
+        
+        .module-switch {
+            background: rgba(255,255,255,0.1);
+            border: 1px solid rgba(255,255,255,0.2);
+            color: white;
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            cursor: pointer;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        
+        .module-switch:hover { background: rgba(255,255,255,0.2); }
+        
+        /* Main Content */
+        .main-content { padding: 24px; max-width: 1600px; margin: 0 auto; }
+        
+        .page-header {
+            margin-bottom: 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+        
+        .page-title {
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: var(--gray-900);
+        }
+        
+        .page-subtitle {
+            color: var(--gray-500);
+            font-size: 0.875rem;
+            margin-top: 4px;
+        }
+        
+        .ai-badge {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        
+        /* Section Cards */
+        .section {
+            background: white;
+            border-radius: 16px;
+            padding: 24px;
+            margin-bottom: 24px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid var(--gray-200);
+        }
+        
+        .section-title {
+            font-size: 1.125rem;
+            font-weight: 600;
+            color: var(--gray-800);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .section-badge {
+            font-size: 0.7rem;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-weight: 600;
+        }
+        
+        /* KPI Cards */
+        .kpi-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+        
+        .kpi-card {
+            background: var(--gray-50);
+            border-radius: 12px;
+            padding: 20px;
+            border: 1px solid var(--gray-200);
+        }
+        
+        .kpi-label {
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            color: var(--gray-500);
+            margin-bottom: 8px;
+        }
+        
+        .kpi-value {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--gray-900);
+        }
+        
+        .kpi-change {
+            font-size: 0.75rem;
+            margin-top: 4px;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+        
+        .kpi-change.up { color: var(--success); }
+        .kpi-change.down { color: var(--danger); }
+        .kpi-change.neutral { color: var(--gray-500); }
+        
+        /* Insight Cards */
+        .insight-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 16px;
+        }
+        
+        .insight-card {
+            background: var(--gray-50);
+            border-radius: 12px;
+            padding: 16px;
+            border-left: 4px solid var(--primary);
+        }
+        
+        .insight-type {
+            font-size: 0.7rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            color: var(--primary);
+            margin-bottom: 8px;
+        }
+        
+        .insight-text {
+            font-size: 0.875rem;
+            color: var(--gray-700);
+            margin-bottom: 8px;
+        }
+        
+        .insight-metric {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--gray-900);
+        }
+        
+        /* Risk Cards */
+        .risk-card {
+            background: var(--gray-50);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 16px;
+            display: flex;
+            gap: 16px;
+        }
+        
+        .risk-level {
+            width: 80px;
+            height: 80px;
+            border-radius: 12px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 0.7rem;
+            text-transform: uppercase;
+        }
+        
+        .risk-level.critical { background: #fee2e2; color: #991b1b; }
+        .risk-level.high { background: #ffedd5; color: #9a3412; }
+        .risk-level.medium { background: #fef3c7; color: #92400e; }
+        .risk-level.low { background: #d1fae5; color: #065f46; }
+        
+        .risk-level .score {
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+        
+        .risk-content { flex: 1; }
+        
+        .risk-category {
+            font-size: 0.7rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            color: var(--gray-500);
+            margin-bottom: 4px;
+        }
+        
+        .risk-name {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--gray-900);
+            margin-bottom: 8px;
+        }
+        
+        .risk-reasoning {
+            font-size: 0.875rem;
+            color: var(--gray-600);
+            margin-bottom: 8px;
+        }
+        
+        .risk-impact {
+            font-size: 0.75rem;
+            color: var(--gray-500);
+            background: var(--gray-100);
+            padding: 8px 12px;
+            border-radius: 6px;
+        }
+        
+        /* Opportunity Cards */
+        .opportunity-card {
+            background: linear-gradient(135deg, #ecfdf5 0%, #d1fae5 100%);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 16px;
+            border-left: 4px solid var(--success);
+        }
+        
+        .opportunity-type {
+            font-size: 0.7rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            color: var(--success);
+            margin-bottom: 8px;
+        }
+        
+        .opportunity-title {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--gray-900);
+            margin-bottom: 8px;
+        }
+        
+        .opportunity-impact {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--success);
+            margin-bottom: 8px;
+        }
+        
+        .opportunity-reasoning {
+            font-size: 0.875rem;
+            color: var(--gray-600);
+        }
+        
+        /* Recommendation Cards */
+        .recommendation-card {
+            background: var(--gray-50);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 16px;
+        }
+        
+        .rec-category {
+            font-size: 0.7rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            color: var(--primary);
+            margin-bottom: 8px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .rec-priority {
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.7rem;
+        }
+        
+        .rec-priority.Critical { background: #fee2e2; color: #991b1b; }
+        .rec-priority.High { background: #ffedd5; color: #9a3412; }
+        .rec-priority.Medium { background: #fef3c7; color: #92400e; }
+        
+        .rec-observation {
+            font-size: 0.875rem;
+            color: var(--gray-700);
+            margin-bottom: 12px;
+            padding: 12px;
+            background: white;
+            border-radius: 8px;
+            border-left: 3px solid var(--warning);
+        }
+        
+        .rec-actions {
+            margin-bottom: 12px;
+        }
+        
+        .rec-actions h4 {
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: var(--gray-500);
+            margin-bottom: 8px;
+        }
+        
+        .rec-actions ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .rec-actions li {
+            font-size: 0.875rem;
+            color: var(--gray-700);
+            padding: 6px 0;
+            padding-left: 20px;
+            position: relative;
+        }
+        
+        .rec-actions li::before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: var(--primary);
+        }
+        
+        .rec-benefits {
+            font-size: 0.75rem;
+            color: var(--success);
+            background: #ecfdf5;
+            padding: 8px 12px;
+            border-radius: 6px;
+        }
+        
+        /* Forecast Table */
+        .forecast-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 16px;
+        }
+        
+        .forecast-card {
+            background: var(--gray-50);
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .forecast-period {
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            color: var(--gray-500);
+            margin-bottom: 12px;
+        }
+        
+        .forecast-value {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--gray-900);
+            margin-bottom: 8px;
+        }
+        
+        .forecast-trend {
+            font-size: 0.75rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 4px;
+        }
+        
+        .forecast-trend.up { color: var(--success); }
+        .forecast-trend.down { color: var(--danger); }
+        .forecast-trend.stable { color: var(--gray-500); }
+        
+        .forecast-confidence {
+            font-size: 0.7rem;
+            color: var(--gray-400);
+            margin-top: 8px;
+        }
+        
+        /* Chart */
+        .chart-container {
+            height: 300px;
+            margin-top: 20px;
+        }
+        
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .forecast-grid { grid-template-columns: repeat(2, 1fr); }
+            .risk-card { flex-direction: column; }
+        }
+        
+        @media (max-width: 768px) {
+            .top-nav { flex-direction: column; height: auto; padding: 12px; gap: 12px; }
+            .nav-tabs { flex-wrap: wrap; }
+            .forecast-grid { grid-template-columns: 1fr; }
+            .kpi-grid { grid-template-columns: repeat(2, 1fr); }
+            .page-header { flex-direction: column; gap: 12px; }
+        }
+        
+        /* Trend Icons */
+        .trend-icon { font-size: 0.875rem; }
+        
+        /* Explainability */
+        .explain-box {
+            background: #eff6ff;
+            border: 1px solid #bfdbfe;
+            border-radius: 8px;
+            padding: 12px;
+            margin-top: 12px;
+            font-size: 0.75rem;
+        }
+        
+        .explain-box h4 {
+            color: #1e40af;
+            margin-bottom: 8px;
+        }
+        
+        .explain-metrics {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 8px;
+        }
+        
+        .explain-metric {
+            background: white;
+            padding: 8px;
+            border-radius: 4px;
+            text-align: center;
+        }
+        
+        .explain-metric .label {
+            font-size: 0.65rem;
+            color: var(--gray-500);
+        }
+        
+        .explain-metric .value {
+            font-weight: 600;
+            color: var(--gray-900);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="top-nav">
+        <div class="top-nav-left">
+            <a href="/ai-advisor" class="logo">
+                🤖 AI Executive Advisor
+            </a>
+            <div class="nav-tabs">
+                <a href="/ai-advisor" class="nav-tab active">📊 Overview</a>
+                <a href="/ai-advisor/brief" class="nav-tab">📋 Daily Brief</a>
+                <a href="/ai-advisor/risks" class="nav-tab">⚠️ Risks</a>
+                <a href="/ai-advisor/opportunities" class="nav-tab">💡 Opportunities</a>
+                <a href="/dashboard" class="nav-tab">📈 Dashboards</a>
+            </div>
+        </div>
+        <div class="top-nav-right">
+            <a href="/" class="module-switch">🔍 Data Explorer</a>
+        </div>
+    </nav>
+    
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="page-header">
+            <div>
+                <h1 class="page-title">AI Executive Advisor</h1>
+                <p class="page-subtitle">Intelligent business insights and decision support</p>
+            </div>
+            <div class="ai-badge">
+                <span>🤖</span>
+                AI-Powered Analysis
+            </div>
+        </div>
+        
+        <!-- Section 1: Executive Summary -->
+        <section class="section">
+            <div class="section-header">
+                <h2 class="section-title">📊 Executive Summary</h2>
+                <span class="section-badge" style="background: var(--gray-100); color: var(--gray-600);">
+                    Real-time Analysis
+                </span>
+            </div>
+            
+            <div class="kpi-grid">
+                <div class="kpi-card">
+                    <div class="kpi-label">Total Revenue</div>
+                    <div class="kpi-value">{{ summary.revenue.formatted }}</div>
+                    <div class="kpi-change {% if summary.revenue.trend == 'up' %}up{% elif summary.revenue.trend == 'down' %}down{% else %}neutral{% endif %}">
+                        {% if summary.revenue.monthly_change > 0 %}▲{% else %}▼{% endif %}
+                        {{ "%.1f"|format(summary.revenue.monthly_change|abs) }}% vs last month
+                    </div>
+                </div>
+                
+                <div class="kpi-card">
+                    <div class="kpi-label">Gross Profit</div>
+                    <div class="kpi-value">{{ summary.profitability.formatted }}</div>
+                    <div class="kpi-change {% if summary.profitability.margin_pct > 30 %}up{% else %}neutral{% endif %}">
+                        {{ "%.1f"|format(summary.profitability.margin_pct) }}% margin
+                    </div>
+                </div>
+                
+                <div class="kpi-card">
+                    <div class="kpi-label">Inventory Value</div>
+                    <div class="kpi-value">${{ "{:,.0f}".format(summary.inventory.value|int) }}</div>
+                    <div class="kpi-change {% if summary.inventory.risk_level in ['Critical', 'High'] %}down{% else %}neutral{% endif %}">
+                        {{ summary.inventory.slow_moving_pct|int }}% slow-moving
+                    </div>
+                </div>
+                
+                <div class="kpi-card">
+                    <div class="kpi-label">Outstanding AR</div>
+                    <div class="kpi-value">{{ summary.accounts_receivable.formatted }}</div>
+                    <div class="kpi-change {% if summary.accounts_receivable.risk_level in ['Critical', 'High'] %}down{% else %}neutral{% endif %}">
+                        {{ summary.accounts_receivable.overdue_pct|int }}% overdue
+                    </div>
+                </div>
+                
+                <div class="kpi-card">
+                    <div class="kpi-label">Active Suppliers</div>
+                    <div class="kpi-value">{{ summary.supplier.count }}</div>
+                    <div class="kpi-change up">
+                        {{ "%.0f"|format(summary.supplier.on_time_rate) }}% on-time
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Section 2: Insight Engine -->
+        <section class="section">
+            <div class="section-header">
+                <h2 class="section-title">💡 Insight Engine</h2>
+                <span class="section-badge" style="background: #dbeafe; color: #1e40af;">
+                    Data-Driven
+                </span>
+            </div>
+            
+            <h3 style="font-size: 0.875rem; color: var(--gray-500); margin-bottom: 12px;">Sales Insights</h3>
+            <div class="insight-grid" style="margin-bottom: 24px;">
+                {% for insight in insights.sales %}
+                <div class="insight-card">
+                    <div class="insight-type">{{ insight.type|replace('_', ' ')|title }}</div>
+                    <div class="insight-text">{{ insight.text }}</div>
+                    <div class="insight-metric">{{ insight.metric }}</div>
+                </div>
+                {% else %}
+                <div class="insight-card">
+                    <div class="insight-text">No significant sales trends detected</div>
+                </div>
+                {% endfor %}
+            </div>
+            
+            <h3 style="font-size: 0.875rem; color: var(--gray-500); margin-bottom: 12px;">Inventory Insights</h3>
+            <div class="insight-grid" style="margin-bottom: 24px;">
+                {% for insight in insights.inventory %}
+                <div class="insight-card" style="border-left-color: var(--warning);">
+                    <div class="insight-type">{{ insight.type|replace('_', ' ')|title }}</div>
+                    <div class="insight-text">{{ insight.text }}</div>
+                    <div class="insight-metric">{{ insight.metric }}</div>
+                </div>
+                {% else %}
+                <div class="insight-card" style="border-left-color: var(--warning);">
+                    <div class="insight-text">Inventory levels normal</div>
+                </div>
+                {% endfor %}
+            </div>
+            
+            <h3 style="font-size: 0.875rem; color: var(--gray-500); margin-bottom: 12px;">AR Insights</h3>
+            <div class="insight-grid">
+                {% for insight in insights.ar %}
+                <div class="insight-card" style="border-left-color: var(--danger);">
+                    <div class="insight-type">{{ insight.type|replace('_', ' ')|title }}</div>
+                    <div class="insight-text">{{ insight.text }}</div>
+                    <div class="insight-metric">{{ insight.critical }} critical</div>
+                </div>
+                {% else %}
+                <div class="insight-card" style="border-left-color: var(--success);">
+                    <div class="insight-text">No overdue invoices</div>
+                </div>
+                {% endfor %}
+            </div>
+        </section>
+        
+        <!-- Section 3: Risk Detection Engine -->
+        <section class="section">
+            <div class="section-header">
+                <h2 class="section-title">⚠️ Risk Detection Engine</h2>
+                <span class="section-badge" style="background: #fee2e2; color: #991b1b;">
+                    {{ risks|length }} Risks Detected
+                </span>
+            </div>
+            
+            {% for risk in risks %}
+            <div class="risk-card">
+                <div class="risk-level {{ risk.level|lower }}">
+                    <span class="score">{{ risk.score }}</span>
+                    {{ risk.level }}
+                </div>
+                <div class="risk-content">
+                    <div class="risk-category">{{ risk.category }}</div>
+                    <div class="risk-name">{{ risk.name }}</div>
+                    <div class="risk-reasoning">{{ risk.reasoning }}</div>
+                    <div class="risk-impact">📊 Impact: {{ risk.impact }}</div>
+                </div>
+            </div>
+            {% else %}
+            <div style="text-align: center; padding: 40px; color: var(--gray-500);">
+                <div style="font-size: 3rem; margin-bottom: 12px;">✅</div>
+                <div>No significant risks detected</div>
+            </div>
+            {% endfor %}
+        </section>
+        
+        <!-- Section 4: Opportunity Engine -->
+        <section class="section">
+            <div class="section-header">
+                <h2 class="section-title">💡 Opportunity Engine</h2>
+                <span class="section-badge" style="background: #d1fae5; color: #065f46;">
+                    {{ opportunities|length }} Opportunities
+                </span>
+            </div>
+            
+            <div class="insight-grid">
+                {% for opp in opportunities %}
+                <div class="opportunity-card">
+                    <div class="opportunity-type">{{ opp.type }}</div>
+                    <div class="opportunity-title">{{ opp.title }}</div>
+                    <div class="opportunity-impact">{{ opp.impact }}</div>
+                    <div class="opportunity-reasoning">{{ opp.reasoning }}</div>
+                </div>
+                {% else %}
+                <div style="text-align: center; padding: 40px; color: var(--gray-500);">
+                    <div style="font-size: 3rem; margin-bottom: 12px;">🔍</div>
+                    <div>No specific opportunities identified</div>
+                </div>
+                {% endfor %}
+            </div>
+        </section>
+        
+        <!-- Section 5: Recommendation Engine -->
+        <section class="section">
+            <div class="section-header">
+                <h2 class="section-title">🎯 Recommendation Engine</h2>
+                <span class="section-badge" style="background: #fef3c7; color: #92400e;">
+                    Actionable Insights
+                </span>
+            </div>
+            
+            {% for rec in recommendations %}
+            <div class="recommendation-card">
+                <div class="rec-category">
+                    <span>{{ rec.category }}</span>
+                    <span class="rec-priority {{ rec.priority }}">{{ rec.priority }} Priority</span>
+                </div>
+                <div class="rec-observation">
+                    <strong>Observation:</strong> {{ rec.observation }}
+                </div>
+                <div class="rec-actions">
+                    <h4>Recommended Actions:</h4>
+                    <ul>
+                        {% for action in rec.actions %}
+                        <li>{{ action }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                <div class="rec-benefits">
+                    💰 Expected Benefits: {{ rec.benefits }}
+                </div>
+            </div>
+            {% else %}
+            <div style="text-align: center; padding: 40px; color: var(--gray-500);">
+                <div style="font-size: 3rem; margin-bottom: 12px;">👍</div>
+                <div>Business operations are running smoothly</div>
+            </div>
+            {% endfor %}
+        </section>
+        
+        <!-- Section 6: Forecasting -->
+        <section class="section">
+            <div class="section-header">
+                <h2 class="section-title">📈 Forecasting</h2>
+                <span class="section-badge" style="background: #e0e7ff; color: #3730a3;">
+                    Based on Historical Data
+                </span>
+            </div>
+            
+            <h3 style="font-size: 0.875rem; color: var(--gray-500); margin-bottom: 16px;">Revenue Forecast</h3>
+            <div class="forecast-grid" style="margin-bottom: 32px;">
+                {% for period, data in forecasts.revenue.items() %}
+                <div class="forecast-card">
+                    <div class="forecast-period">{{ period }}</div>
+                    <div class="forecast-value">{{ data.formatted }}</div>
+                    <div class="forecast-trend {{ data.trend }}">
+                        {% if data.trend == 'up' %}📈{% elif data.trend == 'down' %}📉{% else %}➡️{% endif %}
+                        {{ data.trend|title }}
+                    </div>
+                    <div class="forecast-confidence">{{ data.confidence|int }}% confidence</div>
+                </div>
+                {% endfor %}
+            </div>
+            
+            <h3 style="font-size: 0.875rem; color: var(--gray-500); margin-bottom: 16px;">Profit Forecast</h3>
+            <div class="forecast-grid" style="margin-bottom: 32px;">
+                {% for period, data in forecasts.profit.items() %}
+                <div class="forecast-card">
+                    <div class="forecast-period">{{ period }}</div>
+                    <div class="forecast-value">{{ data.formatted }}</div>
+                    <div class="forecast-trend {{ data.trend }}">
+                        {% if data.trend == 'up' %}📈{% elif data.trend == 'down' %}📉{% else %}➡️{% endif %}
+                        {{ data.trend|title }}
+                    </div>
+                    <div class="forecast-confidence">{{ data.confidence|int }}% confidence</div>
+                </div>
+                {% endfor %}
+            </div>
+            
+            <h3 style="font-size: 0.875rem; color: var(--gray-500); margin-bottom: 16px;">Revenue Trend Chart</h3>
+            <div class="chart-container">
+                <canvas id="revenueChart"></canvas>
+            </div>
+        </section>
+        
+        <!-- Section 8: Explainability -->
+        <section class="section" style="background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);">
+            <div class="section-header" style="border-bottom-color: #bfdbfe;">
+                <h2 class="section-title" style="color: #1e40af;">🔍 Explainability</h2>
+            </div>
+            
+            <p style="color: var(--gray-600); margin-bottom: 20px;">
+                Every insight is generated from actual ERP data. Here's how we calculate the metrics:
+            </p>
+            
+            <div class="explain-box">
+                <h4>📊 Calculation Methodology</h4>
+                <div class="explain-metrics">
+                    <div class="explain-metric">
+                        <div class="label">Revenue Trend</div>
+                        <div class="value">(Current Month - Previous Month) / Previous Month × 100</div>
+                    </div>
+                    <div class="explain-metric">
+                        <div class="label">Margin %</div>
+                        <div class="value">Gross Profit / Revenue × 100</div>
+                    </div>
+                    <div class="explain-metric">
+                        <div class="label">Slow-Moving %</div>
+                        <div class="value">Stock > 3× Sales Rate / Total Products</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Revenue Trend Chart
+        const historicalData = {{ forecasts.historical|tojson }};
+        if (historicalData && historicalData.length > 0) {
+            const labels = historicalData.map(d => d.month_name || `${d.month}/${d.year}`);
+            const revenues = historicalData.map(d => d.total_revenue);
+            const profits = historicalData.map(d => d.total_profit);
+            
+            new Chart(document.getElementById('revenueChart').getContext('2d'), {
+                type: 'line',
+                data: {
+                    labels: labels,
+                    datasets: [
+                        {
+                            label: 'Revenue',
+                            data: revenues,
+                            borderColor: '#6366f1',
+                            backgroundColor: 'rgba(99, 102, 241, 0.1)',
+                            fill: true,
+                            tension: 0.3
+                        },
+                        {
+                            label: 'Profit',
+                            data: profits,
+                            borderColor: '#10b981',
+                            backgroundColor: 'rgba(16, 185, 129, 0.1)',
+                            fill: true,
+                            tension: 0.3
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: { position: 'top' },
+                        tooltip: {
+                            callbacks: {
+                                label: function(ctx) {
+                                    return ctx.dataset.label + ': $' + ctx.raw.toLocaleString();
+                                }
+                            }
+                        }
+                    },
+                    scales: {
+                        y: {
+                            ticks: {
+                                callback: function(value) {
+                                    return '$' + value.toLocaleString();
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+        }
+    });
+    </script>
+</body>
+</html>
