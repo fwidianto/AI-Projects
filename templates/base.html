@@ -465,27 +465,35 @@
             align-items: center;
             gap: 20px;
         }
-        
-        .issue-card.high { background: #fee2e2; border-left: 4px solid var(--danger); }
-        .issue-card.medium { background: #fef3c7; border-left: 4px solid var(--warning); }
-        .issue-card.low { background: #dbeafe; border-left: 4px solid var(--primary); }
-        
+
+        .issue-card.high { background: rgba(239, 68, 68, 0.12); border-left: 4px solid var(--danger); }
+        .issue-card.medium { background: rgba(245, 158, 11, 0.12); border-left: 4px solid var(--warning); }
+        .issue-card.low { background: rgba(96, 165, 250, 0.12); border-left: 4px solid var(--primary); }
+
         .issue-icon {
             font-size: 2rem;
         }
-        
+
         .issue-content {
             flex: 1;
         }
-        
+
         .issue-title {
             font-weight: 600;
-            color: var(--gray-800);
+            color: var(--text-primary);
             margin-bottom: 5px;
         }
-        
+
         .issue-desc {
             font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .issue-count {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-primary);
+        }
             color: var(--gray-600);
         }
         
