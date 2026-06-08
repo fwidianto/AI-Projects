@@ -4,25 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}ERP Data Explorer{% endblock %}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary: #2563eb;
-            --primary-dark: #1d4ed8;
-            --secondary: #64748b;
-            --success: #10b981;
+            --bg-primary: #0b0f19;
+            --bg-secondary: #111827;
+            --bg-tertiary: #0f172a;
+            --text-primary: #f3f4f6;
+            --text-secondary: #d1d5db;
+            --text-muted: #9ca3af;
+            --primary: #60a5fa;
+            --primary-hover: #3b82f6;
+            --success: #22c55e;
             --warning: #f59e0b;
             --danger: #ef4444;
-            --gray-50: #f8fafc;
-            --gray-100: #f1f5f9;
-            --gray-200: #e2e8f0;
-            --gray-300: #cbd5e1;
-            --gray-400: #94a3b8;
-            --gray-500: #64748b;
-            --gray-600: #475569;
-            --gray-700: #334155;
-            --gray-800: #1e293b;
-            --gray-900: #0f172a;
+            --border: rgba(255, 255, 255, 0.05);
+            --border-hover: rgba(255, 255, 255, 0.1);
             --sidebar-width: 280px;
         }
         
@@ -34,8 +33,8 @@
         
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            background: var(--gray-50);
-            color: var(--gray-800);
+            background: var(--bg-primary);
+            color: var(--text-primary);
             line-height: 1.6;
         }
         
@@ -46,16 +45,17 @@
             top: 0;
             width: var(--sidebar-width);
             height: 100vh;
-            background: var(--gray-900);
+            background: var(--bg-secondary);
             color: white;
             overflow-y: auto;
             z-index: 100;
             transition: transform 0.3s ease;
+            border-right: 1px solid var(--border);
         }
         
         .sidebar-header {
             padding: 20px;
-            border-bottom: 1px solid var(--gray-700);
+            border-bottom: 1px solid var(--border);
         }
         
         .sidebar-logo {
@@ -79,7 +79,7 @@
             font-size: 0.75rem;
             font-weight: 600;
             text-transform: uppercase;
-            color: var(--gray-400);
+            color: var(--text-muted);
             letter-spacing: 0.05em;
         }
         
@@ -88,20 +88,20 @@
             align-items: center;
             gap: 12px;
             padding: 12px 20px;
-            color: var(--gray-300);
+            color: var(--text-secondary);
             text-decoration: none;
             transition: all 0.2s;
             font-size: 0.9rem;
         }
         
         .sidebar-link:hover {
-            background: var(--gray-800);
-            color: white;
+            background: var(--bg-tertiary);
+            color: var(--primary);
         }
         
         .sidebar-link.active {
-            background: var(--primary);
-            color: white;
+            background: rgba(96, 165, 250, 0.12);
+            color: var(--primary);
         }
         
         .sidebar-link-icon {
@@ -118,9 +118,9 @@
         
         /* Top Bar */
         .topbar {
-            background: white;
+            background: var(--bg-secondary);
             padding: 15px 30px;
-            border-bottom: 1px solid var(--gray-200);
+            border-bottom: 1px solid var(--border);
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -132,7 +132,7 @@
         .topbar-title {
             font-size: 1.5rem;
             font-weight: 600;
-            color: var(--gray-800);
+            color: var(--text-primary);
         }
         
         .topbar-actions {
@@ -148,15 +148,15 @@
         
         /* Cards */
         .card {
-            background: white;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
             border-radius: 12px;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
             overflow: hidden;
         }
         
         .card-header {
             padding: 20px 25px;
-            border-bottom: 1px solid var(--gray-100);
+            border-bottom: 1px solid var(--border);
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -165,7 +165,7 @@
         .card-title {
             font-size: 1.1rem;
             font-weight: 600;
-            color: var(--gray-800);
+            color: var(--text-primary);
         }
         
         .card-body {
@@ -181,19 +181,19 @@
         }
         
         .kpi-card {
-            background: white;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
             border-radius: 12px;
             padding: 25px;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
             display: flex;
             align-items: center;
             gap: 20px;
-            transition: transform 0.2s, box-shadow 0.2s;
+            transition: transform 0.2s, border-color 0.2s;
         }
         
         .kpi-card:hover {
             transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            border-color: var(--primary);
         }
         
         .kpi-icon {
@@ -206,13 +206,13 @@
             font-size: 1.8rem;
         }
         
-        .kpi-icon.blue { background: #dbeafe; }
-        .kpi-icon.green { background: #d1fae5; }
-        .kpi-icon.purple { background: #ede9fe; }
-        .kpi-icon.orange { background: #ffedd5; }
-        .kpi-icon.red { background: #fee2e2; }
-        .kpi-icon.teal { background: #ccfbf1; }
-        .kpi-icon.gold { background: #fef3c7; }
+        .kpi-icon.blue { background: rgba(96, 165, 250, 0.15); }
+        .kpi-icon.green { background: rgba(34, 197, 94, 0.15); }
+        .kpi-icon.purple { background: rgba(168, 85, 247, 0.15); }
+        .kpi-icon.orange { background: rgba(245, 158, 11, 0.15); }
+        .kpi-icon.red { background: rgba(239, 68, 68, 0.15); }
+        .kpi-icon.teal { background: rgba(20, 184, 166, 0.15); }
+        .kpi-icon.gold { background: rgba(234, 179, 8, 0.15); }
         
         .kpi-content {
             flex: 1;
@@ -220,14 +220,14 @@
         
         .kpi-title {
             font-size: 0.85rem;
-            color: var(--gray-500);
+            color: var(--text-muted);
             margin-bottom: 5px;
         }
         
         .kpi-value {
             font-size: 1.75rem;
             font-weight: 700;
-            color: var(--gray-800);
+            color: var(--text-primary);
         }
         
         /* Tables */
@@ -243,26 +243,26 @@
         th, td {
             padding: 12px 15px;
             text-align: left;
-            border-bottom: 1px solid var(--gray-100);
+            border-bottom: 1px solid var(--border);
         }
         
         th {
-            background: var(--gray-50);
+            background: var(--bg-tertiary);
             font-weight: 600;
             font-size: 0.85rem;
-            color: var(--gray-600);
+            color: var(--text-muted);
             text-transform: uppercase;
             letter-spacing: 0.03em;
             white-space: nowrap;
         }
         
         tr:hover {
-            background: var(--gray-50);
+            background: var(--bg-tertiary);
         }
         
         td {
             font-size: 0.9rem;
-            color: var(--gray-700);
+            color: var(--text-secondary);
         }
         
         /* Pagination */
@@ -271,12 +271,12 @@
             justify-content: space-between;
             align-items: center;
             padding: 20px 25px;
-            border-top: 1px solid var(--gray-100);
+            border-top: 1px solid var(--border);
         }
         
         .pagination-info {
             font-size: 0.9rem;
-            color: var(--gray-500);
+            color: var(--text-muted);
         }
         
         .pagination-controls {
@@ -286,18 +286,19 @@
         
         .pagination-btn {
             padding: 8px 12px;
-            border: 1px solid var(--gray-200);
-            background: white;
+            border: 1px solid var(--border);
+            background: var(--bg-secondary);
             border-radius: 6px;
-            color: var(--gray-600);
+            color: var(--text-secondary);
             text-decoration: none;
             font-size: 0.85rem;
             transition: all 0.2s;
         }
         
         .pagination-btn:hover {
-            background: var(--gray-50);
-            border-color: var(--gray-300);
+            background: var(--bg-tertiary);
+            border-color: var(--primary);
+            color: var(--primary);
         }
         
         .pagination-btn.active {
@@ -612,16 +613,95 @@
         }
         
         ::-webkit-scrollbar-track {
-            background: var(--gray-100);
+            background: var(--bg-tertiary);
         }
         
         ::-webkit-scrollbar-thumb {
-            background: var(--gray-300);
+            background: var(--border-hover);
             border-radius: 4px;
         }
         
         ::-webkit-scrollbar-thumb:hover {
-            background: var(--gray-400);
+            background: var(--text-muted);
+        }
+        
+        /* Buttons */
+        .btn {
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-weight: 500;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.2s;
+            cursor: pointer;
+            border: none;
+            font-size: 0.9rem;
+        }
+        
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background: var(--primary-hover);
+        }
+        
+        .btn-secondary {
+            background: var(--bg-tertiary);
+            color: var(--text-secondary);
+            border: 1px solid var(--border);
+        }
+        
+        .btn-secondary:hover {
+            border-color: var(--primary);
+            color: var(--primary);
+        }
+        
+        /* Search Input */
+        .search-input {
+            padding: 10px 15px;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            background: var(--bg-tertiary);
+            color: var(--text-primary);
+            font-size: 0.9rem;
+            width: 100%;
+            max-width: 300px;
+        }
+        
+        .search-input:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+        
+        .search-input::placeholder {
+            color: var(--text-muted);
+        }
+        
+        /* Badges */
+        .badge {
+            padding: 4px 10px;
+            border-radius: 999px;
+            font-size: 0.75rem;
+            font-weight: 500;
+        }
+        
+        .badge-success {
+            background: rgba(34, 197, 94, 0.15);
+            color: var(--success);
+        }
+        
+        .badge-warning {
+            background: rgba(245, 158, 11, 0.15);
+            color: var(--warning);
+        }
+        
+        .badge-danger {
+            background: rgba(239, 68, 68, 0.15);
+            color: var(--danger);
         }
     </style>
     {% block extra_css %}{% endblock %}

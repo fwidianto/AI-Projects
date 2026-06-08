@@ -4,24 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}ERP Analytics Dashboard{% endblock %}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
     <style>
         :root {
-            --primary: #2563eb;
-            --primary-dark: #1d4ed8;
-            --success: #059669;
-            --warning: #d97706;
-            --danger: #dc2626;
-            --gray-50: #f9fafb;
-            --gray-100: #f3f4f6;
-            --gray-200: #e5e7eb;
-            --gray-300: #d1d5db;
-            --gray-400: #9ca3af;
-            --gray-500: #6b7280;
-            --gray-600: #4b5563;
-            --gray-700: #374151;
-            --gray-800: #1f2937;
-            --gray-900: #111827;
+            --bg-primary: #0b0f19;
+            --bg-secondary: #111827;
+            --bg-tertiary: #0f172a;
+            --text-primary: #f3f4f6;
+            --text-secondary: #d1d5db;
+            --text-muted: #9ca3af;
+            --primary: #60a5fa;
+            --primary-hover: #3b82f6;
+            --success: #22c55e;
+            --warning: #f59e0b;
+            --danger: #ef4444;
+            --border: rgba(255, 255, 255, 0.05);
+            --border-hover: rgba(255, 255, 255, 0.1);
         }
         
         * {
@@ -31,15 +32,16 @@
         }
         
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
-            background: var(--gray-100);
-            color: var(--gray-800);
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
             line-height: 1.5;
         }
         
         /* Top Navigation */
         .top-nav {
-            background: linear-gradient(135deg, var(--gray-900) 0%, var(--gray-800) 100%);
+            background: var(--bg-secondary);
+            border-bottom: 1px solid var(--border);
             color: white;
             padding: 0 24px;
             display: flex;
@@ -49,7 +51,6 @@
             position: sticky;
             top: 0;
             z-index: 100;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
         }
         
         .top-nav-left {
@@ -74,7 +75,7 @@
         }
         
         .nav-tab {
-            color: var(--gray-300);
+            color: var(--text-muted);
             text-decoration: none;
             padding: 8px 16px;
             border-radius: 6px;
@@ -84,13 +85,13 @@
         }
         
         .nav-tab:hover {
-            background: rgba(255,255,255,0.1);
-            color: white;
+            background: var(--bg-tertiary);
+            color: var(--primary);
         }
         
         .nav-tab.active {
-            background: var(--primary);
-            color: white;
+            background: rgba(96, 165, 250, 0.12);
+            color: var(--primary);
         }
         
         .top-nav-right {
@@ -100,9 +101,9 @@
         }
         
         .module-switch {
-            background: rgba(255,255,255,0.1);
-            border: 1px solid rgba(255,255,255,0.2);
-            color: white;
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border);
+            color: var(--text-secondary);
             padding: 6px 12px;
             border-radius: 6px;
             font-size: 0.8rem;
@@ -115,7 +116,8 @@
         }
         
         .module-switch:hover {
-            background: rgba(255,255,255,0.2);
+            border-color: var(--primary);
+            color: var(--primary);
         }
         
         /* Main Content */
@@ -132,12 +134,12 @@
         .page-title {
             font-size: 1.75rem;
             font-weight: 700;
-            color: var(--gray-900);
+            color: var(--text-primary);
             margin-bottom: 4px;
         }
         
         .page-subtitle {
-            color: var(--gray-500);
+            color: var(--text-muted);
             font-size: 0.875rem;
         }
         
@@ -150,17 +152,17 @@
         }
         
         .kpi-card {
-            background: white;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
             border-radius: 12px;
             padding: 24px;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-            transition: transform 0.2s, box-shadow 0.2s;
+            transition: transform 0.2s, border-color 0.2s;
             cursor: pointer;
         }
         
         .kpi-card:hover {
             transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            border-color: var(--primary);
         }
         
         .kpi-header {
@@ -175,7 +177,7 @@
             font-weight: 600;
             text-transform: uppercase;
             letter-spacing: 0.5px;
-            color: var(--gray-500);
+            color: var(--text-muted);
         }
         
         .kpi-icon {
@@ -188,17 +190,17 @@
             font-size: 1.25rem;
         }
         
-        .kpi-icon.blue { background: #dbeafe; }
-        .kpi-icon.green { background: #d1fae5; }
-        .kpi-icon.purple { background: #ede9fe; }
-        .kpi-icon.orange { background: #ffedd5; }
-        .kpi-icon.red { background: #fee2e2; }
-        .kpi-icon.teal { background: #ccfbf1; }
+        .kpi-icon.blue { background: rgba(96, 165, 250, 0.15); }
+        .kpi-icon.green { background: rgba(34, 197, 94, 0.15); }
+        .kpi-icon.purple { background: rgba(168, 85, 247, 0.15); }
+        .kpi-icon.orange { background: rgba(245, 158, 11, 0.15); }
+        .kpi-icon.red { background: rgba(239, 68, 68, 0.15); }
+        .kpi-icon.teal { background: rgba(20, 184, 166, 0.15); }
         
         .kpi-value {
             font-size: 1.75rem;
             font-weight: 700;
-            color: var(--gray-900);
+            color: var(--text-primary);
             margin-bottom: 4px;
         }
         
@@ -225,10 +227,10 @@
         }
         
         .chart-card {
-            background: white;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
             border-radius: 12px;
             padding: 24px;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
         }
         
         .chart-header {
@@ -241,7 +243,7 @@
         .chart-title {
             font-size: 1rem;
             font-weight: 600;
-            color: var(--gray-800);
+            color: var(--text-primary);
         }
         
         .chart-container {
@@ -266,19 +268,20 @@
             font-weight: 600;
             text-transform: uppercase;
             letter-spacing: 0.5px;
-            color: var(--gray-500);
-            background: var(--gray-50);
-            border-bottom: 1px solid var(--gray-200);
+            color: var(--text-muted);
+            background: var(--bg-tertiary);
+            border-bottom: 1px solid var(--border);
         }
         
         .data-table td {
             padding: 12px 16px;
             font-size: 0.875rem;
-            border-bottom: 1px solid var(--gray-100);
+            color: var(--text-secondary);
+            border-bottom: 1px solid var(--border);
         }
         
         .data-table tr:hover {
-            background: var(--gray-50);
+            background: var(--bg-tertiary);
         }
         
         .data-table .number {
@@ -298,15 +301,15 @@
         .badge {
             display: inline-block;
             padding: 4px 10px;
-            border-radius: 20px;
+            border-radius: 999px;
             font-size: 0.75rem;
             font-weight: 600;
         }
         
-        .badge-success { background: #d1fae5; color: #065f46; }
-        .badge-warning { background: #ffedd5; color: #9a3412; }
-        .badge-danger { background: #fee2e2; color: #991b1b; }
-        .badge-info { background: #dbeafe; color: #1e40af; }
+        .badge-success { background: rgba(34, 197, 94, 0.15); color: var(--success); }
+        .badge-warning { background: rgba(245, 158, 11, 0.15); color: var(--warning); }
+        .badge-danger { background: rgba(239, 68, 68, 0.15); color: var(--danger); }
+        .badge-info { background: rgba(96, 165, 250, 0.15); color: var(--primary); }
         
         /* Funnel */
         .funnel {
@@ -318,7 +321,7 @@
         }
         
         .funnel-stage {
-            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-hover) 100%);
             color: white;
             padding: 16px 24px;
             border-radius: 8px;
@@ -345,8 +348,8 @@
             right: -60px;
             top: 50%;
             transform: translateY(-50%);
-            background: var(--gray-800);
-            color: white;
+            background: var(--bg-tertiary);
+            color: var(--text-primary);
             padding: 4px 8px;
             border-radius: 4px;
             font-size: 0.7rem;
@@ -376,6 +379,7 @@
             gap: 16px;
             flex-wrap: wrap;
             font-size: 0.75rem;
+            color: var(--text-muted);
         }
         
         .aging-legend-item {
@@ -426,7 +430,7 @@
         /* Progress bars */
         .progress-bar {
             height: 8px;
-            background: var(--gray-200);
+            background: var(--bg-tertiary);
             border-radius: 4px;
             overflow: hidden;
         }
