@@ -913,10 +913,10 @@ def execute_sql():
     for cmd in forbidden:
         if cmd in sql_upper:
             return jsonify({
-                'error': f"Operation '{cmd}' is not allowed. Only SELECT queries are permitted.",
+                'error': f"Operation {cmd} is not allowed. Only SELECT queries are permitted.",
                 'columns': [],
                 'rows': []
-            }), 400
+            }), 500
     
     # Must start with SELECT
     if not sql_upper.strip().startswith('SELECT'):
@@ -924,7 +924,7 @@ def execute_sql():
             'error': 'Only SELECT queries are allowed.',
             'columns': [],
             'rows': []
-        }), 400
+        }), 500
     
     # Block multiple statements (basic check)
     if ';' in sql.rstrip(';').replace("';", ""):
@@ -932,7 +932,7 @@ def execute_sql():
             'error': 'Multiple statements are not allowed.',
             'columns': [],
             'rows': []
-        }), 400
+        }), 500
     
     try:
         with get_db_connection() as conn:
@@ -952,7 +952,7 @@ def execute_sql():
             'error': str(e),
             'columns': [],
             'rows': []
-        }), 400
+        }), 500
 
 # ========================================
 # API ENDPOINTS
