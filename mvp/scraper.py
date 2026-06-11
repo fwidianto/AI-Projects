@@ -326,6 +326,11 @@ def create_sample_jobs() -> List[Job]:
     
     Returns:
         List of sample Job objects
+    
+    Assumptions:
+        - 10 sample jobs are sufficient for MVP testing
+        - Jobs cover diverse roles matching target positions
+        - Salary ranges reflect Indonesian market (15M-28M IDR)
     """
     sample_jobs = [
         Job(

@@ -47,21 +47,22 @@ def load_profile(config_path: str = "config/profile.json"):
 
 
 def scrape_jobs(args, config):
-    """Scrape jobs from Indeed."""
+    """Scrape jobs from Indeed or use sample data."""
     print("\n" + "=" * 60)
     print("🔍 SCRAPING JOBS")
     print("=" * 60)
     
     db = setup_database(args.db)
+    jobs = []
     
     if args.use_sample:
-        print("📦 Using sample jobs (no scraping)")
+        print("📦 Using sample jobs (no web scraping)")
         jobs = create_sample_jobs()
     else:
         print(f"🌐 Scraping from Indeed...")
+        print("   (Note: Indeed may block automated requests)")
         scraper = IndeedScraper(rate_limit=args.rate_limit)
         
-        all_jobs = []
         for query in config.profile.target_roles[:3]:  # Limit to top 3 roles
             print(f"   Searching: {query}")
             result = scraper.search(
@@ -71,11 +72,16 @@ def scrape_jobs(args, config):
                 days_back=args.days,
             )
             
-            if result.success:
+            if result.success and result.jobs:
                 print(f"   ✅ Found {len(result.jobs)} jobs")
-                all_jobs.extend(result.jobs)
+                jobs.extend(result.jobs)
             else:
-                print(f"   ❌ Error: {result.error}")
+                print(f"   ⚠️ No jobs found (site may be blocking)")
+        
+        # If no jobs scraped, fall back to sample
+        if not jobs:
+            print("\n⚠️ Web scraping failed. Using sample jobs instead.")
+            jobs = create_sample_jobs()
     
     # Store jobs in database
     if jobs:
