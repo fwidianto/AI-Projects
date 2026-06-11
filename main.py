@@ -137,15 +137,27 @@ def score_jobs(args, config, db):
     return results
 
 
-def generate_reports(args, config, results):
+def generate_reports(args, config, results=None, db=None):
     """Generate reports."""
     print("\n" + "=" * 60)
     print("📄 GENERATING REPORTS")
     print("=" * 60)
     
+    # If no results passed, load from database
     if not results:
-        print("⚠️ No scored jobs. Run --score first.")
-        return
+        if db is None:
+            db = setup_database(args.db)
+        
+        # Get jobs with scores from database
+        scored_jobs = db.get_jobs_with_scores(min_score=0, limit=100)
+        
+        if not scored_jobs:
+            print("⚠️ No scored jobs found in database.")
+            print("   Run --scrape --use-sample followed by --score first.")
+            return
+        
+        # Convert to results format for report generators
+        results = scored_jobs
     
     # Generate reports
     output_dir = Path("data")
