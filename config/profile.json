@@ -1,0 +1,142 @@
+{
+  "profile": {
+    "name": "Fajar Widianto",
+    "email": "fajar@example.com",
+    "headline": "Business Operations Analyst | ERP Specialist",
+    "summary": "Experienced Business Operations Analyst with expertise in ERP systems (SAP ECC, Odoo), cost control, budgeting, and process improvement. Skilled in SQL, data analysis, and business intelligence tools.",
+    "experience_years": 5,
+    "education": "Bachelor's in Information Systems",
+    "target_roles": [
+      "ERP Analyst",
+      "Business Analyst",
+      "Operations Analyst",
+      "Cost Control Analyst",
+      "Finance Analyst",
+      "Reporting Analyst",
+      "Data Analyst"
+    ],
+    "preferred_locations": [
+      "Jakarta",
+      "Bekasi",
+      "Karawang",
+      "Remote"
+    ],
+    "salary_expectations": {
+      "min": 15000000,
+      "max": 25000000,
+      "currency": "IDR"
+    },
+    "skills": [
+      {
+        "name": "SAP ECC",
+        "proficiency": 5,
+        "is_key_skill": true
+      },
+      {
+        "name": "SAP FI",
+        "proficiency": 4,
+        "is_key_skill": true
+      },
+      {
+        "name": "SAP CO",
+        "proficiency": 4,
+        "is_key_skill": true
+      },
+      {
+        "name": "Odoo ERP",
+        "proficiency": 5,
+        "is_key_skill": true
+      },
+      {
+        "name": "SQL",
+        "proficiency": 4,
+        "is_key_skill": true
+      },
+      {
+        "name": "Excel",
+        "proficiency": 5,
+        "is_key_skill": true
+      },
+      {
+        "name": "Google Sheets",
+        "proficiency": 5,
+        "is_key_skill": true
+      },
+      {
+        "name": "Looker Studio",
+        "proficiency": 4,
+        "is_key_skill": true
+      },
+      {
+        "name": "Power BI",
+        "proficiency": 3,
+        "is_key_skill": false
+      },
+      {
+        "name": "Process Improvement",
+        "proficiency": 4,
+        "is_key_skill": true
+      },
+      {
+        "name": "Cost Control",
+        "proficiency": 5,
+        "is_key_skill": true
+      },
+      {
+        "name": "Budgeting",
+        "proficiency": 5,
+        "is_key_skill": true
+      },
+      {
+        "name": "Financial Analysis",
+        "proficiency": 4,
+        "is_key_skill": true
+      },
+      {
+        "name": "Business Analysis",
+        "proficiency": 5,
+        "is_key_skill": true
+      },
+      {
+        "name": "Requirements Gathering",
+        "proficiency": 4,
+        "is_key_skill": true
+      },
+      {
+        "name": "Data Analysis",
+        "proficiency": 4,
+        "is_key_skill": true
+      },
+      {
+        "name": "ETL",
+        "proficiency": 3,
+        "is_key_skill": false
+      },
+      {
+        "name": "Python",
+        "proficiency": 3,
+        "is_key_skill": false
+      }
+    ],
+    "certifications": [
+      "SAP ECC Certification",
+      "Odoo Implementation"
+    ]
+  },
+  "search_preferences": {
+    "sources": [
+      "indeed",
+      "linkedin"
+    ],
+    "default_location": "Jakarta",
+    "max_results_per_search": 50,
+    "days_back": 30
+  },
+  "scoring_weights": {
+    "skills_match": 0.40,
+    "title_match": 0.30,
+    "location_match": 0.15,
+    "salary_match": 0.10,
+    "experience_match": 0.05
+  }
+}
